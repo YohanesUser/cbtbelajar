@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="student-name">Welcome, Student</h1>
+        <div class="exam-info">
+            <p>Mapel: <strong>MTK, IPA</strong></p>
+            <p>Waktu: <strong>60 Menit</strong></p>
+            <p>Jumlah Soal: <strong>58</strong></p>
+            <p>Status Soal: <strong>Active</strong></p>
+            <p>Guru: <strong>Yohanes Alfaro SSS</strong></p>
+            <div class="spinner"></div>
+            <button id="start-exam">Mulai Ujian</button>
+        </div>
+    </div>
+
+    <script>
+        // Ambil nama siswa dari sessionStorage
+        const studentName = sessionStorage.getItem('studentName');
+
+        if (studentName) {
+            // Tampilkan nama siswa di halaman dashboard
+            document.getElementById('student-name').textContent = `Welcome, ${studentName}`;
+        } else {
+            // Jika tidak ada nama siswa, arahkan kembali ke halaman login
+            window.location.href = 'login.html';
+        }
+
+        document.getElementById('start-exam').addEventListener('click', () => {
+            window.location.href = 'question.html?page=1';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+    "exam": {
+        "title": "Sample Exam",
+        "questions": [
+            {
+                "text": "What is the capital of France?",
+                "options": ["Paris", "London", "Berlin", "Rome"],
+                "correctOption": 0
+            },
+            {
+                "text": "What is the largest planet in our solar system?",
+                "options": ["Earth", "Saturn", "Jupiter", "Uranus"],
+                "correctOption": 2
+            },
+            {
+                "text": "Who painted the Mona Lisa?",
+                "options": ["Leonardo da Vinci", "Michelangelo", "Raphael", "Caravaggio"],
+                "correctOption": 0
+            }
+        ]
+    }
+}

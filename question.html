@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        li:hover {
+            background: rgba(40, 167, 69, 0.2);
+        }
+
+        li.selected {
+            background: #28a745;
+            color: #fff;
+        }
+
+        button {
+            background: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            margin: 20px 5px;
+        }
+
+        button:hover {
+            background: #218838;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        .result {
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span id="time">60:00</span>
+            <div id="question-number">Question <span id="current-question">1</span></div>
+        </div>
+        <h2 id="question"></h2>
+        <ul id="options"></ul>
+        <div class="navigation">
+            <button id="back">Back</button>
+            <button id="next">Next</button>
+            <button id="submit" style="display: none;">Submit</button>
+        </div>
+        <div class="result" id="result" style="display: none;"></div>
+    </div>
+
+    <script>
+        const questions = [
+            { question: "Apa yang dimaksud dengan fotosintesis?", options: ["A. Proses pengambilan oksigen", "B. Proses pembuatan makanan oleh tumbuhan", "C. Proses penguraian zat organik", "D. Proses penyerapan air"], answer: 1 },
+            { question: "Apa yang terjadi pada air ketika dipanaskan?", options: ["A. Air membeku", "B. Air menguap", "C. Air menjadi es", "D. Air tidak berubah"], answer: 1 },
+            { question: "Bagaimana cara manusia bernapas?", options: ["A. Menghirup karbon dioksida", "B. Menghirup oksigen", "C. Mengeluarkan nitrogen", "D. Mengeluarkan uap air"], answer: 1 },
+            { question: "Apa yang dimaksud dengan ekosistem?", options: ["A. Komunitas hewan", "B. Komunitas tumbuhan", "C. Interaksi antara makhluk hidup dan lingkungannya", "D. Rantai makanan"], answer: 2 },
+            { question: "Apa yang menjadi sumber energi utama bagi manusia?", options: ["A. Angin", "B. Matahari", "C. Air", "D. Bahan bakar fosil"], answer: 1 },
+            { question: "Di mana proses pencernaan makanan dimulai?", options: ["A. Di lambung", "B. Di mulut", "C. Di usus halus", "D. Di usus besar"], answer: 1 },
+            { question: "Apa yang dimaksud dengan hukum Newton pertama?", options: ["A. Gaya sama dengan massa kali percepatan", "B. Suatu benda akan tetap diam atau bergerak lurus jika tidak ada gaya yang bekerja", "C. Setiap aksi ada reaksi yang sama dan berlawanan", "D. Benda yang lebih berat jatuh lebih cepat"], answer: 1 },
+            { question: "Apa yang dimaksud dengan jaringan pada tumbuhan?", options: ["A. Kumpulan sel-sel yang memiliki fungsi sama", "B. Kumpulan organ-organ", "C. Kumpulan sistem", "D. Kumpulan individu"], answer: 0 },
+            { question: "Apa yang dimaksud dengan siklus air?", options: ["A. Proses penyerapan air oleh tanah", "B. Proses pergerakan air dari laut ke udara dan kembali", "C. Proses penguapan air", "D. Proses pemendekan air"], answer: 1 },
+            { question: "Apa itu massa jenis?", options: ["A. Massa dibagi volume", "B. Volume dibagi massa", "C. Massa dikali volume", "D. Massa dikurangi volume"], answer: 0 },
+            { question: "Apa yang dimaksud dengan planet?", options: ["A. Benda langit yang bercahaya", "B. Benda langit yang mengorbit bintang", "C. Benda langit yang memiliki atmosfer", "D. Benda langit yang lebih kecil dari bulan"], answer: 1 },
+            { question: "Apa yang terjadi saat magnet didekatkan dengan logam ferromagnetik?", options: ["A. Magnet akan menarik logam", "B. Magnet tidak berpengaruh", "C. Logam akan meleleh", "D. Logam akan hancur"], answer: 0 },
+            { question: "Apa fungsi akar pada tumbuhan?", options: ["A. Menyerap air dan nutrisi", "B. Membuat fotosintesis", "C. Menyimpan makanan", "D. Menyokong batang"], answer: 0 },
+            { question: "Apa yang dimaksud dengan oksidasi?", options: ["A. Proses pengurangan zat", "B. Proses penambahan oksigen", "C. Proses penggabungan zat", "D. Proses pembakaran"], answer: 1 },
+            { question: "Apa yang terjadi saat suatu benda dipanaskan?", options: ["A. Benda mengecil", "B. Benda mengembang", "C. Benda tidak berubah", "D. Benda pecah"], answer: 1 },
+            { question: "Apa yang menjadi ciri-ciri hewan berdarah panas?", options: ["A. Suhu tubuhnya selalu sama", "B. Suhu tubuhnya bervariasi", "C. Tidak memiliki suhu tubuh", "D. Suhu tubuhnya selalu dingin"], answer: 0 },
+            { question: "Apa yang dimaksud dengan energi kinetik?", options: ["A. Energi yang disimpan", "B. Energi gerak", "C. Energi yang dihasilkan oleh panas", "D. Energi yang berasal dari makanan"], answer: 1 },
+            { question: "Apa yang menjadi penyebab hujan?", options: ["A. Proses penguapan", "B. Proses kondensasi", "C. Proses pengembunan", "D. Semua benar"], answer: 3 },
+            { question: "Apa yang dimaksud dengan ion?", options: ["A. Atom yang netral", "B. Atom yang kehilangan atau mendapatkan elektron", "C. Molekul yang stabil", "D. Zat yang tidak bereaksi"], answer: 1 },
+            { question: "Apa yang dimaksud dengan jari-jari bumi?", options: ["A. Panjang bumi dari pusat ke permukaan", "B. Panjang bumi dari kutub ke kutub", "C. Lingkar bumi", "D. Diameter bumi"], answer: 0 },
+            { question: "Apa fungsi daun pada tumbuhan?", options: ["A. Menyimpan makanan", "B. Tempat fotosintesis", "C. Menyerap air", "D. Menyokong batang"], answer: 1 },
+            { question: "Apa yang menjadi penyebab terjadinya gerhana?", options: ["A. Rotasi bumi", "B. Revolusi bumi", "C. Posisi bulan dan matahari", "D. Semua benar"], answer: 2 },
+            { question: "Apa yang dimaksud dengan habitat?", options: ["A. Lingkungan tempat hidup makhluk hidup", "B. Proses adaptasi makhluk hidup", "C. Proses evolusi", "D. Proses reproduksi"], answer: 0 },
+            { question: "Apa itu zat padat?", options: ["A. Zat yang memiliki bentuk tetap", "B. Zat yang dapat mengalir", "C. Zat yang tidak dapat dilihat", "D. Zat yang berbentuk gas"], answer: 0 },
+            { question: "Apa yang dimaksud dengan reaksi kimia?", options: ["A. Proses perubahan fisik", "B. Proses penggabungan zat", "C. Proses pembentukan zat baru", "D. Proses pemisahan zat"], answer: 2 },
+            { question: "Apa yang terjadi jika suhu udara meningkat?", options: ["A. Udara menjadi lebih berat", "B. Udara menjadi lebih ringan", "C. Udara tidak berubah", "D. Udara menjadi berbahaya"], answer: 1 },
+            { question: "Apa yang dimaksud dengan daur ulang?", options: ["A. Proses membuat barang baru dari barang bekas", "B. Proses membuang barang", "C. Proses memproduksi barang baru", "D. Proses mengubah barang menjadi limbah"], answer: 0 },
+            { question: "Apa yang dimaksud dengan pola makan sehat?", options: ["A. Mengkonsumsi makanan yang beragam", "B. Mengkonsumsi makanan cepat saji", "C. Mengkonsumsi hanya sayuran", "D. Mengkonsumsi makanan manis"], answer: 0 },
+            { question: "Apa itu fotosintesis?", options: ["A. Proses pengambilan energi dari makanan", "B. Proses penyerapan air", "C. Proses pembentukan makanan dari cahaya matahari", "D. Proses pernapasan pada tumbuhan"], answer: 2 },
+            { question: "Apa yang dimaksud dengan iklim?", options: ["A. Cuaca jangka pendek", "B. Cuaca jangka panjang di suatu wilayah", "C. Suhu harian", "D. Perubahan cuaca mendadak"], answer: 1 },
+            { question: "Apa yang menjadi penyebab terjadinya musim?", options: ["A. Rotasi bumi", "B. Revolusi bumi", "C. Perubahan suhu", "D. Semua benar"], answer: 1 },
+            { question: "Apa yang dimaksud dengan gaya gesek?", options: ["A. Gaya yang mempercepat benda", "B. Gaya yang melawan gerak benda", "C. Gaya yang menarik benda", "D. Gaya yang menghasilkan energi"], answer: 1 },
+            { question: "Apa yang dimaksud dengan daur hidup?", options: ["A. Siklus kehidupan suatu makhluk hidup", "B. Proses reproduksi", "C. Proses evolusi", "D. Proses pertumbuhan"], answer: 0 },
+            { question: "Apa yang terjadi pada suhu ketika air membeku?", options: ["A. Suhu meningkat", "B. Suhu tetap", "C. Suhu menurun", "D. Suhu berubah drastis"], answer: 2 },
+            { question: "Apa yang dimaksud dengan pembudidayaan?", options: ["A. Proses memelihara dan mengembangbiakkan makhluk hidup", "B. Proses menghancurkan makhluk hidup", "C. Proses mengolah bahan makanan", "D. Proses pembuangan limbah"], answer: 0 },
+            { question: "Apa itu limbah?", options: ["A. Bahan yang tidak berguna", "B. Bahan yang dapat didaur ulang", "C. Bahan yang bermanfaat", "D. Bahan yang aman"], answer: 0 },
+            { question: "Apa yang dimaksud dengan makhluk hidup?", options: ["A. Zat mati", "B. Zat yang memiliki kehidupan", "C. Zat yang tidak dapat tumbuh", "D. Zat yang tidak dapat bergerak"], answer: 1 },
+            { question: "Apa yang terjadi pada tanaman saat kekurangan air?", options: ["A. Tumbuh subur", "B. Layu", "C. Berbuah lebat", "D. Berdaun lebat"], answer: 1 },
+            { question: "Apa yang dimaksud dengan adaptasi?", options: ["A. Perubahan bentuk", "B. Proses penyesuaian makhluk hidup terhadap lingkungan", "C. Proses reproduksi", "D. Proses pertumbuhan"], answer: 1 },
+            { question: "Apa itu energi alternatif?", options: ["A. Energi yang tidak terbarukan", "B. Energi yang dapat diperbaharui", "C. Energi dari bahan bakar fosil", "D. Energi dari listrik"], answer: 1 },
+            { question: "Apa yang terjadi pada benda yang jatuh?", options: ["A. Benda bergerak ke atas", "B. Benda diam", "C. Benda jatuh ke bawah karena gaya gravitasi", "D. Benda melayang"], answer: 2 },
+            { question: "Apa yang dimaksud dengan klasifikasi makhluk hidup?", options: ["A. Proses mengelompokkan makhluk hidup berdasarkan kesamaan", "B. Proses mencari makhluk hidup baru", "C. Proses menghilangkan makhluk hidup", "D. Proses reproduksi"], answer: 0 },
+            { question: "Apa yang dimaksud dengan rantai makanan?", options: ["A. Proses pertumbuhan makhluk hidup", "B. Hubungan makanan antara makhluk hidup", "C. Proses reproduksi", "D. Proses penguraian"], answer: 1 },
+            { question: "Apa yang menjadi sumber utama oksigen di bumi?", options: ["A. Laut", "B. Hutan", "C. Tumbuhan", "D. Semua benar"], answer: 2 },
+            { question: "Apa yang dimaksud dengan lingkungan?", options: ["A. Tempat tinggal makhluk hidup", "B. Semua yang ada di sekitar makhluk hidup", "C. Proses adaptasi", "D. Semua benar"], answer: 1 },
+            { question: "Apa itu perubahan fisik?", options: ["A. Perubahan yang mengubah komposisi zat", "B. Perubahan yang tidak mengubah komposisi zat", "C. Perubahan yang tidak dapat dikembalikan", "D. Semua salah"], answer: 1 },
+            { question: "Apa yang dimaksud dengan kitaran nitrogen?", options: ["A. Proses penguraian zat organik", "B. Proses pengambilan nitrogen dari udara oleh tumbuhan", "C. Proses yang melibatkan nitrogen dalam ekosistem", "D. Semua benar"], answer: 2 },
+            { question: "Apa yang terjadi pada air ketika suhu menurun?", options: ["A. Air menguap", "B. Air membeku", "C. Air tidak berubah", "D. Air mendidih"], answer: 1 },
+            { question: "Apa yang menjadi ciri-ciri sel hewan?", options: ["A. Memiliki dinding sel", "B. Tidak memiliki klorofil", "C. Memiliki vakuola besar", "D. Semua benar"], answer: 1 },
+            { question: "Apa yang dimaksud dengan perubahan kimia?", options: ["A. Perubahan yang mengubah bentuk", "B. Perubahan yang menghasilkan zat baru", "C. Perubahan fisik", "D. Semua salah"], answer: 1 },
+            { question: "Apa yang menjadi penyebab pergeseran lempeng bumi?", options: ["A. Energi panas dari dalam bumi", "B. Gaya gravitasi", "C. Rotasi bumi", "D. Semua benar"], answer: 0 },
+            { question: "Apa yang dimaksud dengan pemanasan global?", options: ["A. Suhu bumi yang meningkat akibat aktivitas manusia", "B. Suhu bumi yang menurun", "C. Suhu bumi yang tetap", "D. Semua salah"], answer: 0 },
+            { question: "Apa yang dimaksud dengan hewan herbivora?", options: ["A. Hewan pemakan daging", "B. Hewan pemakan tumbuhan", "C. Hewan pemakan serangga", "D. Semua salah"], answer: 1 },
+            { question: "Apa yang terjadi saat gas dipanaskan?", options: ["A. Gas menyusut", "B. Gas mengembang", "C. Gas menghilang", "D. Gas tetap"], answer: 1 },
+            { question: "Apa yang dimaksud dengan fermentasi?", options: ["A. Proses penguraian zat dengan bantuan mikroorganisme", "B. Proses pengolahan makanan", "C. Proses pemisahan zat", "D. Semua benar"], answer: 0 },
+            { question: "Apa itu virus?", options: ["A. Makhluk hidup", "B. Zat mati", "C. Mikroorganisme yang dapat menyebabkan penyakit", "D. Semua benar"], answer: 2 },
+            { question: "Apa yang dimaksud dengan pencemaran lingkungan?", options: ["A. Proses pembuangan limbah", "B. Proses pengolahan limbah", "C. Proses pembersihan lingkungan", "D. Semua benar"], answer: 0 },
+            { question: "Apa yang dimaksud dengan proses osmosis?", options: ["A. Pergerakan zat dari daerah berkonsentrasi tinggi ke rendah", "B. Pergerakan zat dari daerah berkonsentrasi rendah ke tinggi", "C. Proses penguapan", "D. Semua benar"], answer: 0 }
+        ];
+
+        let timeRemaining = 60 * 60; // 1 hour in seconds
+        let timerInterval = setInterval(() => {
+            timeRemaining -= 1;
+            document.getElementById('time').textContent = formatTime(timeRemaining);
+            if (timeRemaining <= 0) {
+                clearInterval(timerInterval);
+                alert('Waktu habis! Soal akan disubmit.');
+                submitQuiz(); // Submit otomatis saat waktu habis
+            }
+        }, 1000);
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secondsRemaining = seconds % 60;
+            return `${minutes}:${secondsRemaining.toString().padStart(2, '0')}`;
+        }
+
+        let currentPage = 1;
+        const selectedAnswers = new Array(questions.length).fill(null);
+
+        document.getElementById('current-question').textContent = currentPage;
+
+        function loadQuestion() {
+            const questionData = questions[currentPage - 1];
+            document.getElementById('question').textContent = questionData.question;
+
+            const optionsElement = document.getElementById('options');
+            optionsElement.innerHTML = '';
+            questionData.options.forEach((option, index) => {
+                const li = document.createElement('li');
+                li.textContent = option;
+                li.addEventListener('click', () => selectOption(index));
+                if (selectedAnswers[currentPage - 1] === index) {
+                    li.classList.add('selected');
+                }
+                optionsElement.appendChild(li);
+            });
+
+            document.getElementById('next').style.display = (currentPage === questions.length) ? 'none' : 'inline-block';
+            document.getElementById('submit').style.display = (currentPage === questions.length) ? 'inline-block' : 'none';
+        }
+
+        function selectOption(index) {
+            selectedAnswers[currentPage - 1] = index;
+            loadQuestion();
+        }
+
+        document.getElementById('next').addEventListener('click', () => {
+            if (currentPage < questions.length) {
+                currentPage++;
+                document.getElementById('current-question').textContent = currentPage;
+                loadQuestion();
+            }
+        });
+
+        document.getElementById('back').addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                document.getElementById('current-question').textContent = currentPage;
+                loadQuestion();
+            }
+        });
+
+        document.getElementById('submit').addEventListener('click', submitQuiz);
+
+        function submitQuiz() {
+            let score = 0;
+            questions.forEach((question, index) => {
+                if (selectedAnswers[index] === question.answer) {
+                    score++;
+                }
+            });
+
+            const resultElement = document.getElementById('result');
+            const totalQuestions = questions.length;
+            const scorePercentage = Math.round((score / totalQuestions) * 100);
+            resultElement.textContent = `Your score: ${score}/${totalQuestions} (${scorePercentage}%)`;
+            resultElement.style.display = 'block';
+
+            function submitQuiz() {
+    let score = 0;
+    questions.forEach((question, index) => {
+        if (selectedAnswers[index] === question.answer) {
+            score++;
+        }
+    });
+
+    const resultElement = document.getElementById('result');
+    const totalQuestions = questions.length;
+    const scorePercentage = Math.round((score / totalQuestions) * 100);
+    resultElement.textContent = `Your score: ${score}/${totalQuestions} (${scorePercentage}%)`;
+    resultElement.style.display = 'block';
+
+    // Prepare the message for WhatsApp
+    const whatsappNumber = '6289530067456';
+    const whatsappMessage = `Score: ${score}/${totalQuestions} (${scorePercentage}%)`;
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+    // Redirect to WhatsApp after a short delay to display the result
+    setTimeout(() => {
+        window.location.href = whatsappURL; // Redirect to WhatsApp
+    }, 3000); // Delay for 3 seconds
+
+    document.getElementById('next').style.display = 'none';
+    document.getElementById('submit').style.display = 'none';
+}
+
+        }
+
+        // Memulai Fullscreen mode saat soal dimulai
+        window.onload = function() {
+            // Coba masuk ke mode layar penuh
+            const enterFullscreen = () => {
+                if (document.documentElement.requestFullscreen) {
+                    document.documentElement.requestFullscreen();
+                } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+                    document.documentElement.mozRequestFullScreen();
+                } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari, Opera
+                    document.documentElement.webkitRequestFullscreen();
+                } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+                    document.documentElement.msRequestFullscreen();
+                }
+            };
+
+            // Tunggu beberapa detik untuk memberikan pengguna kesempatan untuk berinteraksi
+            setTimeout(enterFullscreen, 10);
+        };
+
+        // Mencegah tombol back
+        window.history.pushState(null, null, window.location.href);
+        window.onpopstate = function () {
+            window.history.go(1); // Mencegah pengguna menekan tombol "back"
+        };
+
+        // Mencegah klik kanan (context menu)
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+
+        // Mencegah shortcut keyboard umum (misalnya: Ctrl+C, Ctrl+V, dll.)
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && (e.key === 'c' || e.key === 'v' || e.key === 'x' || e.key === 's' || e.key === 'a')) {
+                e.preventDefault();
+            }
+            if (e.key === 'PrintScreen') {
+                alert('Screenshots are not allowed!');
+                e.preventDefault();
+            }
+        });
+
+        // Deteksi jika pengguna keluar dari tab atau aplikasi
+        document.addEventListener('visibilitychange', function() {
+            if (document.visibilityState === 'hidden') {
+                alert('Anda tidak boleh meninggalkan halaman ini!');
+            }
+        });
+
+        // Mencegah pengguna menekan tombol "Home"
+        window.addEventListener('blur', function () {
+            alert('Anda tidak boleh meninggalkan halaman ini!');
+            window.focus();
+        });
+
+        loadQuestion();
+    </script>
+</body>
+</html>
