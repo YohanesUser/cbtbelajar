@@ -5,25 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Container utama */
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Exam info layout dengan Flexbox */
+        .exam-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 500px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .exam-info p {
+            width: 45%;
+            margin: 10px 0;
+        }
+
+        .spinner {
+            width: 45%;
+            height: 20px;
+            background-color: #f0f0f0;
+            margin-top: 10px;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        /* Style untuk div tambahan mapel */
+        .mapel-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1 id="student-name">Welcome, Student</h1>
-        <div class="exam-info">
-            <p>Mapel: <strong>MTK, IPA</strong></p>
-            <p>Waktu: <strong>60 Menit</strong></p>
-            <p>Jumlah Soal: <strong>58</strong></p>
-            <p>Status Soal: <strong>Active</strong></p>
-            <p>Guru: <strong>Yohanes Alfaro SSS</strong></p>
-            <div class="spinner"></div>
-            <button id="start-exam">Mulai Ujian</button>
+        
+        <div class="mapel-container">
+            <!-- Mata Pelajaran 1 -->
+            <div class="exam-info">
+                <p>Mapel: <strong>MTK, IPA</strong></p>
+                <p>Waktu: <strong>60 Menit</strong></p>
+                <p>Jumlah Soal: <strong>58</strong></p>
+                <p>Status Soal: <strong>Active</strong></p>
+                <p>Expired: <strong>4-10-24</strong></p>
+                <p>Guru: <strong>Yohanes Alfaro SSS</strong></p>
+                <div class="spinner"></div>
+                <button id="start-exam">Mulai Ujian</button>
+            </div>
+            
+
+            <!-- Mata Pelajaran Lain (Contoh: Bahasa Inggris) -->
+            <div class="exam-info">
+                <p>Mapel: <strong>Pengetahuan Umum</strong></p>
+                <p>Waktu: <strong>20 Menit</strong></p>
+                <p>Jumlah Soal: <strong>24</strong></p>
+                <p>Status Soal: <strong>Active</strong></p>
+                <p>Expired: <strong>4-10-24</strong></p>
+                <p>Guru: <strong>Rafael Yama Alifianto</strong></p>
+                <div class="spinner"></div>
+                <button id="start-exam1">Mulai Ujian</button>
+            </div>
         </div>
+
+        <div class="exam-info">
+            <p>Mapel: <strong>Nama Daerah</strong></p>
+            <p>Waktu: <strong>20 Menit</strong></p>
+            <p>Jumlah Soal: <strong>30</strong></p>
+            <p>Status Soal: <strong>Inactive</strong></p>
+            <p>Active: <strong>2-10-24</strong></p>
+            <p>Guru: <strong>Admin Yhns</strong></p>
+            <div class="spinner"></div>
+            <button id="start-exam2">Belum Waktunya Ujian</button>
+        </div>
+    </div>
+
+        
     </div>
 
     <script>
         // Ambil nama siswa dari sessionStorage
         const studentName = sessionStorage.getItem('studentName');
-
+    
         if (studentName) {
             // Tampilkan nama siswa di halaman dashboard
             document.getElementById('student-name').textContent = `Welcome, ${studentName}`;
@@ -31,10 +127,33 @@
             // Jika tidak ada nama siswa, arahkan kembali ke halaman login
             window.location.href = 'login.html';
         }
-
+    
+        // Event listener untuk tombol Mulai Ujian
         document.getElementById('start-exam').addEventListener('click', () => {
-            window.location.href = 'question.html?page=1';
+            // Misalnya, kita mengecek kondisi berdasarkan status soal atau mapel
+            const mapel = "Bahasa Inggris"; // Contoh: ganti sesuai kondisi atau input pengguna
+    
+            // Kondisi untuk mengarahkan ke halaman yang berbeda
+            if (mapel === "Bahasa Inggris") {
+                window.location.href = 'question.html?page=1'; // Halaman untuk Bahasa Inggris
+            } else {
+                window.location.href = 'question.html?page=1'; // Halaman untuk mata pelajaran lainnya
+            }
+        });
+
+        // Event listener untuk tombol Mulai Ujian
+        document.getElementById('start-exam1').addEventListener('click', () => {
+            // Misalnya, kita mengecek kondisi berdasarkan status soal atau mapel
+            const mapel = "Bahasa Inggris"; // Contoh: ganti sesuai kondisi atau input pengguna
+    
+            // Kondisi untuk mengarahkan ke halaman yang berbeda
+            if (mapel === "Bahasa Inggris") {
+                window.location.href = 'question1.html?page=1'; // Halaman untuk Bahasa Inggris
+            } else {
+                window.location.href = 'question.html?page=1'; // Halaman untuk mata pelajaran lainnya
+            }
         });
     </script>
+    
 </body>
 </html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        li:hover {
+            background: rgba(40, 167, 69, 0.2);
+        }
+
+        li.selected {
+            background: #28a745;
+            color: #fff;
+        }
+
+        button {
+            background: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            margin: 20px 5px;
+        }
+
+        button:hover {
+            background: #218838;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        .result {
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span id="time">20:00</span>
+            <div id="question-number">Question <span id="current-question">1</span></div>
+        </div>
+        <h2 id="question"></h2>
+        <ul id="options"></ul>
+        <div class="navigation">
+            <button id="back">Back</button>
+            <button id="next">Next</button>
+            <button id="submit" style="display: none;">Submit</button>
+        </div>
+        <div class="result" id="result" style="display: none;"></div>
+    </div>
+
+    <script>
+        const questions = [
+    { "question": "Apa arti rambu lalu lintas berbentuk segitiga terbalik dengan pinggiran merah dan latar belakang putih?", "options": ["A. Larangan parkir", "B. Wajib berhenti", "C. Hati-hati", "D. Dilarang masuk"], "answer": 2 },
+    
+    { "question": "Apa yang harus dilakukan pengemudi saat melihat rambu 'STOP'?", "options": ["A. Memperlambat kendaraan", "B. Berhenti sepenuhnya", "C. Melanjutkan perjalanan dengan hati-hati", "D. Hanya berhenti jika ada kendaraan lain"], "answer": 1 },
+    
+    { "question": "Apa warna rambu yang menunjukkan perintah wajib?", "options": ["A. Merah", "B. Kuning", "C. Biru", "D. Hijau"], "answer": 2 },
+    
+    { "question": "Rambu berbentuk lingkaran dengan garis merah dan tanda diagonal menyilang menunjukkan apa?", "options": ["A. Arah jalan", "B. Batas kecepatan", "C. Larangan", "D. Tempat parkir"], "answer": 2 },
+    
+    { "question": "Apa arti dari rambu berbentuk lingkaran dengan garis tepi merah dan angka di dalamnya?", "options": ["A. Batas kecepatan minimum", "B. Batas kecepatan maksimum", "C. Wajib menepi", "D. Jalur khusus"], "answer": 1 },
+    
+    { "question": "Kendaraan apa yang memiliki hak utama di jalan raya?", "options": ["A. Sepeda motor", "B. Ambulans dengan sirine menyala", "C. Mobil polisi", "D. Bus umum"], "answer": 1 },
+    
+    { "question": "Apakah fungsi dari garis putih putus-putus di tengah jalan?", "options": ["A. Melarang kendaraan berpindah jalur", "B. Membolehkan kendaraan berpindah jalur", "C. Menunjukkan jalur khusus", "D. Batas parkir"], "answer": 1 },
+    
+    { "question": "Apa yang harus dilakukan jika lampu lalu lintas berubah menjadi kuning?", "options": ["A. Mempercepat kendaraan", "B. Memperlambat dan berhenti jika memungkinkan", "C. Tetap berjalan dengan kecepatan konstan", "D. Mengabaikannya"], "answer": 1 },
+    
+    { "question": "Rambu lalu lintas berbentuk lingkaran berwarna biru dengan simbol sepeda motor menunjukkan apa?", "options": ["A. Jalur sepeda motor", "B. Larangan untuk sepeda motor", "C. Tempat parkir sepeda motor", "D. Zona bebas kendaraan"], "answer": 0 },
+    
+    { "question": "Jika ada rambu yang menunjukkan batas kecepatan 60 km/jam, apa yang harus dilakukan pengemudi?", "options": ["A. Mengemudi di atas 60 km/jam", "B. Tidak boleh melebihi 60 km/jam", "C. Tidak boleh lebih rendah dari 60 km/jam", "D. Mengemudi tepat 60 km/jam"], "answer": 1 },
+    
+    { "question": "Apa yang ditunjukkan oleh rambu jalan berbentuk persegi panjang hijau dengan nama kota?", "options": ["A. Kota tujuan", "B. Nama jalan", "C. Lokasi parkir", "D. Lokasi pemberhentian bus"], "answer": 0 },
+    
+    { "question": "Rambu apa yang mengharuskan kendaraan berjalan di jalur tertentu?", "options": ["A. Larangan", "B. Perintah wajib", "C. Informasi", "D. Peringatan"], "answer": 1 },
+    
+    { "question": "Pada saat menyeberang di zebra cross, siapa yang memiliki prioritas?", "options": ["A. Pengendara mobil", "B. Pejalan kaki", "C. Pengendara sepeda motor", "D. Pengendara sepeda"], "answer": 1 },
+    
+    { "question": "Apa yang sebaiknya dilakukan saat melihat tanda lampu lalu lintas berwarna merah?", "options": ["A. Berhenti sepenuhnya", "B. Memperlambat laju kendaraan", "C. Melanjutkan perjalanan", "D. Hanya berhenti jika ada kendaraan lain"], "answer": 0 },
+    
+    { "question": "Apa tujuan dari garis kuning yang dicat melintang di jalan?", "options": ["A. Tempat parkir", "B. Area berhenti", "C. Jalur penyeberangan", "D. Batas kecepatan"], "answer": 1 },
+    
+    { "question": "Apa arti dari rambu lalu lintas berbentuk segi lima dengan simbol orang menyeberang?", "options": ["A. Zona pejalan kaki", "B. Larangan parkir", "C. Perintah untuk berhenti", "D. Tempat menyeberang jalan"], "answer": 3 },
+    
+    { "question": "Kapan seorang pengendara boleh menggunakan jalur bus?", "options": ["A. Hanya ketika tidak ada bus", "B. Hanya ketika darurat", "C. Pada hari libur", "D. Tidak pernah, kecuali ada pengecualian hukum"], "answer": 3 },
+    
+    { "question": "Apa yang ditunjukkan oleh tanda jalur dengan simbol sepeda di jalan?", "options": ["A. Jalur sepeda", "B. Jalur pejalan kaki", "C. Jalur kendaraan umum", "D. Jalur kendaraan berat"], "answer": 0 },
+    
+    { "question": "Apa yang harus dilakukan pengemudi jika ada lampu berkedip di perlintasan kereta api?", "options": ["A. Berhenti sepenuhnya", "B. Melanjutkan perjalanan", "C. Mengurangi kecepatan", "D. Menyalakan lampu kendaraan"], "answer": 0 },
+    
+    { "question": "Apa arti dari rambu berbentuk lingkaran merah dengan simbol mobil dan sepeda motor di dalamnya?", "options": ["A. Larangan masuk untuk mobil dan sepeda motor", "B. Tempat parkir mobil dan sepeda motor", "C. Jalan khusus mobil dan sepeda motor", "D. Batas kecepatan kendaraan"], "answer": 0 },
+
+    { "question": "Apa yang dimaksud dengan lampu hijau di lampu lalu lintas?", "options": ["A. Berhenti", "B. Berjalan dengan hati-hati", "C. Siap-siap berhenti", "D. Melanjutkan perjalanan"], "answer": 3 },
+    
+    { "question": "Apa yang harus dilakukan pengemudi ketika melihat tanda zebra cross?", "options": ["A. Memperlambat dan berhenti jika ada pejalan kaki", "B. Tetap melaju seperti biasa", "C. Mengabaikan tanda tersebut", "D. Berbelok arah"], "answer": 0 },
+    
+    { "question": "Apa arti dari rambu berbentuk segitiga dengan tanda seru di dalamnya?", "options": ["A. Larangan parkir", "B. Peringatan bahaya", "C. Tempat penyeberangan", "D. Jalur bus"], "answer": 1 },
+    
+    { "question": "Jika ada rambu berbentuk segi empat dengan warna hijau dan tanda panah ke atas, itu menunjukkan apa?", "options": ["A. Jalan satu arah", "B. Larangan belok kanan", "C. Jalan menuju tujuan tertentu", "D. Wajib lurus"], "answer": 2 }
+]
+;
+
+        let timeRemaining = 60 * 60; // 1 hour in seconds
+        let timerInterval = setInterval(() => {
+            timeRemaining -= 1;
+            document.getElementById('time').textContent = formatTime(timeRemaining);
+            if (timeRemaining <= 0) {
+                clearInterval(timerInterval);
+                alert('Waktu habis! Soal akan disubmit.');
+                submitQuiz(); // Submit otomatis saat waktu habis
+            }
+        }, 1000);
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secondsRemaining = seconds % 60;
+            return `${minutes}:${secondsRemaining.toString().padStart(2, '0')}`;
+        }
+
+        let currentPage = 1;
+        const selectedAnswers = new Array(questions.length).fill(null);
+
+        document.getElementById('current-question').textContent = currentPage;
+
+        function loadQuestion() {
+            const questionData = questions[currentPage - 1];
+            document.getElementById('question').textContent = questionData.question;
+
+            const optionsElement = document.getElementById('options');
+            optionsElement.innerHTML = '';
+            questionData.options.forEach((option, index) => {
+                const li = document.createElement('li');
+                li.textContent = option;
+                li.addEventListener('click', () => selectOption(index));
+                if (selectedAnswers[currentPage - 1] === index) {
+                    li.classList.add('selected');
+                }
+                optionsElement.appendChild(li);
+            });
+
+            document.getElementById('next').style.display = (currentPage === questions.length) ? 'none' : 'inline-block';
+            document.getElementById('submit').style.display = (currentPage === questions.length) ? 'inline-block' : 'none';
+        }
+
+        function selectOption(index) {
+            selectedAnswers[currentPage - 1] = index;
+            loadQuestion();
+        }
+
+        document.getElementById('next').addEventListener('click', () => {
+            if (currentPage < questions.length) {
+                currentPage++;
+                document.getElementById('current-question').textContent = currentPage;
+                loadQuestion();
+            }
+        });
+
+        document.getElementById('back').addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                document.getElementById('current-question').textContent = currentPage;
+                loadQuestion();
+            }
+        });
+
+        document.getElementById('submit').addEventListener('click', submitQuiz);
+
+        function submitQuiz() {
+            let score = 0;
+            questions.forEach((question, index) => {
+                if (selectedAnswers[index] === question.answer) {
+                    score++;
+                }
+            });
+
+            const resultElement = document.getElementById('result');
+            const totalQuestions = questions.length;
+            const scorePercentage = Math.round((score / totalQuestions) * 100);
+            resultElement.textContent = `Your score: ${score}/${totalQuestions} (${scorePercentage}%)`;
+            resultElement.style.display = 'block';
+
+            function submitQuiz() {
+    let score = 0;
+    questions.forEach((question, index) => {
+        if (selectedAnswers[index] === question.answer) {
+            score++;
+        }
+    });
+
+    const resultElement = document.getElementById('result');
+    const totalQuestions = questions.length;
+    const scorePercentage = Math.round((score / totalQuestions) * 100);
+    resultElement.textContent = `Your score: ${score}/${totalQuestions} (${scorePercentage}%)`;
+    resultElement.style.display = 'block';
+
+    // Prepare the message for WhatsApp
+    const whatsappNumber = '6289530067456';
+    const whatsappMessage = `Score: ${score}/${totalQuestions} (${scorePercentage}%)`;
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+    // Redirect to WhatsApp after a short delay to display the result
+    setTimeout(() => {
+        window.location.href = whatsappURL; // Redirect to WhatsApp
+    }, 3000); // Delay for 3 seconds
+
+    document.getElementById('next').style.display = 'none';
+    document.getElementById('submit').style.display = 'none';
+}
+
+        }
+
+        // Memulai Fullscreen mode saat soal dimulai
+        window.onload = function() {
+            // Coba masuk ke mode layar penuh
+            const enterFullscreen = () => {
+                if (document.documentElement.requestFullscreen) {
+                    document.documentElement.requestFullscreen();
+                } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+                    document.documentElement.mozRequestFullScreen();
+                } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari, Opera
+                    document.documentElement.webkitRequestFullscreen();
+                } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+                    document.documentElement.msRequestFullscreen();
+                }
+            };
+
+            // Tunggu beberapa detik untuk memberikan pengguna kesempatan untuk berinteraksi
+            setTimeout(enterFullscreen, 10);
+        };
+
+        // Mencegah tombol back
+        window.history.pushState(null, null, window.location.href);
+        window.onpopstate = function () {
+            window.history.go(1); // Mencegah pengguna menekan tombol "back"
+        };
+
+        // Mencegah klik kanan (context menu)
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+
+        // Mencegah shortcut keyboard umum (misalnya: Ctrl+C, Ctrl+V, dll.)
+        document.addEventListener('keydown', function (e) {
+            if (e.ctrlKey && (e.key === 'c' || e.key === 'v' || e.key === 'x' || e.key === 's' || e.key === 'a')) {
+                e.preventDefault();
+            }
+            if (e.key === 'PrintScreen') {
+                alert('Screenshots are not allowed!');
+                e.preventDefault();
+            }
+        });
+
+        // Deteksi jika pengguna keluar dari tab atau aplikasi
+        document.addEventListener('visibilitychange', function() {
+            if (document.visibilityState === 'hidden') {
+                alert('Anda tidak boleh meninggalkan halaman ini!');
+            }
+        });
+
+        // Mencegah pengguna menekan tombol "Home"
+        window.addEventListener('blur', function () {
+            alert('Anda tidak boleh meninggalkan halaman ini!');
+            window.focus();
+        });
+
+        loadQuestion();
+    </script>
+</body>
+</html>
