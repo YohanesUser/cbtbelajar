@@ -83,6 +83,21 @@
             margin-top: 20px;
             color: #28a745;
         }
+
+        .question-list {
+            display: none;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .question-list ul {
+            padding-left: 0;
+        }
+
+        .question-list li {
+            margin: 5px 0;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -97,8 +112,14 @@
             <button id="back">Back</button>
             <button id="next">Next</button>
             <button id="submit" style="display: none;">Submit</button>
+            <button id="view-questions">Daftar Soal</button>
         </div>
         <div class="result" id="result" style="display: none;"></div>
+        <div class="question-list" id="question-list">
+            <h3>Daftar Soal</h3>
+            <ul></ul>
+            <button id="close-list">Tutup</button>
+        </div>
     </div>
 
     <script>
@@ -163,7 +184,7 @@
             { question: "Apa yang dimaksud dengan proses osmosis?", options: ["A. Pergerakan zat dari daerah berkonsentrasi tinggi ke rendah", "B. Pergerakan zat dari daerah berkonsentrasi rendah ke tinggi", "C. Proses penguapan", "D. Semua benar"], answer: 0 }
         ];
 
-        let timeRemaining = 60 * 60; // 1 hour in seconds
+        let timeRemaining = 60 * 60; // 1 jam dalam detik
         let timerInterval = setInterval(() => {
             timeRemaining -= 1;
             document.getElementById('time').textContent = formatTime(timeRemaining);
@@ -229,104 +250,57 @@
         document.getElementById('submit').addEventListener('click', submitQuiz);
 
         function submitQuiz() {
-            let score = 0;
-            questions.forEach((question, index) => {
-                if (selectedAnswers[index] === question.answer) {
-                    score++;
-                }
+            clearInterval(timerInterval);
+            const score = selectedAnswers.reduce((acc, answer, index) => {
+                return answer === questions[index].answer ? acc + 1 : acc;
+            }, 0);
+            const totalQuestions = questions.length;
+            const percentage = (score / totalQuestions) * 100; // Hitung persentase
+
+            // Tampilkan hasil dan persentase
+            document.getElementById('result').innerHTML = `Skor Anda: ${score} dari ${totalQuestions} (${percentage.toFixed(2)}%)`;
+            document.getElementById('result').style.display = 'block';
+            document.querySelector('.navigation').style.display = 'none'; // Sembunyikan tombol navigasi setelah pengiriman
+
+            // Delay 3 detik sebelum mengirim nilai ke WhatsApp
+            setTimeout(() => {
+                const phoneNumber = "6289530067456"; // Nomor WhatsApp tujuan
+                const message = `Nilai ( MAsukkan Nama Anda ) adalah: ${score} dari ${totalQuestions} (${percentage.toFixed(2)}%)`;
+                const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+                // Buka URL WhatsApp
+                window.open(whatsappURL, '_blank');
+            }, 3000); // Delay 3000ms (3 detik)
+        }
+
+        // Load pertanyaan pertama saat halaman dimuat
+        loadQuestion();
+
+        // Tampilkan daftar soal
+        document.getElementById('view-questions').addEventListener('click', () => {
+            const questionListElement = document.getElementById('question-list');
+            const questionListUl = questionListElement.querySelector('ul');
+            questionListUl.innerHTML = '';
+
+            questions.forEach((_, index) => {
+                const li = document.createElement('li');
+                li.textContent = `Soal ${index + 1}: ${selectedAnswers[index] !== null ? 'Jawaban dipilih' : 'Belum dijawab'}`;
+                li.addEventListener('click', () => {
+                    currentPage = index + 1;
+                    document.getElementById('current-question').textContent = currentPage;
+                    loadQuestion();
+                    questionListElement.style.display = 'none'; // Sembunyikan daftar soal setelah memilih
+                });
+                questionListUl.appendChild(li);
             });
 
-            const resultElement = document.getElementById('result');
-            const totalQuestions = questions.length;
-            const scorePercentage = Math.round((score / totalQuestions) * 100);
-            resultElement.textContent = `Your score: ${score}/${totalQuestions} (${scorePercentage}%)`;
-            resultElement.style.display = 'block';
-
-            function submitQuiz() {
-    let score = 0;
-    questions.forEach((question, index) => {
-        if (selectedAnswers[index] === question.answer) {
-            score++;
-        }
-    });
-
-    const resultElement = document.getElementById('result');
-    const totalQuestions = questions.length;
-    const scorePercentage = Math.round((score / totalQuestions) * 100);
-    resultElement.textContent = `Your score: ${score}/${totalQuestions} (${scorePercentage}%)`;
-    resultElement.style.display = 'block';
-
-    // Prepare the message for WhatsApp
-    const whatsappNumber = '6289530067456';
-    const whatsappMessage = `Score: ${score}/${totalQuestions} (${scorePercentage}%)`;
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-
-    // Redirect to WhatsApp after a short delay to display the result
-    setTimeout(() => {
-        window.location.href = whatsappURL; // Redirect to WhatsApp
-    }, 3000); // Delay for 3 seconds
-
-    document.getElementById('next').style.display = 'none';
-    document.getElementById('submit').style.display = 'none';
-}
-
-        }
-
-        // Memulai Fullscreen mode saat soal dimulai
-        window.onload = function() {
-            // Coba masuk ke mode layar penuh
-            const enterFullscreen = () => {
-                if (document.documentElement.requestFullscreen) {
-                    document.documentElement.requestFullscreen();
-                } else if (document.documentElement.mozRequestFullScreen) { // Firefox
-                    document.documentElement.mozRequestFullScreen();
-                } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari, Opera
-                    document.documentElement.webkitRequestFullscreen();
-                } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
-                    document.documentElement.msRequestFullscreen();
-                }
-            };
-
-            // Tunggu beberapa detik untuk memberikan pengguna kesempatan untuk berinteraksi
-            setTimeout(enterFullscreen, 10);
-        };
-
-        // Mencegah tombol back
-        window.history.pushState(null, null, window.location.href);
-        window.onpopstate = function () {
-            window.history.go(1); // Mencegah pengguna menekan tombol "back"
-        };
-
-        // Mencegah klik kanan (context menu)
-        document.addEventListener('contextmenu', function (e) {
-            e.preventDefault();
+            questionListElement.style.display = 'block';
         });
 
-        // Mencegah shortcut keyboard umum (misalnya: Ctrl+C, Ctrl+V, dll.)
-        document.addEventListener('keydown', function (e) {
-            if (e.ctrlKey && (e.key === 'c' || e.key === 'v' || e.key === 'x' || e.key === 's' || e.key === 'a')) {
-                e.preventDefault();
-            }
-            if (e.key === 'PrintScreen') {
-                alert('Screenshots are not allowed!');
-                e.preventDefault();
-            }
+        // Tutup daftar soal
+        document.getElementById('close-list').addEventListener('click', () => {
+            document.getElementById('question-list').style.display = 'none';
         });
-
-        // Deteksi jika pengguna keluar dari tab atau aplikasi
-        document.addEventListener('visibilitychange', function() {
-            if (document.visibilityState === 'hidden') {
-                alert('Anda tidak boleh meninggalkan halaman ini!');
-            }
-        });
-
-        // Mencegah pengguna menekan tombol "Home"
-        window.addEventListener('blur', function () {
-            alert('Anda tidak boleh meninggalkan halaman ini!');
-            window.focus();
-        });
-
-        loadQuestion();
     </script>
 </body>
 </html>

@@ -68,6 +68,56 @@
             gap: 20px;
             margin-top: 40px;
         }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .modal-content input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .modal-content button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal-content button:hover {
+            background-color: #0056b3;
+        }
+
+        .close {
+            color: red;
+            float: right;
+            font-size: 18px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -88,7 +138,7 @@
             </div>
             
 
-            <!-- Mata Pelajaran Lain (Contoh: Bahasa Inggris) -->
+            <!-- Mata Pelajaran Lain (Contoh: Pengetahuan Umum) -->
             <div class="exam-info">
                 <p>Mapel: <strong>Pengetahuan Umum</strong></p>
                 <p>Waktu: <strong>20 Menit</strong></p>
@@ -113,7 +163,14 @@
         </div>
     </div>
 
-        
+    <!-- Modal untuk input token -->
+    <div id="tokenModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Masukkan Token</h2>
+            <input type="text" id="token-input" placeholder="Masukkan token (6 huruf)" maxlength="6">
+            <button id="verify-token-btn">Verifikasi Token</button>
+        </div>
     </div>
 
     <script>
@@ -127,32 +184,67 @@
             // Jika tidak ada nama siswa, arahkan kembali ke halaman login
             window.location.href = 'login.html';
         }
-    
-        // Event listener untuk tombol Mulai Ujian
-        document.getElementById('start-exam').addEventListener('click', () => {
-            // Misalnya, kita mengecek kondisi berdasarkan status soal atau mapel
-            const mapel = "Bahasa Inggris"; // Contoh: ganti sesuai kondisi atau input pengguna
-    
-            // Kondisi untuk mengarahkan ke halaman yang berbeda
-            if (mapel === "Bahasa Inggris") {
-                window.location.href = 'question.html?page=1'; // Halaman untuk Bahasa Inggris
+
+        // Fungsi untuk membuka modal
+        function openModal() {
+            document.getElementById('tokenModal').style.display = 'flex';
+        }
+
+        // Fungsi untuk menutup modal
+        function closeModal() {
+            document.getElementById('tokenModal').style.display = 'none';
+        }
+
+        // Fungsi untuk verifikasi token
+        function verifyToken(expectedToken, examPage) {
+            const userToken = document.getElementById('token-input').value;
+            if (userToken && userToken.length === 6) {
+                if (userToken === expectedToken) {
+                    alert("Token benar, Anda akan diarahkan ke halaman ujian.");
+                    closeModal();
+                    window.location.href = examPage; // Arahkan ke halaman ujian
+                } else {
+                    alert("Token salah. Silakan coba lagi.");
+                }
             } else {
-                window.location.href = 'question.html?page=1'; // Halaman untuk mata pelajaran lainnya
+                alert("Token harus terdiri dari 6 huruf.");
             }
-        });
+        }
 
         // Event listener untuk tombol Mulai Ujian
-        document.getElementById('start-exam1').addEventListener('click', () => {
-            // Misalnya, kita mengecek kondisi berdasarkan status soal atau mapel
-            const mapel = "Bahasa Inggris"; // Contoh: ganti sesuai kondisi atau input pengguna
-    
-            // Kondisi untuk mengarahkan ke halaman yang berbeda
-            if (mapel === "Bahasa Inggris") {
-                window.location.href = 'question1.html?page=1'; // Halaman untuk Bahasa Inggris
-            } else {
-                window.location.href = 'question.html?page=1'; // Halaman untuk mata pelajaran lainnya
-            }
+        document.getElementById('start-exam').addEventListener('click', () => {
+            openModal(); // Buka modal untuk input token
+
+            // Set token yang valid dan halaman ujian
+            const token = "ENCKTO";
+            const examPage = 'question.html?page=1';
+
+            // Verifikasi token ketika tombol Verifikasi diklik
+            document.getElementById('verify-token-btn').onclick = () => verifyToken(token, examPage);
         });
+
+        // Event listener untuk tombol Mulai Ujian (Pelajaran Lain)
+        document.getElementById('start-exam1').addEventListener('click', () => {
+            openModal(); // Buka modal untuk input token
+
+            // Set token yang valid dan halaman ujian
+            const token = "ENCKTO";
+            const examPage = 'question1.html?page=1';
+
+            // Verifikasi token ketika tombol Verifikasi diklik
+            document.getElementById('verify-token-btn').onclick = () => verifyToken(token, examPage);
+        });
+
+        // Event listener untuk menutup modal
+        document.querySelector('.close').addEventListener('click', closeModal);
+
+        // Tutup modal jika klik di luar modal
+        window.onclick = function(event) {
+            const modal = document.getElementById('tokenModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
     </script>
     
 </body>

@@ -15,13 +15,24 @@
             <button type="submit">Login</button>
         </form>
     </div>
+
     <script>
         const students = [
             { username: 'Iqbal', password: 'infomancing' },
             { username: 'Tian', password: 'infomancing' },
             { username: 'admin', password: 'admin' },
             { username: 'lisa', password: 'lisa2023' },
-            { username: 'ferdi', password: 'ferdi2023' }
+            { username: 'ferdi', password: 'ferdi2023' },
+            { username: 'awang', password: 'marjani' },
+            { username: 'bondan', password: 'wahyu' },
+            { username: 'cello', password: 'heru' },
+            { username: 'Zovin', password: 'andak' },
+            { username: 'bagus', password: 'kelik' },
+            { username: 'doyok', password: 'wiwit' },
+            { username: 'tara', password: 'china' },
+            { username: 'yohan', password: 'supardal' },
+            { username: 'farel', password: 'btbd' },
+            { username: 'encik', password: 'pluto' }
         ];
 
         document.getElementById('login-form').addEventListener('submit', (e) => {
@@ -29,13 +40,21 @@
             const username = document.getElementById('username').value.trim();
             const password = document.getElementById('password').value.trim();
 
+            // Cek jika user adalah admin
+            if (username === 'admin' && password === 'admin1') {
+                // Redirect ke halaman admin
+                window.location.href = 'admin.html';
+                return;
+            }
+
+            // Cek jika user adalah siswa
             const student = students.find(student => student.username === username && student.password === password);
 
             if (student) {
-                // Simpan nama siswa ke localStorage atau sessionStorage
+                // Simpan nama siswa ke sessionStorage
                 sessionStorage.setItem('studentName', student.username);
                 
-                // Redirect ke dashboard
+                // Redirect ke dashboard siswa
                 window.location.href = 'dashboard.html';
             } else {
                 alert('Username atau password salah');
