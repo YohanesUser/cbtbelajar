@@ -123,7 +123,7 @@
     </div>
 
     <script>
-        const mathQuestionsTK = [
+    const mathQuestionsTK = [
     { "question": "7 + 5 = ?", "options": ["10", "11", "12", "13"], "answer": 2 },
     { "question": "8 + 6 = ?", "options": ["12", "13", "14", "15"], "answer": 3 },
     { "question": "9 + 3 = ?", "options": ["11", "12", "13", "14"], "answer": 1 },
@@ -239,7 +239,7 @@
             // Delay 3 detik sebelum mengirim nilai ke WhatsApp
             setTimeout(() => {
                 const phoneNumber = "6289530067456"; // Nomor WhatsApp tujuan
-                const message = `Nilai ( MAsukkan Nama Anda ) adalah: ${score} dari ${totalQuestions} (${percentage.toFixed(2)}%)`;
+                const message = `Nilai ( Masukkan Nama Anda ) adalah: ${score} dari ${totalQuestions} (${percentage.toFixed(2)}%)`;
                 const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
                 // Buka URL WhatsApp
