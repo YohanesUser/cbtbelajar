@@ -124,54 +124,39 @@
 
     <script>
         const questions = [
-    { "question": "Apa arti rambu lalu lintas berbentuk segitiga terbalik dengan pinggiran merah dan latar belakang putih?", "options": ["A. Larangan parkir", "B. Wajib berhenti", "C. Hati-hati", "D. Dilarang masuk"], "answer": 2 },
-    
-    { "question": "Apa yang harus dilakukan pengemudi saat melihat rambu 'STOP'?", "options": ["A. Memperlambat kendaraan", "B. Berhenti sepenuhnya", "C. Melanjutkan perjalanan dengan hati-hati", "D. Hanya berhenti jika ada kendaraan lain"], "answer": 1 },
-    
-    { "question": "Apa warna rambu yang menunjukkan perintah wajib?", "options": ["A. Merah", "B. Kuning", "C. Biru", "D. Hijau"], "answer": 2 },
-    
-    { "question": "Rambu berbentuk lingkaran dengan garis merah dan tanda diagonal menyilang menunjukkan apa?", "options": ["A. Arah jalan", "B. Batas kecepatan", "C. Larangan", "D. Tempat parkir"], "answer": 2 },
-    
-    { "question": "Apa arti dari rambu berbentuk lingkaran dengan garis tepi merah dan angka di dalamnya?", "options": ["A. Batas kecepatan minimum", "B. Batas kecepatan maksimum", "C. Wajib menepi", "D. Jalur khusus"], "answer": 1 },
-    
-    { "question": "Kendaraan apa yang memiliki hak utama di jalan raya?", "options": ["A. Sepeda motor", "B. Ambulans dengan sirine menyala", "C. Mobil polisi", "D. Bus umum"], "answer": 1 },
-    
-    { "question": "Apakah fungsi dari garis putih putus-putus di tengah jalan?", "options": ["A. Melarang kendaraan berpindah jalur", "B. Membolehkan kendaraan berpindah jalur", "C. Menunjukkan jalur khusus", "D. Batas parkir"], "answer": 1 },
-    
-    { "question": "Apa yang harus dilakukan jika lampu lalu lintas berubah menjadi kuning?", "options": ["A. Mempercepat kendaraan", "B. Memperlambat dan berhenti jika memungkinkan", "C. Tetap berjalan dengan kecepatan konstan", "D. Mengabaikannya"], "answer": 1 },
-    
-    { "question": "Rambu lalu lintas berbentuk lingkaran berwarna biru dengan simbol sepeda motor menunjukkan apa?", "options": ["A. Jalur sepeda motor", "B. Larangan untuk sepeda motor", "C. Tempat parkir sepeda motor", "D. Zona bebas kendaraan"], "answer": 0 },
-    
-    { "question": "Jika ada rambu yang menunjukkan batas kecepatan 60 km/jam, apa yang harus dilakukan pengemudi?", "options": ["A. Mengemudi di atas 60 km/jam", "B. Tidak boleh melebihi 60 km/jam", "C. Tidak boleh lebih rendah dari 60 km/jam", "D. Mengemudi tepat 60 km/jam"], "answer": 1 },
-    
-    { "question": "Apa yang ditunjukkan oleh rambu jalan berbentuk persegi panjang hijau dengan nama kota?", "options": ["A. Kota tujuan", "B. Nama jalan", "C. Lokasi parkir", "D. Lokasi pemberhentian bus"], "answer": 0 },
-    
-    { "question": "Rambu apa yang mengharuskan kendaraan berjalan di jalur tertentu?", "options": ["A. Larangan", "B. Perintah wajib", "C. Informasi", "D. Peringatan"], "answer": 1 },
-    
-    { "question": "Pada saat menyeberang di zebra cross, siapa yang memiliki prioritas?", "options": ["A. Pengendara mobil", "B. Pejalan kaki", "C. Pengendara sepeda motor", "D. Pengendara sepeda"], "answer": 1 },
-    
-    { "question": "Apa yang sebaiknya dilakukan saat melihat tanda lampu lalu lintas berwarna merah?", "options": ["A. Berhenti sepenuhnya", "B. Memperlambat laju kendaraan", "C. Melanjutkan perjalanan", "D. Hanya berhenti jika ada kendaraan lain"], "answer": 0 },
-    
-    { "question": "Apa tujuan dari garis kuning yang dicat melintang di jalan?", "options": ["A. Tempat parkir", "B. Area berhenti", "C. Jalur penyeberangan", "D. Batas kecepatan"], "answer": 1 },
-    
-    { "question": "Apa arti dari rambu lalu lintas berbentuk segi lima dengan simbol orang menyeberang?", "options": ["A. Zona pejalan kaki", "B. Larangan parkir", "C. Perintah untuk berhenti", "D. Tempat menyeberang jalan"], "answer": 3 },
-    
-    { "question": "Kapan seorang pengendara boleh menggunakan jalur bus?", "options": ["A. Hanya ketika tidak ada bus", "B. Hanya ketika darurat", "C. Pada hari libur", "D. Tidak pernah, kecuali ada pengecualian hukum"], "answer": 3 },
-    
-    { "question": "Apa yang ditunjukkan oleh tanda jalur dengan simbol sepeda di jalan?", "options": ["A. Jalur sepeda", "B. Jalur pejalan kaki", "C. Jalur kendaraan umum", "D. Jalur kendaraan berat"], "answer": 0 },
-    
-    { "question": "Apa yang harus dilakukan pengemudi jika ada lampu berkedip di perlintasan kereta api?", "options": ["A. Berhenti sepenuhnya", "B. Melanjutkan perjalanan", "C. Mengurangi kecepatan", "D. Menyalakan lampu kendaraan"], "answer": 0 },
-    
-    { "question": "Apa arti dari rambu berbentuk lingkaran merah dengan simbol mobil dan sepeda motor di dalamnya?", "options": ["A. Larangan masuk untuk mobil dan sepeda motor", "B. Tempat parkir mobil dan sepeda motor", "C. Jalan khusus mobil dan sepeda motor", "D. Batas kecepatan kendaraan"], "answer": 0 },
+    { question: "2 x 3 = ?", options: ["5", "6", "7", "8"], answer: 1 },
+    { question: "4 x 5 = ?", options: ["18", "20", "22", "24"], answer: 1 },
+    { question: "6 x 7 = ?", options: ["42", "45", "48", "49"], answer: 0 },
+    { question: "8 x 9 = ?", options: ["72", "74", "76", "78"], answer: 0 },
+    { question: "5 x 3 = ?", options: ["12", "13", "15", "18"], answer: 2 },
+    { question: "7 x 4 = ?", options: ["24", "28", "32", "36"], answer: 1 },
+    { question: "9 x 6 = ?", options: ["52", "54", "56", "58"], answer: 1 },
+    { question: "3 x 3 = ?", options: ["6", "7", "8", "9"], answer: 3 },
+    { question: "10 x 10 = ?", options: ["90", "100", "110", "120"], answer: 1 },
+    { question: "12 x 2 = ?", options: ["22", "24", "26", "28"], answer: 1 },
+    { question: "11 x 3 = ?", options: ["30", "31", "32", "33"], answer: 3 },
+    { question: "5 x 6 = ?", options: ["28", "30", "32", "34"], answer: 1 },
+    { question: "8 x 7 = ?", options: ["54", "56", "58", "60"], answer: 1 },
+    { question: "4 x 4 = ?", options: ["12", "14", "16", "18"], answer: 2 },
+    { question: "6 x 6 = ?", options: ["34", "35", "36", "37"], answer: 2 },
+    { question: "7 x 8 = ?", options: ["52", "54", "56", "58"], answer: 2 },
+    { question: "3 x 10 = ?", options: ["28", "29", "30", "31"], answer: 2 },
+    { question: "5 x 5 = ?", options: ["23", "24", "25", "26"], answer: 2 },
+    { question: "9 x 9 = ?", options: ["80", "81", "82", "83"], answer: 1 },
+    { question: "10 x 4 = ?", options: ["38", "39", "40", "41"], answer: 2 },
+    { question: "2 x 8 = ?", options: ["14", "15", "16", "17"], answer: 2 },
+    { question: "6 x 5 = ?", options: ["28", "29", "30", "31"], answer: 2 },
+    { question: "7 x 3 = ?", options: ["20", "21", "22", "23"], answer: 1 },
+    { question: "12 x 3 = ?", options: ["34", "35", "36", "37"], answer: 2 },
+    { question: "9 x 5 = ?", options: ["40", "42", "44", "45"], answer: 3 },
+    { question: "8 x 6 = ?", options: ["46", "48", "50", "52"], answer: 1 },
+    { question: "10 x 3 = ?", options: ["27", "28", "29", "30"], answer: 3 },
+    { question: "11 x 2 = ?", options: ["20", "21", "22", "23"], answer: 2 },
+    { question: "4 x 9 = ?", options: ["34", "35", "36", "37"], answer: 2 },
+    { question: "7 x 7 = ?", options: ["48", "49", "50", "51"], answer: 1 },
+    { question: "KAMU MENDAPATKAN 2K", options: ["ok", "ok", "ok", "ok"], answer: 1 }
+];
 
-    { "question": "Apa yang dimaksud dengan lampu hijau di lampu lalu lintas?", "options": ["A. Berhenti", "B. Berjalan dengan hati-hati", "C. Siap-siap berhenti", "D. Melanjutkan perjalanan"], "answer": 3 },
-    
-    { "question": "Apa yang harus dilakukan pengemudi ketika melihat tanda zebra cross?", "options": ["A. Memperlambat dan berhenti jika ada pejalan kaki", "B. Tetap melaju seperti biasa", "C. Mengabaikan tanda tersebut", "D. Berbelok arah"], "answer": 0 },
-    
-    { "question": "Apa arti dari rambu berbentuk segitiga dengan tanda seru di dalamnya?", "options": ["A. Larangan parkir", "B. Peringatan bahaya", "C. Tempat penyeberangan", "D. Jalur bus"], "answer": 1 },
-    
-    { "question": "Jika ada rambu berbentuk segi empat dengan warna hijau dan tanda panah ke atas, itu menunjukkan apa?", "options": ["A. Jalan satu arah", "B. Larangan belok kanan", "C. Jalan menuju tujuan tertentu", "D. Wajib lurus"], "answer": 2 }
-]
 ;
 
         let timeRemaining = 60 * 60; // 1 jam dalam detik
