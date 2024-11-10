@@ -33,18 +33,20 @@
         }
 
         .spinner {
-            width: 45%;
-            height: 20px;
-            background-color: #f0f0f0;
-            margin-top: 10px;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
+    width: 40px; /* Sesuaikan ukuran */
+    height: 40px; /* Sesuaikan ukuran */
+    border: 5px solid #f0f0f0; /* Warna latar */
+    border-top: 5px solid #3498db; /* Warna bagian yang berputar */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-top: 10px;
+}
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 
         button {
             width: 100%;
@@ -127,12 +129,12 @@
         <div class="mapel-container">
             <!-- Mata Pelajaran 1 -->
             <div class="exam-info">
-                <p>Mapel: <strong>BIOLOGI DAN MICRO FISHING BAMBANGLIPURO</strong></p>
-                <p>Waktu: <strong>60 Menit</strong></p>
+                <p>Mapel: <strong>PENGETAHUAN UMUM</strong></p>
+                <p>Waktu: <strong>20 Menit</strong></p>
                 <p>Jumlah Soal: <strong>36</strong></p>
                 <p>Status Soal: <strong>Active</strong></p>
                 <p>Expired: <strong>30-11-24</strong></p>
-                <p>Guru: <strong>IBU YANTI DAN PAK HERU WIBOWO</strong></p>
+                <p>Guru: <strong>ADMIN YHNS</strong></p>
                 <div class="spinner"></div>
                 <button id="start-exam">Mulai Ujian</button>
             </div>
@@ -140,12 +142,12 @@
 
             <!-- Mata Pelajaran Lain (Contoh: Pengetahuan Umum) -->
             <div class="exam-info">
-                <p>Mapel: <strong>PENGETAHUAN UMUM SDN Bantulan bantul</strong></p>
-                <p>Waktu: <strong>60 Menit</strong></p>
+                <p>Mapel: <strong>PENGETAHUAN UMUM MANCING BANTUL</strong></p>
+                <p>Waktu: <strong>30 Menit</strong></p>
                 <p>Jumlah Soal: <strong>34</strong></p>
                 <p>Status Soal: <strong>Active</strong></p>
                 <p>Expired: <strong>30-11-24</strong></p>
-                <p>Guru: <strong>Bu Tini</strong></p>
+                <p>Guru: <strong>Bu Tini Suyanti feat. Admin Yhns</strong></p>
                 <div class="spinner"></div>
                 <button id="start-exam1">Mulai Ujian</button>
             </div>
@@ -216,7 +218,7 @@
             openModal(); // Buka modal untuk input token
 
             // Set token yang valid dan halaman ujian
-            const token = "PELCGN";
+            const token = "SMPBLP";
             const examPage = 'question.html?page=1';
 
             // Verifikasi token ketika tombol Verifikasi diklik
@@ -228,7 +230,7 @@
             openModal(); // Buka modal untuk input token
 
             // Set token yang valid dan halaman ujian
-            const token = "PELCGN";
+            const token = "SMPBLP";
             const examPage = 'question1.html?page=1';
 
             // Verifikasi token ketika tombol Verifikasi diklik

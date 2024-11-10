@@ -10,7 +10,7 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0') no-repeat center center fixed;
+            background: url('https://www.gerejaganjuran.org/assets/img/article/poster/01b15feee07a5aa928479cf7c479ae46.jpg') no-repeat center center fixed;
             background-size: cover;
         }
 
@@ -35,6 +35,15 @@
             color: #333;
         }
 
+        .question-image {
+            max-width: 100%;
+            margin: 20px auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
         ul {
             list-style-type: none;
             padding: 0;
@@ -53,12 +62,12 @@
         }
 
         li.selected {
-            background: #28a745;
+            background: #1d8ecf;
             color: #fff;
         }
 
         button {
-            background: #28a745;
+            background: #1d8ecf;
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -81,7 +90,7 @@
         .result {
             font-size: 1.5em;
             margin-top: 20px;
-            color: #28a745;
+            color: #1d8ecf;
         }
 
         .question-list {
@@ -98,15 +107,21 @@
             margin: 5px 0;
             cursor: pointer;
         }
+
+        /* Zoom class for the image */
+        .zoomed {
+            transform: scale(2);
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <span id="time">60:00</span>
+            <span id="time">30:00</span>
             <div id="question-number">Question <span id="current-question">1</span></div>
         </div>
         <h2 id="question"></h2>
+        <img id="question-image" class="question-image" src="" alt="" style="display: none;">
         <ul id="options"></ul>
         <div class="navigation">
             <button id="back">Back</button>
@@ -123,55 +138,156 @@
     </div>
 
     <script>
-        const questions =[
-        { "question": "Siapa nama presiden Indonesia Yang baru saja di lantik 2024?", "options": ["Prabowo Subianto", "Soeharto", "Joko Widodo", "BJ Habibie"], "answer": 0 },
-        { "question": "Siapa nama wakil presiden Indonesia saat ini?", "options": ["Soekarno", "Soeharto", "Joko Widodo", "Gibran Rakabuming Raka"], "answer": 3 },
-        { "question": "Siapa nama anak Mantan presiden Jokowi??", "options": ["Soekarno", "Kesang pangarep", "Joko Widodo", "BJ Habibie"], "answer": 1 },
-        { "question": "Apa nama partai banteng dengan background merah di Indonesia?", "options": ["PSI", "Gerindra", "PDI", "PAN"], "answer": 2 },
-    { "question": "Siapa nama presiden pertama Indonesia?", "options": ["Soekarno", "Soeharto", "Joko Widodo", "BJ Habibie"], "answer": 0 },
-    { "question": "Bendera Indonesia berwarna?", "options": ["Merah-Putih", "Biru-Putih", "Hijau-Putih", "Merah-Hijau"], "answer": 0 },
-    { "question": "Apakah nama ibukota Indonesia?", "options": ["Jakarta", "Surabaya", "Bandung", "Medan"], "answer": 0 },
-    { "question": "Sebutkan nama hari kemerdekaan Indonesia?", "options": ["Hari Kartini", "Hari Pahlawan", "Hari Merdeka", "Hari Anak"], "answer": 2 },
-    { "question": "Apa alat transportasi di laut?", "options": ["Mobil", "Kereta", "Kapal", "Pesawat"], "answer": 2 },
-    { "question": "Dimana kita belajar setiap hari?", "options": ["Sekolah", "Pasar", "Kebun", "Rumah"], "answer": 0 },
-    { "question": "Apa nama mata uang Indonesia?", "options": ["Dolar", "Rupiah", "Yen", "Euro"], "answer": 1 },
-    { "question": "Siapa yang mengajar di sekolah?", "options": ["Dokter", "Guru", "Pilot", "Petani"], "answer": 1 },
-    { "question": "Buah yang warnanya merah dan manis adalah?", "options": ["Apel", "Pisang", "Jeruk", "Anggur"], "answer": 0 },
-    { "question": "Hari raya umat Islam adalah?", "options": ["Natal", "Idul Fitri", "Waisak", "Galungan"], "answer": 1 },
-    { "question": "Alat untuk menulis di buku adalah?", "options": ["Sendok", "Pensil", "Pisau", "Garpu"], "answer": 1 },
-    { "question": "Hewan yang bisa terbang di langit adalah?", "options": ["Ikan", "Burung", "Kucing", "Kelinci"], "answer": 1 },
-    { "question": "Siapa yang membantu mengobati orang sakit?", "options": ["Guru", "Dokter", "Koki", "Polisi"], "answer": 1 },
-    { "question": "Bulan yang ke-12 dalam setahun adalah?", "options": ["November", "Desember", "Oktober", "Agustus"], "answer": 1 },
-    { "question": "Apa nama benua tempat Indonesia berada?", "options": ["Asia", "Afrika", "Eropa", "Australia"], "answer": 0 },
-    { "question": "Hewan yang hidup di air disebut?", "options": ["Ikan", "Burung", "Kucing", "Sapi"], "answer": 0 },
-    { "question": "Di mana kita membeli makanan?", "options": ["Sekolah", "Kebun", "Pasar", "Pantai"], "answer": 2 },
-    { "question": "Yang kita hirup setiap hari untuk bernapas adalah?", "options": ["Air", "Angin", "Oksigen", "Cahaya"], "answer": 2 },
-    { "question": "Siapakah yang disebut sebagai ibu negara?", "options": ["Ibu Presiden", "Ibu Wali Kota", "Ibu Guru", "Ibu Dokter"], "answer": 0 },
-    { "question": "Apa warna daun pada umumnya?", "options": ["Merah", "Hijau", "Biru", "Kuning"], "answer": 1 },
-    { "question": "Nama hari pertama dalam satu minggu adalah?", "options": ["Senin", "Selasa", "Minggu", "Jumat"], "answer": 0 },
-    { "question": "Apa nama alat transportasi yang terbang di udara?", "options": ["Mobil", "Kapal", "Sepeda", "Pesawat"], "answer": 3 },
-    { "question": "Hari ibu dirayakan pada bulan?", "options": ["Juni", "Mei", "Juli", "Desember"], "answer": 3 },
-    { "question": "Lambang negara Indonesia adalah?", "options": ["Harimau", "Burung Garuda", "Macan", "Singa"], "answer": 1 },
-    { "question": "Alat yang digunakan untuk membersihkan lantai adalah?", "options": ["Sapu", "Pisau", "Garpu", "Penggaris"], "answer": 0 },
-    { "question": "Orang yang membuat masakan disebut?", "options": ["Dokter", "Pilot", "Koki", "Petani"], "answer": 2 },
-    { "question": "Negara tetangga Indonesia yang berbatasan langsung adalah?", "options": ["Amerika", "Singapura", "Australia", "Italia"], "answer": 1 },
-    { "question": "Makanan sehat yang berasal dari sayuran dan buah disebut?", "options": ["Junk food", "Makanan Cepat Saji", "Makanan Sehat", "Makanan Instan"], "answer": 2 },
-    { "question": "Apa alat untuk berkomunikasi jarak jauh?", "options": ["Telepon", "Pisau", "Garpu", "Sendok"], "answer": 0 },
-    { "question": "Hewan yang memiliki belalai panjang adalah?", "options": ["Singa", "Harimau", "Gajah", "Kuda"], "answer": 2 }
+        const questions = [
+    {
+        "question": "Apa itu micro fishing?",
+        "options": ["Memancing ikan besar", "Memancing ikan kecil", "Memancing di laut", "Memancing di sungai besar"],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2017/07/12/22/44/fishing-2493905_960_720.jpg"
+    },
+    {
+        "question": "Alat yang digunakan dalam micro fishing adalah?",
+        "options": ["Jala", "Pancing kecil", "Kail besar", "Perahu"],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2015/09/18/18/09/fishing-944257_960_720.jpg"
+    },
+    {
+        "question": "Apa tujuan utama dari micro fishing?",
+        "options": ["Menangkap ikan besar", "Menangkap ikan kecil", "Menangkap ikan yang terluka", "Menangkap hewan laut lainnya"],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2016/10/24/23/39/fishing-1760499_960_720.jpg"
+    },
+    {
+        "question": "Jenis ikan apa yang biasanya ditangkap dalam micro fishing?",
+        "options": ["Ikan paus", "Ikan wader", "Ikan guppy", "Ikan lele besar"],
+        "answer": 2,
+        "image": "https://i.ytimg.com/vi/MeEtsOE9ffY/maxresdefault.jpg"
+    },
+    {
+        "question": "Micro fishing populer di negara mana?",
+        "options": ["Jepang", "Brazil", "Kanada", "Australia"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2017/12/14/06/33/fishing-3011351_960_720.jpg"
+    },
+    {
+        "question": "Apa bahan yang paling umum digunakan untuk kail dalam micro fishing?",
+        "options": ["Besi", "Tali pancing biasa", "Kawat tipis", "Plastik"],
+        "answer": 2,
+        "image": "https://cdn.pixabay.com/photo/2016/08/10/03/22/fishing-1584237_960_720.jpg"
+    },
+    {
+        "question": "Di mana biasanya micro fishing dilakukan?",
+        "options": ["Sungai besar", "Kolam dalam", "Kali kecil", "Laut lepas"],
+        "answer": 2,
+        "image": "https://cdn.pixabay.com/photo/2018/04/18/21/55/fishing-3334133_960_720.jpg"
+    },
+    {
+        "question": "Apa yang dibutuhkan untuk menjaga ikan hasil tangkapan?",
+        "options": ["Ember besar", "Kedalaman air yang stabil", "Keranjang khusus", "Akuarium portable"],
+        "answer": 3,
+        "image": "https://cdn.pixabay.com/photo/2016/03/27/18/09/fish-1281039_960_720.jpg"
+    },
+    {
+        "question": "Alat apakah yang digunakan untuk menarik ikan?",
+        "options": ["Jaring besar", "Kail dan tali pancing", "Gagang pancing besar", "Alat penarik otomatis"],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2017/12/14/17/47/fishing-3014024_960_720.jpg"
+    },
+    {
+        "question": "Apa kelebihan micro fishing dibandingkan dengan jenis memancing lainnya?",
+        "options": ["Ikan yang lebih besar", "Lebih menantang", "Menggunakan alat lebih besar", "Cocok untuk laut lepas"],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2016/09/10/01/56/fishing-1660807_960_720.jpg"
+    },
+    {
+        "question": "Bagaimana cara menjaga keseimbangan ekosistem saat melakukan micro fishing?",
+        "options": ["Membatasi jumlah ikan yang ditangkap", "Memancing ikan besar saja", "Memancing hanya saat musim hujan", "Tidak memancing di pagi hari"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2017/08/09/17/45/fishing-2617419_960_720.jpg"
+    },
+    {
+        "question": "Berapa lama waktu yang dibutuhkan untuk memancing ikan kecil dalam micro fishing?",
+        "options": ["Beberapa menit", "Beberapa jam", "Beberapa hari", "Beberapa minggu"],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2017/10/28/11/58/fishing-2892341_960_720.jpg"
+    },
+    {
+        "question": "Apa yang harus dilakukan jika ikan kecil terjebak di kail?",
+        "options": ["Menarik cepat", "Melepaskan dengan hati-hati", "Membiarkannya mati", "Menggunakan alat pemotong"],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2017/08/30/03/14/fishing-2696844_960_720.jpg"
+    },
+    {
+        "question": "Bagaimana cara memilih alat yang tepat untuk micro fishing?",
+        "options": ["Berdasarkan ukuran ikan", "Berdasarkan cuaca", "Berdasarkan lokasi memancing", "Berdasarkan jenis kail"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2017/05/22/16/18/fishing-2332741_960_720.jpg"
+    },
+    {
+        "question": "Apa tantangan utama dalam micro fishing?",
+        "options": ["Memilih ikan besar", "Menangkap ikan yang sangat kecil", "Menggunakan umpan buatan", "Menjaga alat tetap kering"],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2018/02/02/14/36/fishing-3121214_960_720.jpg"
+    },
+    {
+        "question": "Berapa panjang umpan yang biasa digunakan dalam micro fishing?",
+        "options": ["2-3 cm", "10-15 cm", "20-25 cm", "30-35 cm"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2017/08/04/10/28/fishing-2572272_960_720.jpg"
+    },
+    {
+        "question": "Apa kelebihan menggunakan pancing kecil dalam micro fishing?",
+        "options": ["Mempermudah menarik ikan besar", "Menghemat biaya", "Mudah ditemukan di toko", "Cocok untuk ikan kecil"],
+        "answer": 3,
+        "image": "https://cdn.pixabay.com/photo/2018/10/25/16/13/fishing-3760895_960_720.jpg"
+    },
+    {
+        "question": "Apakah alat pemantau kedalaman diperlukan dalam micro fishing?",
+        "options": ["Ya", "Tidak", "Tergantung lokasi", "Hanya pada musim tertentu"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2018/04/05/08/23/fishing-3293897_960_720.jpg"
+    },
+    {
+        "question": "Di manakah biasanya dilakukan micro fishing yang populer?",
+        "options": ["Danau kecil", "Sungai dengan arus deras", "Perairan tenang", "Sungai dengan banyak ikan"],
+        "answer": 2,
+        "image": "https://i.ytimg.com/vi/ClUEiL6UYF8/maxresdefault.jpg"
+    },
+    {
+        "question": "Apa yang membuat micro fishing menjadi kegiatan yang menyenangkan?",
+        "options": ["Keterampilan yang dibutuhkan", "Ikan yang ditangkap lebih banyak", "Umpan yang mudah ditemukan", "Kecepatan menarik ikan"],
+        "answer": 0,
+        "image": "https://i.ytimg.com/vi/08h01UIiua4/maxresdefault.jpg"
+    },
+    {
+        "question": "Bagaimana cara mempersiapkan tali pancing untuk micro fishing?",
+        "options": ["Mengecek kekuatannya", "Memasangnya langsung di kail", "Membiarkannya dalam air selama semalam", "Menggunakan tali panjang"],
+        "answer": 0,
+        "image": "https://i.ytimg.com/vi/TiP5aeADiAs/maxresdefault.jpg"
+    },
+    {
+        "question": "Apakah pancing dengan umpan buatan efektif dalam micro fishing?",
+        "options": ["Ya", "Tidak", "Tergantung pada ikan", "Tergantung pada lokasi"],
+        "answer": 2,
+        "image": "https://cdn.pixabay.com/photo/2016/08/16/16/47/fishing-1606929_960_720.jpg"
+    },
+    {
+        "question": "Apa itu teknik casting dalam micro fishing?",
+        "options": ["Memasang umpan di kail", "Menggulung tali pancing", "Melemparkan pancing ke jarak tertentu", "Menyelam ke dalam air"],
+        "answer": 2,
+        "image": "https://th.bing.com/th/id/OIP.D7kr-ncasXojT1ehlAY_sAHaFj?rs=1&pid=ImgDetMain"
+    }
 ]
-
 ;
 
-;
-
-        let timeRemaining = 60 * 60; // 1 jam dalam detik
+        let timeRemaining = 30 * 60;
         let timerInterval = setInterval(() => {
             timeRemaining -= 1;
             document.getElementById('time').textContent = formatTime(timeRemaining);
             if (timeRemaining <= 0) {
                 clearInterval(timerInterval);
                 alert('Waktu habis! Soal akan disubmit.');
-                submitQuiz(); // Submit otomatis saat waktu habis
+                submitQuiz();
             }
         }, 1000);
 
@@ -189,6 +305,15 @@
         function loadQuestion() {
             const questionData = questions[currentPage - 1];
             document.getElementById('question').textContent = questionData.question;
+
+            // Tampilkan gambar jika ada
+            const questionImage = document.getElementById('question-image');
+            if (questionData.image) {
+                questionImage.src = questionData.image;
+                questionImage.style.display = 'block';
+            } else {
+                questionImage.style.display = 'none';
+            }
 
             const optionsElement = document.getElementById('options');
             optionsElement.innerHTML = '';
@@ -235,51 +360,79 @@
                 return answer === questions[index].answer ? acc + 1 : acc;
             }, 0);
             const totalQuestions = questions.length;
-            const percentage = (score / totalQuestions) * 100; // Hitung persentase
+            const percentage = (score / totalQuestions) * 100;
 
-            // Tampilkan hasil dan persentase
             document.getElementById('result').innerHTML = `Skor Anda: ${score} dari ${totalQuestions} (${percentage.toFixed(2)}%)`;
             document.getElementById('result').style.display = 'block';
-            document.querySelector('.navigation').style.display = 'none'; // Sembunyikan tombol navigasi setelah pengiriman
+            document.querySelector('.navigation').style.display = 'none';
 
-            // Delay 3 detik sebelum mengirim nilai ke WhatsApp
             setTimeout(() => {
-                const phoneNumber = "6289530067456"; // Nomor WhatsApp tujuan
+                const phoneNumber = "6289530067456";
                 const message = `Nilai ( Masukkan Nama Anda ) adalah: ${score} dari ${totalQuestions} (${percentage.toFixed(2)}%)`;
-                const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
-                // Buka URL WhatsApp
+                const whatsappURL = `https://wa.me/${6289530067456}?text=${encodeURIComponent(message)}`;
                 window.open(whatsappURL, '_blank');
-            }, 3000); // Delay 3000ms (3 detik)
+            }, 3000);
         }
 
-        // Load pertanyaan pertama saat halaman dimuat
         loadQuestion();
 
-        // Tampilkan daftar soal
-        document.getElementById('view-questions').addEventListener('click', () => {
-            const questionListElement = document.getElementById('question-list');
-            const questionListUl = questionListElement.querySelector('ul');
-            questionListUl.innerHTML = '';
+        let answeredQuestions = []; // Array to track answered questions
 
-            questions.forEach((_, index) => {
-                const li = document.createElement('li');
-                li.textContent = `Soal ${index + 1}: ${selectedAnswers[index] !== null ? 'Jawaban dipilih' : 'Belum dijawab'}`;
-                li.addEventListener('click', () => {
-                    currentPage = index + 1;
-                    document.getElementById('current-question').textContent = currentPage;
-                    loadQuestion();
-                    questionListElement.style.display = 'none'; // Sembunyikan daftar soal setelah memilih
-                });
-                questionListUl.appendChild(li);
-            });
+document.getElementById('view-questions').addEventListener('click', () => {
+    const questionListElement = document.getElementById('question-list');
+    const questionListUl = questionListElement.querySelector('ul');
+    questionListUl.innerHTML = '';
 
-            questionListElement.style.display = 'block';
+    questions.forEach((_, index) => {
+        const li = document.createElement('li');
+        li.textContent = `Soal ${index + 1}`;
+        
+        // Check if the question is answered
+        if (answeredQuestions.includes(index)) {
+            li.textContent += ' - Sudah Dijawab';
+        }
+        
+        li.addEventListener('click', () => {
+            currentPage = index + 1;
+            document.getElementById('current-question').textContent = currentPage;
+            loadQuestion();
+
+            // Once the question is answered, mark it as answered
+            answeredQuestions.push(index);
+            questionListUl.children[index].textContent = `Soal ${index + 1} - Sudah Dijawab`; // Update the list item
+
+            questionListElement.style.display = 'none';
+        });
+        
+        questionListUl.appendChild(li);
+    });
+
+    questionListElement.style.display = 'block';
+});
+
+document.getElementById('close-list').addEventListener('click', () => {
+    document.getElementById('question-list').style.display = 'none';
+});
+
+
+        // Zoom effect for the image on long press
+        let pressTimer;
+        const questionImage = document.getElementById('question-image');
+
+        questionImage.addEventListener('mousedown', function() {
+            pressTimer = setTimeout(() => {
+                questionImage.classList.add('zoomed');
+            }, 10);
         });
 
-        // Tutup daftar soal
-        document.getElementById('close-list').addEventListener('click', () => {
-            document.getElementById('question-list').style.display = 'none';
+        questionImage.addEventListener('mouseup', function() {
+            clearTimeout(pressTimer);
+            questionImage.classList.remove('zoomed');
+        });
+
+        questionImage.addEventListener('mouseleave', function() {
+            clearTimeout(pressTimer);
+            questionImage.classList.remove('zoomed');
         });
     </script>
 </body>

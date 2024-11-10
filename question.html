@@ -10,7 +10,7 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0') no-repeat center center fixed;
+            background: url('https://th.bing.com/th/id/OIP.gTdTnI0RG8Xgt6a4fLFyZQAAAA?rs=1&pid=ImgDetMain') no-repeat center center fixed;
             background-size: cover;
         }
 
@@ -35,6 +35,15 @@
             color: #333;
         }
 
+        .question-image {
+            max-width: 100%;
+            margin: 20px auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
         ul {
             list-style-type: none;
             padding: 0;
@@ -53,12 +62,12 @@
         }
 
         li.selected {
-            background: #28a745;
+            background: #1d8ecf;
             color: #fff;
         }
 
         button {
-            background: #28a745;
+            background: #1d8ecf;
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -81,7 +90,7 @@
         .result {
             font-size: 1.5em;
             margin-top: 20px;
-            color: #28a745;
+            color: #1d8ecf;
         }
 
         .question-list {
@@ -98,15 +107,21 @@
             margin: 5px 0;
             cursor: pointer;
         }
+
+        /* Zoom class for the image */
+        .zoomed {
+            transform: scale(2);
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <span id="time">60:00</span>
+            <span id="time">20:00</span>
             <div id="question-number">Question <span id="current-question">1</span></div>
         </div>
         <h2 id="question"></h2>
+        <img id="question-image" class="question-image" src="" alt="" style="display: none;">
         <ul id="options"></ul>
         <div class="navigation">
             <button id="back">Back</button>
@@ -124,52 +139,185 @@
 
     <script>
         const questions = [
-    
-    { "question": "Jumlah sperma yang dikeluarkan dalam ejakulasi bisa mencapai?", "options": ["Ratusan", "Ribuan hingga jutaan", "Puluhan", "Satu saja"], "answer": 1 },
-    { "question": "Jumlah sperma yang dikeluarkan saat onani/ngocok adalah?", "options": ["Ratusan", "Ribuan hingga jutaan", "Puluhan", "Satu saja"], "answer": 1 },
-    { "question": "proses memasukkan penis ke dalam vagina dinamakan?", "options": ["Seks", "ciuman", "Puluhan", "berkelahi"], "berbicara": 0 },
-    { "question": "berapa kali manusai normal mengeluarkan sperma", "options": ["1x seminggu", "2x seminggu", "tidak pernah", "Setiap hari"], "answer": 1 },
-    { "question": "berapa lama durasi seks rata rata", "options": ["3menit", "5menit", "15meinit", "Suka-suka"], "answer": 2 },
-    { "question": "Apa yang dimaksud dengan micro fishing?", "options": ["Memancing ikan besar", "Memancing ikan kecil", "Memancing di laut", "Memancing di sungai besar"], "answer": 1 },
-    { "question": "Alat utama yang digunakan dalam micro fishing adalah?", "options": ["Jala", "Pancing kecil", "Kail besar", "Perahu"], "answer": 1 },
-    { "question": "Micro fishing biasanya dilakukan di mana?", "options": ["Samudra", "Sungai kecil atau parit", "Danau besar", "Laut dalam"], "answer": 1 },
-    { "question": "Ikan yang ditangkap saat micro fishing biasanya berukuran?", "options": ["Besar", "Kecil", "Sangat besar", "Sangat kecil"], "answer": 3 },
-    { "question": "Umpan yang digunakan untuk micro fishing biasanya?", "options": ["Berukuran besar", "Sangat kecil", "Tidak digunakan umpan", "Berwarna merah"], "answer": 1 },
-    { "question": "Apa keuntungan dari micro fishing?", "options": ["Menangkap ikan besar", "Menjaga keseimbangan ekosistem", "Lebih cepat menangkap ikan", "Menggunakan banyak alat"], "answer": 1 },
-    { "question": "Ikan yang sering ditangkap dalam micro fishing biasanya?", "options": ["Ikan predator", "Ikan kecil seperti ikan mas atau nila kecil", "Hiu", "Paus"], "answer": 1 },
-    { "question": "Salah satu teknik utama dalam micro fishing adalah?", "options": ["Menggunakan jaring", "Menggunakan kail dan pancing kecil", "Menggunakan tombak", "Memancing di laut dalam"], "answer": 1 },
-    { "question": "Micro fishing populer di negara?", "options": ["Australia", "Jepang", "Afrika Selatan", "Kanada"], "answer": 1 },
-    { "question": "Mengapa micro fishing dianggap ramah lingkungan?", "options": ["Menggunakan bahan kimia", "Tidak merusak ekosistem", "Menggunakan alat berat", "Mengambil semua ikan di area tersebut"], "answer": 1 },
-    { "question": "Panjang pancing yang digunakan dalam micro fishing biasanya?", "options": ["Sangat panjang", "Pendek", "Tidak ada pancing", "Seukuran jaring ikan"], "answer": 1 },
-    { "question": "Ikan yang ditangkap dalam micro fishing biasanya digunakan untuk?", "options": ["Dikonsumsi", "Dipelihara atau sebagai hobi", "Dijual dalam jumlah besar", "Dilepaskan di laut dalam"], "answer": 1 },
-    { "question": "Kail dalam micro fishing biasanya berukuran?", "options": ["Besar", "Sangat kecil", "Sangat besar", "Tidak ada kail"], "answer": 1 },
-    { "question": "Apa jenis ikan yang sering ditangkap saat micro fishing?", "options": ["Tuna", "Ikan-ikan kecil seperti guppy atau ikan kecil lokal", "Ikan hiu", "Lumba-lumba"], "answer": 1 },
-    { "question": "Micro fishing paling cocok dilakukan di?", "options": ["Danau besar", "Sungai kecil atau kolam dangkal", "Samudra Pasifik", "Gurun pasir"], "answer": 1 },
-    { "question": "Apa tujuan utama dari micro fishing?", "options": ["Menangkap ikan besar untuk konsumsi", "Menangkap ikan kecil sebagai hobi", "Membuat pancingan besar", "Berlayar di lautan"], "answer": 1 },
-    { "question": "Mengapa umpan yang kecil diperlukan dalam micro fishing?", "options": ["Agar ikan tidak tertarik", "Agar sesuai dengan ukuran ikan kecil", "Supaya ikan besar datang", "Tidak ada umpan yang diperlukan"], "answer": 1 },
-    { "question": "Apa keuntungan lain dari micro fishing selain menjaga ekosistem?", "options": ["Menghemat biaya peralatan", "Menangkap ikan sebanyak mungkin", "Menggunakan banyak energi", "Menangkap ikan besar"], "answer": 0 },
-    { "question": "Apa perbedaan utama micro fishing dengan memancing biasa?", "options": ["Hanya menggunakan jala", "Memancing ikan kecil dengan alat kecil", "Dilakukan di laut dalam", "Tidak perlu alat pancing"], "answer": 1 },
-    { "question": "Ikan kecil yang ditangkap dalam micro fishing sering kali dipelihara dalam?", "options": ["Akuarium", "Kolam renang", "Sungai besar", "Laut bebas"], "answer": 0 },
-    { "question": "Micro fishing membutuhkan?", "options": ["Banyak alat besar", "Peralatan sederhana dan kecil", "Peralatan berat", "Perahu besar"], "answer": 1 },
-    { "question": "Jenis pancing yang digunakan untuk micro fishing disebut?", "options": ["Kail besar", "Kail kecil atau micro hook", "Jaring ikan", "Tombak"], "answer": 1 },
-    { "question": "Micro fishing biasanya dilakukan oleh?", "options": ["Nelayan komersial", "Penggemar hobi", "Penjaga pantai", "Pemancing profesional"], "answer": 1 },
-    { "question": "Apa yang bisa dipelajari dari micro fishing?", "options": ["Cara menangkap ikan besar", "Jenis-jenis ikan kecil dan lingkungan mereka", "Membuat jaring", "Memancing di laut dalam"], "answer": 1 },
-    { "question": "Peralatan dalam micro fishing biasanya dibuat dari?", "options": ["Bahan baja", "Bahan ringan seperti plastik atau fiber", "Besi berat", "Kayu besar"], "answer": 1 },
-    { "question": "Micro fishing sering kali dilakukan di daerah yang?", "options": ["Berombak besar", "Tenang seperti sungai kecil", "Dekat pantai", "Di tengah laut"], "answer": 1 },
-    { "question": "Apa hal utama yang dibutuhkan saat micro fishing?", "options": ["Kesabaran", "Jaring besar", "Kail besar", "Perahu motor"], "answer": 0 },
-    { "question": "Bagaimana ukuran ikan yang biasa ditangkap dalam micro fishing?", "options": ["Besar sekali", "Kecil atau sangat kecil", "Biasa saja", "Raksasa"], "answer": 1 },
+    {
+        "question": "Siapa penemu listrik?",
+        "options": ["Nikola Tesla", "Albert Einstein", "Thomas Edison", "Michael Faraday"],
+        "answer": 2,
+        "image": "https://th.bing.com/th/id/OIP.msDuQv5njLwKJmS_QIiA4AHaEK?rs=1&pid=ImgDetMain"
+    },
+    {
+        "question": "Apa ibu kota Jepang?",
+        "options": ["Kyoto", "Osaka", "Hokkaido", "Tokyo"],
+        "answer": 3,
+        "image": "https://cdn.pixabay.com/photo/2016/10/13/18/55/japan-1733554_960_720.jpg"
+    },
+    {
+        "question": "Apa nama planet terbesar di tata surya?",
+        "options": ["Bumi", "Mars", "Jupiter", "Saturnus"],
+        "answer": 2,
+        "image": "https://th.bing.com/th/id/OIP.DLdsHTjAgFxMCJs13su2mgHaDt?rs=1&pid=ImgDetMain"
+    },
+    {
+        "question": "Siapa yang menulis novel 'Laskar Pelangi'?",
+        "options": ["Andrea Hirata", "Tere Liye", "Pramoedya Ananta Toer", "Bram Stoker"],
+        "answer": 0,
+        "image": "https://www.wartajuara.com/wp-content/uploads/2023/01/laskar_pelangi-removebg-preview.png"
+    },
+    {
+        "question": "Apa nama sistem pemerintahan di Indonesia?",
+        "options": ["Monarki", "Demokrasi", "Oligarki", "Teokrasi"],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2016/11/18/17/17/indonesia-1837817_960_720.jpg"
+    },
+    {
+        "question": "Siapa presiden pertama Indonesia?",
+        "options": ["Soeharto", "Bacharuddin Jusuf Habibie", "Megawati Soekarnoputri", "Soekarno"],
+        "answer": 3,
+        "image": "https://cdn.pixabay.com/photo/2015/12/01/04/06/soekarno-1077101_960_720.jpg"
+    },
+    {
+        "question": "Apa yang dimaksud dengan fotosintesis?",
+        "options": ["Proses pembuatan makanan oleh tumbuhan", "Proses pertumbuhan tumbuhan", "Proses respirasi tumbuhan", "Proses pembuatan air oleh tumbuhan"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2016/10/16/17/32/plants-1741771_960_720.jpg"
+    },
+    {
+        "question": "Berapa jumlah pulau di Indonesia?",
+        "options": ["10.000", "13.466", "17.000", "20.000"],
+        "answer": 2,
+        "image": "https://2.bp.blogspot.com/-oR5M2YCGFTw/WGNMbkiRX_I/AAAAAAAAACQ/3fg7Oe6_zzMK2lnA-GhhtZckxjb6IH7qgCLcB/s1600/29989414_2c6749b494_o.jpg"
+    },
+    {
+        "question": "Siapa yang menemukan hukum gravitasi?",
+        "options": ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Nicolaus Copernicus"],
+        "answer": 0,
+        "image": "https://img2.djawanews.com/4_eVQfT45S5ylbmozNc48GtwoxaGlsU7Tdv5EDfu7rM/rs:fill:600:338:1/g:no/aHR0cHM6Ly9kamF3YW5ld3MuY29tL3Bob3Rvcy9rdWRhcGFuLXBhZ2kvNWUwM2IyNTkzZjhlODAzMzJiMmUyOTU5ZDY5Y2NjMWM2MTMxMDYxOC5qcGc.jpg"
+    },
+    {
+        "question": "Apa mata uang yang digunakan di Amerika Serikat?",
+        "options": ["Euro", "Pound", "Yen", "Dollar"],
+        "answer": 3,
+        "image": "https://cdn.pixabay.com/photo/2017/03/29/20/14/us-2187424_960_720.jpg"
+    },
+    {
+        "question": "Apa nama benua yang terletak di selatan Bumi?",
+        "options": ["Afrika", "Asia", "Antartika", "Australia"],
+        "answer": 2,
+        "image": "https://iluminasi.com/img/upload/antartika-600.jpg"
+    },
+    {
+        "question": "Siapa penemu telepon?",
+        "options": ["Alexander Graham Bell", "Thomas Edison", "Nikola Tesla", "Michael Faraday"],
+        "answer": 0,
+        "image": "https://i.ytimg.com/vi/Xe5ozRKx81c/maxresdefault.jpg"
+    },
+    {
+        "question": "Apa nama laut yang memisahkan Indonesia dengan Australia?",
+        "options": ["Samudera Hindia", "Laut Cina Selatan", "Laut Timor", "Laut Arafura"],
+        "answer": 3,
+        "image": "https://th.bing.com/th/id/OIP.vcsit9tkHHVqXnBHDZRUnQHaFw?rs=1&pid=ImgDetMain"
+    },
+    {
+        "question": "Siapa yang menciptakan teori evolusi?",
+        "options": ["Charles Darwin", "Albert Einstein", "Galileo Galilei", "Isaac Newton"],
+        "answer": 0,
+        "image": "https://image.slidesharecdn.com/a-ppt-beginners-guide-to-internet-02-1998-131125090727-phpapp02/95/teori-evolusi-6-638.jpg?cb=1385370544"
+    },
+    {
+        "question": "Apa yang dimaksud dengan pluralisme?",
+        "options": ["Kesatuan dalam keberagaman", "Sistem pemerintahan yang demokratis", "Kepercayaan terhadap satu agama", "Pertukaran budaya antar negara"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2017/09/04/18/38/multicultural-2715140_960_720.jpg"
+    },
+    {
+        "question": "Apa nama negara yang dikenal sebagai Negeri Sakura?",
+        "options": ["Korea Selatan", "Thailand", "Jepang", "Vietnam"],
+        "answer": 2,
+        "image": "https://cdn.pixabay.com/photo/2017/03/27/00/17/japan-2177540_960_720.jpg"
+    },
+    {
+        "question": "Siapa yang menemukan lampu pijar?",
+        "options": ["Nikola Tesla", "Thomas Edison", "Michael Faraday", "Galileo Galilei"],
+        "answer": 1,
+        "image": "https://th.bing.com/th/id/OIP.2Uayp-_K2FGfslcQp5xQggHaFP?rs=1&pid=ImgDetMain"
+    },
+    {
+        "question": "Apa yang dimaksud dengan demokrasi?",
+        "options": ["Sistem pemerintahan oleh rakyat", "Pemerintahan militer", "Pemerintahan oleh satu orang", "Sistem pemerintahan oleh para pemimpin agama"],
+        "answer": 0,
+        "image": "https://th.bing.com/th/id/OIP.JaK5D4lgjyW2B4pZ7qkKGgHaEo?rs=1&pid=ImgDetMain"
+    },
+    {
+        "question": "Apa alat yang digunakan untuk mengukur suhu?",
+        "options": ["Thermometer", "Barometer", "Altimeter", "Anemometer"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2018/05/28/08/31/thermometer-3433989_960_720.jpg"
+    },
+    {
+        "question": "Apa nama organisasi yang mengatur sepak bola dunia?",
+        "options": ["FIFA", "NBA", "ICC", "IOC"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2017/06/30/01/51/soccer-2459751_960_720.jpg"
+    },
+    {
+        "question": "Siapa penulis novel 'Harry Potter'?",
+        "options": ["J.R.R. Tolkien", "J.K. Rowling", "C.S. Lewis", "George R.R. Martin"],
+        "answer": 1,
+        "image": "https://i.ytimg.com/vi/h3xZKGE4VvQ/maxresdefault.jpg"
+    },
+    {
+        "question": "Di manakah Candi Borobudur berada?",
+        "options": ["Jawa Barat", "Jawa Tengah", "Bali", "Sumatra"],
+        "answer": 1,
+        "image": "https://1001indonesia.net/asset/2016/01/borobudur.jpg"
+    },
+    {
+        "question": "Apa nama alat transportasi yang menggunakan rel?",
+        "options": ["Kereta Api", "Bus", "Pesawat", "Mobil"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2017/08/02/13/13/rail-2570997_960_720.jpg"
+    },
+    {
+        "question": "Siapa yang menemukan teori relativitas?",
+        "options": ["Albert Einstein", "Isaac Newton", "Nikola Tesla", "Galileo Galilei"],
+        "answer": 0,
+        "image": "https://superapp.id/blog/wp-content/uploads/2022/06/3-9.webp"
+    },
+    {
+        "question": "Apa nama sungai terpanjang di dunia?",
+        "options": ["Sungai Nil", "Sungai Amazon", "Sungai Mississippi", "Sungai Mekong"],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2018/11/21/06/47/river-3832056_960_720.jpg"
+    },
+    {
+        "question": "Siapa yang menciptakan Facebook?",
+        "options": ["Mark Zuckerberg", "Steve Jobs", "Bill Gates", "Larry Page"],
+        "answer": 0,
+        "image": "https://www.biografiku.com/wp-content/uploads/2009/10/v912.jpg"
+    },
+    {
+        "question": "Apa yang dimaksud dengan globalisasi?",
+        "options": ["Proses integrasi ekonomi dan budaya antar negara", "Proses penyebaran agama ke seluruh dunia", "Proses pemberantasan kemiskinan", "Proses penurunan jumlah penduduk dunia"],
+        "answer": 0,
+        "image": "https://cdn-2.tstatic.net/tribunnews/foto/bank/images/ilustrasi-upaya-menghadapai-modernisasi-dan-globalisasi.jpg"
+    },
+    {
+        "question": "Apa nama gunung tertinggi di dunia?",
+        "options": ["Gunung Merapi", "Gunung Everest", "Gunung Kilimanjaro", "Gunung Fuji"],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2017/10/01/16/11/mountains-2801573_960_720.jpg"
+    }
 ]
 ;
 
-
-        let timeRemaining = 60 * 60; // 1 jam dalam detik
+        let timeRemaining = 20 * 60;
         let timerInterval = setInterval(() => {
             timeRemaining -= 1;
             document.getElementById('time').textContent = formatTime(timeRemaining);
             if (timeRemaining <= 0) {
                 clearInterval(timerInterval);
                 alert('Waktu habis! Soal akan disubmit.');
-                submitQuiz(); // Submit otomatis saat waktu habis
+                submitQuiz();
             }
         }, 1000);
 
@@ -187,6 +335,15 @@
         function loadQuestion() {
             const questionData = questions[currentPage - 1];
             document.getElementById('question').textContent = questionData.question;
+
+            // Tampilkan gambar jika ada
+            const questionImage = document.getElementById('question-image');
+            if (questionData.image) {
+                questionImage.src = questionData.image;
+                questionImage.style.display = 'block';
+            } else {
+                questionImage.style.display = 'none';
+            }
 
             const optionsElement = document.getElementById('options');
             optionsElement.innerHTML = '';
@@ -233,51 +390,79 @@
                 return answer === questions[index].answer ? acc + 1 : acc;
             }, 0);
             const totalQuestions = questions.length;
-            const percentage = (score / totalQuestions) * 100; // Hitung persentase
+            const percentage = (score / totalQuestions) * 100;
 
-            // Tampilkan hasil dan persentase
             document.getElementById('result').innerHTML = `Skor Anda: ${score} dari ${totalQuestions} (${percentage.toFixed(2)}%)`;
             document.getElementById('result').style.display = 'block';
-            document.querySelector('.navigation').style.display = 'none'; // Sembunyikan tombol navigasi setelah pengiriman
+            document.querySelector('.navigation').style.display = 'none';
 
-            // Delay 3 detik sebelum mengirim nilai ke WhatsApp
             setTimeout(() => {
-                const phoneNumber = "6289530067456"; // Nomor WhatsApp tujuan
-                const message = `Nilai ( MAsukkan Nama Anda ) adalah: ${score} dari ${totalQuestions} (${percentage.toFixed(2)}%)`;
-                const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
-                // Buka URL WhatsApp
+                const phoneNumber = "6289530067456";
+                const message = `Nilai ( Masukkan Nama Anda ) adalah: ${score} dari ${totalQuestions} (${percentage.toFixed(2)}%)`;
+                const whatsappURL = `https://wa.me/${6289530067456}?text=${encodeURIComponent(message)}`;
                 window.open(whatsappURL, '_blank');
-            }, 3000); // Delay 3000ms (3 detik)
+            }, 3000);
         }
 
-        // Load pertanyaan pertama saat halaman dimuat
         loadQuestion();
 
-        // Tampilkan daftar soal
-        document.getElementById('view-questions').addEventListener('click', () => {
-            const questionListElement = document.getElementById('question-list');
-            const questionListUl = questionListElement.querySelector('ul');
-            questionListUl.innerHTML = '';
+        let answeredQuestions = []; // Array to track answered questions
 
-            questions.forEach((_, index) => {
-                const li = document.createElement('li');
-                li.textContent = `Soal ${index + 1}: ${selectedAnswers[index] !== null ? 'Jawaban dipilih' : 'Belum dijawab'}`;
-                li.addEventListener('click', () => {
-                    currentPage = index + 1;
-                    document.getElementById('current-question').textContent = currentPage;
-                    loadQuestion();
-                    questionListElement.style.display = 'none'; // Sembunyikan daftar soal setelah memilih
-                });
-                questionListUl.appendChild(li);
-            });
+document.getElementById('view-questions').addEventListener('click', () => {
+    const questionListElement = document.getElementById('question-list');
+    const questionListUl = questionListElement.querySelector('ul');
+    questionListUl.innerHTML = '';
 
-            questionListElement.style.display = 'block';
+    questions.forEach((_, index) => {
+        const li = document.createElement('li');
+        li.textContent = `Soal ${index + 1}`;
+        
+        // Check if the question is answered
+        if (answeredQuestions.includes(index)) {
+            li.textContent += ' - Sudah Dijawab';
+        }
+        
+        li.addEventListener('click', () => {
+            currentPage = index + 1;
+            document.getElementById('current-question').textContent = currentPage;
+            loadQuestion();
+
+            // Once the question is answered, mark it as answered
+            answeredQuestions.push(index);
+            questionListUl.children[index].textContent = `Soal ${index + 1} - Sudah Dijawab`; // Update the list item
+
+            questionListElement.style.display = 'none';
+        });
+        
+        questionListUl.appendChild(li);
+    });
+
+    questionListElement.style.display = 'block';
+});
+
+document.getElementById('close-list').addEventListener('click', () => {
+    document.getElementById('question-list').style.display = 'none';
+});
+
+
+        // Zoom effect for the image on long press
+        let pressTimer;
+        const questionImage = document.getElementById('question-image');
+
+        questionImage.addEventListener('mousedown', function() {
+            pressTimer = setTimeout(() => {
+                questionImage.classList.add('zoomed');
+            }, 10);
         });
 
-        // Tutup daftar soal
-        document.getElementById('close-list').addEventListener('click', () => {
-            document.getElementById('question-list').style.display = 'none';
+        questionImage.addEventListener('mouseup', function() {
+            clearTimeout(pressTimer);
+            questionImage.classList.remove('zoomed');
+        });
+
+        questionImage.addEventListener('mouseleave', function() {
+            clearTimeout(pressTimer);
+            questionImage.classList.remove('zoomed');
         });
     </script>
 </body>
