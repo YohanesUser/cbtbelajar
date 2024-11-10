@@ -124,26 +124,42 @@
 
     <script>
         const questions = [
-    { "question": "Di mana janin berkembang pada tubuh ibu?", "options": ["Perut", "Rahim", "Lambung", "Usus"], "answer": 1 },
-    { "question": "Sperma dihasilkan oleh bagian tubuh laki-laki yang disebut?", "options": ["Hati", "Testis", "Ginjal", "Lambung"], "answer": 1 },
-    { "question": "Telur dalam tubuh perempuan dihasilkan di?", "options": ["Ovarium", "Rahim", "Paru-paru", "Lambung"], "answer": 0 },
-    { "question": "Proses bertemunya sperma dan sel telur disebut?", "options": ["Menstruasi", "Ovulasi", "Fertilisasi", "Ejakulasi"], "answer": 2 },
-    { "question": "Kandungan mengandung janin selama?", "options": ["3 bulan", "5 bulan", "9 bulan", "12 bulan"], "answer": 2 },
-    { "question": "Proses melahirkan bayi terjadi melalui?", "options": ["Pencernaan", "Kelahiran", "Peredaran darah", "Pengeluaran"], "answer": 1 },
-    { "question": "Sel telur bertemu sperma di dalam bagian tubuh yang disebut?", "options": ["Paru-paru", "Rahim", "Ginjal", "Saluran telur"], "answer": 3 },
-    { "question": "Salah satu tanda pubertas pada laki-laki adalah?", "options": ["Suara lebih besar", "Tinggi badan menurun", "Rambut rontok", "Kuku bertambah panjang"], "answer": 0 },
-    { "question": "Seorang bayi di dalam rahim mendapatkan makanan melalui?", "options": ["Plasenta", "Usus", "Ginjal", "Paru-paru"], "answer": 0 },
-    { "question": "Sel telur dihasilkan setiap bulan oleh?", "options": ["Rahim", "Ovarium", "Ginjal", "Jantung"], "answer": 1 },
-    { "question": "Tanda pubertas pada perempuan adalah?", "options": ["Tumbuh janggut", "Mengalami menstruasi", "Suara menjadi lebih besar", "Rambut rontok"], "answer": 1 },
-    { "question": "Manusia memiliki berapa kromosom total?", "options": ["23", "46", "48", "52"], "answer": 1 },
-    { "question": "Sperma bertemu sel telur dalam proses yang disebut?", "options": ["Menstruasi", "Pencernaan", "Fertilisasi", "Ekskresi"], "answer": 2 },
-    { "question": "Perkembangan manusia dimulai dari bertemunya sel telur dan?", "options": ["Ovarium", "Plasenta", "Janin", "Sperma"], "answer": 3 },
-    { "question": "Bayi berkembang selama kehamilan di dalam?", "options": ["Jantung", "Paru-paru", "Rahim", "Usus"], "answer": 2 },
-    { "question": "Saat pubertas, remaja perempuan biasanya mengalami?", "options": ["Pertumbuhan kuku", "Rambut rontok", "Menstruasi", "Tinggi badan menurun"], "answer": 2 },
-    { "question": "Ketika seorang bayi lahir, ia keluar dari?", "options": ["Kepala", "Perut", "Kaki", "Rahim"], "answer": 3 },
-    { "question": "Tugas utama plasenta adalah?", "options": ["Menyaring udara", "Menyalurkan makanan", "Menghasilkan sperma"], "answer": 2}
-
-];
+    { "question": "Sperma dihasilkan oleh organ tubuh laki-laki yang disebut?", "options": ["Ginjal", "Hati", "Testis", "Usus"], "answer": 2 },
+    { "question": "Tempat bertemunya sperma dan sel telur disebut?", "options": ["Rahim", "Saluran telur", "Ovarium", "Lambung"], "answer": 1 },
+    { "question": "Proses bertemunya sperma dengan sel telur disebut?", "options": ["Ejakulasi", "Fertilisasi", "Menstruasi", "Ovulasi"], "answer": 1 },
+    { "question": "Sperma bergerak menuju sel telur dengan bantuan?", "options": ["Kaki", "Tangan", "Ekor", "Sirip"], "answer": 2 },
+    { "question": "Fungsi utama sperma adalah untuk?", "options": ["Memberi makanan", "Menyusun tulang", "Membuahi sel telur", "Membersihkan darah"], "answer": 2 },
+    { "question": "Setelah bertemu sel telur, sperma akan?", "options": ["Membuat janin", "Meninggal", "Tetap sperma", "Membuat darah"], "answer": 0 },
+    { "question": "Sperma dihasilkan dalam organ tubuh yang disebut?", "options": ["Rahim", "Paru-paru", "Testis", "Lambung"], "answer": 2 },
+    { "question": "Jumlah sperma yang dikeluarkan dalam satu kali proses adalah?", "options": ["1", "Ribuan", "Puluhan", "Hanya satu"], "answer": 1 },
+    { "question": "Sperma berenang menuju sel telur melalui?", "options": ["Darah", "Udara", "Cairan tubuh", "Plasenta"], "answer": 2 },
+    { "question": "Sel telur yang telah dibuahi oleh sperma akan menjadi?", "options": ["Organ tubuh", "Janin", "Sel sperma", "Plasenta"], "answer": 1 },
+    { "question": "Berapa lama sperma bisa hidup dalam tubuh perempuan setelah ejakulasi?", "options": ["1 hari", "3-5 hari", "10 hari", "1 bulan"], "answer": 1 },
+    { "question": "Sperma membutuhkan waktu untuk mencapai sel telur selama?", "options": ["Beberapa detik", "Beberapa menit hingga beberapa jam", "Beberapa hari", "Beberapa minggu"], "answer": 1 },
+    { "question": "Proses bertemunya sperma dan sel telur biasanya terjadi di?", "options": ["Testis", "Ovarium", "Rahim", "Saluran telur"], "answer": 3 },
+    { "question": "Sperma yang sehat memiliki bentuk seperti?", "options": ["Bulat", "Dengan ekor untuk berenang", "Bergelombang", "Tidak beraturan"], "answer": 1 },
+    { "question": "Di mana sperma disimpan sebelum dikeluarkan dari tubuh?", "options": ["Ginjal", "Kandung kemih", "Epididimis", "Lambung"], "answer": 2 },
+    { "question": "Proses keluarnya sperma dari tubuh disebut?", "options": ["Ovulasi", "Menstruasi", "Ejakulasi", "Respirasi"], "answer": 2 },
+    { "question": "Sperma bertemu sel telur untuk memulai proses?", "options": ["Makan", "Respirasi", "Pembuahan", "Pencernaan"], "answer": 2 },
+    { "question": "Proses di mana tubuh mulai memproduksi sperma disebut?", "options": ["Pubertas", "Menopause", "Fertilitas", "Respirasi"], "answer": 0 },
+    { "question": "Setelah sperma membuahi sel telur, sel telur akan berkembang menjadi?", "options": ["Sperma baru", "Sel tulang", "Janin", "Sel darah"], "answer": 2 },
+    { "question": "Setelah sperma keluar, apakah dapat bertahan hidup di udara?", "options": ["Ya, selamanya", "Tidak, langsung mati", "Beberapa waktu", "Selalu hidup di udara"], "answer": 2 },
+    { "question": "Untuk bergerak menuju sel telur, sperma menggunakan?", "options": ["Darah", "Kaki", "Ekor", "Perut"], "answer": 2 },
+    { "question": "Sperma yang paling cepat dan sehat akan?", "options": ["Membantu pencernaan", "Membuahi sel telur", "Menjadi tulang", "Meningkatkan darah"], "answer": 1 },
+    { "question": "Kapan tubuh laki-laki mulai memproduksi sperma?", "options": ["Sejak bayi", "Saat pubertas", "Setelah menikah", "Setelah dewasa"], "answer": 1 },
+    { "question": "Bagian sperma yang membantu untuk berenang disebut?", "options": ["Kepala", "Ekor", "Badan", "Kaki"], "answer": 1 },
+    { "question": "Setelah pembuahan, sel telur akan berkembang menjadi?", "options": ["Sperma baru", "Janin", "Sel darah", "Sel tubuh"], "answer": 1 },
+    { "question": "Sel telur hanya bisa dibuahi oleh?", "options": ["Satu sperma", "Banyak sperma", "Sperma dan sel darah", "Sperma dan makanan"], "answer": 0 },
+    { "question": "Jika sperma tidak membuahi sel telur, tubuh perempuan akan mengalami?", "options": ["Ejakulasi", "Menstruasi", "Pubertas", "Kehamilan"], "answer": 1 },
+    { "question": "Proses reproduksi pada manusia memerlukan?", "options": ["Dua orang", "Satu orang", "Empat orang", "Tiga orang"], "answer": 0 },
+    { "question": "Proses pembentukan sperma terjadi di dalam?", "options": ["Testis", "Ovarium", "Rahim", "Lambung"], "answer": 0 },
+    { "question": "Jumlah sperma yang dikeluarkan dalam ejakulasi bisa mencapai?", "options": ["Ratusan", "Ribuan hingga jutaan", "Puluhan", "Satu saja"], "answer": 1 },
+    { "question": "Jumlah sperma yang dikeluarkan saat onani/ngocok adalah?", "options": ["Ratusan", "Ribuan hingga jutaan", "Puluhan", "Satu saja"], "answer": 1 },
+    { "question": "proses memasukkan penis ke dalam vagina dinamakan?", "options": ["Seks", "ciuman", "Puluhan", "berkelahi"], "berbicara": 0 },
+    { "question": "berapa kali manusai normal mengeluarkan sperma", "options": ["1x seminggu", "2x seminggu", "tidak pernah", "Setiap hari"], "answer": 1 },
+    { "question": "berapa lama durasi seks rata rata", "options": ["3menit", "5menit", "15meinit", "Suka-suka"], "answer": 2 }
+]
+;
 
 
         let timeRemaining = 60 * 60; // 1 jam dalam detik
