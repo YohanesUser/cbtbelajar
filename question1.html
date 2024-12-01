@@ -10,7 +10,7 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('https://www.gerejaganjuran.org/assets/img/article/poster/01b15feee07a5aa928479cf7c479ae46.jpg') no-repeat center center fixed;
+            background: url('https://cbt.smpkanisiusbambanglipuro.sch.id/dist/img/logo29.png') no-repeat center center fixed;
             background-size: cover;
         }
 
@@ -136,148 +136,383 @@
             <button id="close-list">Tutup</button>
         </div>
     </div>
+    <footer style="background-color: #333; color: #fff; padding: 20px 0; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+          <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+            <!-- Informasi Perusahaan -->
+            <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+              <h4 style="margin: 0 0 10px;">Tentang Kami</h4>
+              <p style="margin: 0;">Kami menyediakan layanan cbt terbaik untuk kebutuhan Belajar.</p>
+            </div>
+
+            <!-- Media Sosial -->
+<div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+    <h4 style="margin: 0 0 10px;">Ikuti Kami</h4>
+    <div style="display: flex; gap: 10px; justify-content: center;">
+      <a href="https://www.facebook.com/profile.php?id=100085367364559" target="_blank" style="color: #fff; font-size: 20px; text-decoration: none;">&#x1F426;</a> <!-- Facebook -->
+      <a href="https://www.github.com/YohanesUser" target="_blank" style="color: #fff; font-size: 20px; text-decoration: none;">&#x1F4F1;</a> <!-- Twitter -->
+      <a href="https://www.instagram.com/yohanes_af_sr" target="_blank" style="color: #fff; font-size: 20px; text-decoration: none;">&#x1F4F6;</a> <!-- Instagram -->
+    </div>
+  </div>
+  
+      
+          <!-- Hak Cipta -->
+          <div style="margin-top: 20px; border-top: 1px solid #444; padding-top: 10px; font-size: 14px;">
+            <p style="margin: 0;">&copy; 2024 Cbt RT03 Kanutan. Semua hak dilindungi.</p>
+          </div>
+        </div>
+      </footer>
+      
+      <style>
+        /* Reset margin dan padding */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Memastikan tinggi penuh */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Tinggi body mencakup seluruh viewport */
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 16px;
+  margin-top: auto; /* Pastikan footer selalu di bawah */
+}
+
+/* Menambahkan jarak yang cukup jauh antara footer dan elemen di atasnya */
+.content {
+  margin-bottom: 50px; /* Menambah jarak antara konten dan footer */
+}
+
+@media (min-width: 992px) {
+  footer {
+    padding: 10px 0;
+    font-size: 14px;
+  }
+  footer h4 {
+    font-size: 16px;
+  }
+  footer p {
+    font-size: 12px;
+  }
+}
+
+
+
+      </style>
 
     <script>
-        const questions = [
+        const questions =[
     {
-        "question": "Apa itu micro fishing?",
-        "options": ["Memancing ikan besar", "Memancing ikan kecil", "Memancing di laut", "Memancing di sungai besar"],
-        "answer": 1,
-        "image": "https://cdn.pixabay.com/photo/2017/07/12/22/44/fishing-2493905_960_720.jpg"
+        "question": "MOHON MAAF APABILA ADA SOAL YANG SAMA/DOUBLE",
+        "options": ["oke, siap admin"],
+        "answer": 0,
+        "image": "https://pbs.twimg.com/media/EMmXZnXU0AANTbw?format=jpg&name=large"
     },
     {
-        "question": "Alat yang digunakan dalam micro fishing adalah?",
-        "options": ["Jala", "Pancing kecil", "Kail besar", "Perahu"],
-        "answer": 1,
-        "image": "https://cdn.pixabay.com/photo/2015/09/18/18/09/fishing-944257_960_720.jpg"
+        "question": "Sakramen perkawinan Katolik mengajarkan pasangan untuk? ",
+        "options": ["Membangun keluarga yang bahagia", "Menghormati tradisi keluarga", "Membantu gereja dalam pelayanan", "Memiliki banyak anak"],
+        "answer": 0,
+        "image": "https://live.staticflickr.com/579/21876192920_ca4a6e81d9_z.jpg"
     },
     {
-        "question": "Apa tujuan utama dari micro fishing?",
-        "options": ["Menangkap ikan besar", "Menangkap ikan kecil", "Menangkap ikan yang terluka", "Menangkap hewan laut lainnya"],
-        "answer": 1,
-        "image": "https://cdn.pixabay.com/photo/2016/10/24/23/39/fishing-1760499_960_720.jpg"
+        "question": "Sakramen imamat Katolik bertujuan untuk? ",
+        "options": ["Menjadikan seseorang imam yang melayani umat", "Memberikan kekuatan rohani", "Mempererat ikatan dalam keluarga", "Meningkatkan rasa iman umat"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2017/07/31/12/51/holy-2567179_960_720.jpg"
     },
     {
-        "question": "Jenis ikan apa yang biasanya ditangkap dalam micro fishing?",
-        "options": ["Ikan paus", "Ikan wader", "Ikan guppy", "Ikan lele besar"],
+        "question": "Imam dalam sakramen imamat memiliki tugas utama untuk? ",
+        "options": ["Memberikan pengajaran dan baptisan", "Menjadi pemimpin umat dan memberi sakramen", "Membangun gereja yang megah", "Menjaga kesejahteraan ekonomi gereja"],
+        "answer": 1,
+        "image": "https://i.pinimg.com/originals/59/6a/d2/596ad231e4a2375c75a882239144c9ca.jpg"
+    },
+    {
+        "question": "Sakramen perkawinan mengajarkan bahwa cinta antara suami istri adalah?",
+        "options": ["Simbol kasih Allah", "Hasil dari perjanjian duniawi", "Komitmen sosial", "Sekedar formalitas gereja"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2017/04/18/10/32/wedding-2239920_960_720.jpg"
+    },
+    {
+        "question": "Apa tujuan utama membangun masa depan menurut ajaran Katolik?",
+        "options": ["Mencari kekayaan", "Melayani Tuhan dan sesama", "Membangun keluarga yang bahagia", "Memperluas pengaruh pribadi"],
+        "answer": 1,
+        "image": "https://i.ytimg.com/vi/nv2gzSvk35w/maxresdefault.jpg"
+    },
+    {
+        "question": "Dalam ajaran Katolik, apa peran Allah dalam membangun masa depan umat?",
+        "options": ["Menjadi sumber harapan dan kehidupan", "Meningkatkan kesejahteraan ekonomi", "Menyelesaikan masalah dunia", "Menentukan takdir umat"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2016/02/18/18/47/sun-1205517_960_720.jpg"
+    },
+    {
+        "question": "Bagaimana kita dapat merasakan Allah sebagai sumber keselamatan sejati?",
+        "options": ["Melalui iman dan doa", "Dengan berbuat baik kepada sesama", "Melalui upacara gereja", "Dengan berdoa hanya pada waktu-waktu tertentu"],
+        "answer": 0,
+        "image": "https://infopertama.com/wp-content/uploads/2022/05/1636952507-tangan-berdoa.jpg"
+    },
+    {
+        "question": "Apa yang dimaksud dengan keselamatan sejati menurut ajaran Katolik?",
+        "options": ["Kehidupan kekal bersama Tuhan", "Penyembuhan penyakit", "Kesuksesan dalam karier", "Meningkatkan kualitas hidup duniawi"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2017/12/01/00/16/faith-2984575_960_720.jpg"
+    },
+    {
+        "question": "Bagaimana iman menjadi karya keselamatan Allah dalam hidup kita?",
+        "options": ["Melalui perbuatan amal", "Dengan menerima kasih Tuhan dan mempercayai-Nya", "Dengan mengikuti ritual gereja", "Dengan menjadi pemimpin gereja"],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2015/10/31/16/42/jesus-1012453_960_720.jpg"
+    },
+    {
+        "question": "Beriman Kristiani berarti?",
+        "options": ["Menerima Yesus sebagai Juruselamat", "Menjadi anggota gereja", "Membangun gereja yang besar", "Menjadi pekerja sosial"],
+        "answer": 0,
+        "image": "https://i.ytimg.com/vi/oZ8Zd01LUOU/hqdefault.jpg"
+    },
+    {
+        "question": "Bagaimana iman dan kebersamaan dalam jemaat membantu dalam kehidupan umat Kristiani?",
+        "options": ["Mendukung satu sama lain dalam kehidupan rohani", "Mengajarkan cara berbisnis yang baik", "Memperkuat hubungan sosial antar jemaat", "Memberikan kesejahteraan materi"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2016/08/16/19/44/church-1603645_960_720.jpg"
+    },
+    {
+        "question": "Apa hak dan kewajiban anggota masyarakat menurut ajaran Katolik?",
+        "options": ["Berpartisipasi dalam pembangunan sosial dan membantu yang membutuhkan", "Mencari kekayaan pribadi", "Menjaga jarak dengan sesama", "Tidak ikut campur dalam urusan sosial"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2017/06/21/12/35/charity-2425979_960_720.jpg"
+    },
+    {
+        "question": "Imam dalam Gereja Katolik memiliki kewajiban untuk?",
+        "options": ["Memberikan sakramen dan pelayanan pastoral", "Mengajarkan ajaran moral kepada umat", "Mengumpulkan sumbangan untuk gereja", "Mendirikan bangunan gereja"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2016/09/25/21/10/pope-1690076_960_720.jpg"
+    },
+    {
+        "question": "Bagaimana peran sakramen perkawinan dalam kehidupan umat Katolik?",
+        "options": ["Menyatukan pasangan dalam cinta yang suci", "Mengubah status sosial", "Memperoleh keberkahan harta", "Mencapai status sosial tinggi"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2017/05/23/11/33/wedding-2337051_960_720.jpg"
+    },
+    {
+        "question": "Apa yang dimaksud dengan keselamatan sejati dalam Gereja Katolik?",
+        "options": ["Persekutuan abadi dengan Allah di surga", "Kemakmuran duniawi", "Kekuasaan rohani", "Keberhasilan dalam pekerjaan"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2016/07/10/08/28/jesus-1501045_960_720.jpg"
+    },
+    {
+        "question": "Dalam Katolik, iman adalah?",
+        "options": ["Tanggapan terhadap karya keselamatan Allah", "Kesadaran diri dalam beribadah", "Upacara gereja yang rutin", "Kesediaan untuk memberi"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2016/08/12/20/57/prayer-1593893_960_720.jpg"
+    },
+    {
+        "question": "Apa peran gereja dalam membangun kebersamaan jemaat menurut ajaran Katolik?",
+        "options": ["Menjadi tempat beribadah dan berbagi kasih", "Mengelola harta kekayaan", "Memberikan pelatihan bisnis", "Mengatur kehidupan sosial masyarakat"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2016/05/13/01/25/church-1396400_960_720.jpg"
+    },
+    {
+        "question": "Bagaimana iman Kristiani mendorong umat untuk hidup bersama dalam kasih?",
+        "options": ["Dengan berbagi dan melayani sesama", "Dengan mengikuti perintah kekuasaan", "Dengan menghindari dunia luar", "Dengan memperbanyak ibadah pribadi"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2015/07/17/22/14/giving-849811_960_720.jpg"
+    },
+    {
+        "question": "Apa yang menjadi hak dan kewajiban umat Katolik dalam masyarakat?",
+        "options": ["Berpartisipasi dalam kehidupan sosial yang adil dan penuh kasih", "Menghindari hubungan sosial yang buruk", "Menjaga jarak dengan masyarakat", "Hanya mengikuti tradisi gereja"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2016/04/05/12/16/community-1304244_960_720.jpg"
+    },
+    {
+        "question": "Apa tujuan dari sakramen perkawinan menurut ajaran Katolik?",
+        "options": ["Untuk menyucikan pernikahan", "Untuk mempererat hubungan sosial", "Untuk mempersembahkan kasih Allah kepada pasangan", "Untuk mendapatkan berkat ekonomi"],
         "answer": 2,
-        "image": "https://i.ytimg.com/vi/MeEtsOE9ffY/maxresdefault.jpg"
+        "image": "https://cdn.pixabay.com/photo/2017/08/06/02/12/wedding-2585379_960_720.jpg"
     },
     {
-        "question": "Micro fishing populer di negara mana?",
-        "options": ["Jepang", "Brazil", "Kanada", "Australia"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2017/12/14/06/33/fishing-3011351_960_720.jpg"
-    },
-    {
-        "question": "Apa bahan yang paling umum digunakan untuk kail dalam micro fishing?",
-        "options": ["Besi", "Tali pancing biasa", "Kawat tipis", "Plastik"],
-        "answer": 2,
-        "image": "https://cdn.pixabay.com/photo/2016/08/10/03/22/fishing-1584237_960_720.jpg"
-    },
-    {
-        "question": "Di mana biasanya micro fishing dilakukan?",
-        "options": ["Sungai besar", "Kolam dalam", "Kali kecil", "Laut lepas"],
-        "answer": 2,
-        "image": "https://cdn.pixabay.com/photo/2018/04/18/21/55/fishing-3334133_960_720.jpg"
-    },
-    {
-        "question": "Apa yang dibutuhkan untuk menjaga ikan hasil tangkapan?",
-        "options": ["Ember besar", "Kedalaman air yang stabil", "Keranjang khusus", "Akuarium portable"],
-        "answer": 3,
-        "image": "https://cdn.pixabay.com/photo/2016/03/27/18/09/fish-1281039_960_720.jpg"
-    },
-    {
-        "question": "Alat apakah yang digunakan untuk menarik ikan?",
-        "options": ["Jaring besar", "Kail dan tali pancing", "Gagang pancing besar", "Alat penarik otomatis"],
+        "question": "Dalam sakramen imamat, siapa yang diberikan kuasa untuk merayakan sakramen ini?",
+        "options": ["Umat Katolik", "Uskup dan imam", "Semua orang yang dipilih oleh gereja", "Pendeta dari agama lain"],
         "answer": 1,
-        "image": "https://cdn.pixabay.com/photo/2017/12/14/17/47/fishing-3014024_960_720.jpg"
+        "image": "https://th.bing.com/th/id/OIP.7BFaJW8V2VzoD-O5pbFRFAHaE8?rs=1&pid=ImgDetMain"
     },
     {
-        "question": "Apa kelebihan micro fishing dibandingkan dengan jenis memancing lainnya?",
-        "options": ["Ikan yang lebih besar", "Lebih menantang", "Menggunakan alat lebih besar", "Cocok untuk laut lepas"],
+        "question": "Apa yang dimaksud dengan sakramen imamat dalam ajaran Katolik?",
+        "options": ["Sakramen yang memberikan kuasa untuk memimpin perayaan liturgi", "Sakramen yang membebaskan umat dari dosa", "Sakramen untuk menjadi pewarta Injil", "Sakramen untuk penguatan iman umat"],
+        "answer": 0,
+        "image": "https://th.bing.com/th/id/OIP.-wtwc7BNK-cFOyrIx7bX6QHaE8?w=1200&h=802&rs=1&pid=ImgDetMain"
+    },
+    {
+        "question": "Iman dalam Katolik merupakan?",
+        "options": ["Respon terhadap karya keselamatan Allah", "Gaya hidup yang mengutamakan keberhasilan pribadi", "Keyakinan terhadap teori filsafat", "Pemahaman tentang peraturan gereja"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2016/08/21/15/55/bible-1619316_960_720.jpg"
+    },
+    {
+        "question": "Apa makna dari kata 'Ima' dalam bahasa Ibrani yang digunakan dalam Kitab Suci?",
+        "options": ["Kepercayaan yang benar", "Tanggung jawab sosial", "Pertolongan Tuhan", "Pengakuan terhadap perintah Tuhan"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2016/12/07/20/36/bible-1893804_960_720.jpg"
+    },
+    {
+        "question": "Bagaimana cara Allah menyelamatkan umat-Nya dalam ajaran Katolik?",
+        "options": ["Melalui Yesus Kristus sebagai Juruselamat", "Dengan memberkati umat yang rajin beribadah", "Dengan memberikan kekayaan bagi umat", "Dengan mengutuk dosa-dosa umat"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2015/11/05/23/12/jesus-1029314_960_720.jpg"
+    },
+    {
+        "question": "Bagaimana sakramen perkawinan menyatakan kasih Allah?",
+        "options": ["Melalui kesetiaan dan pengorbanan suami-istri", "Melalui kehidupan yang terpisah dari dunia", "Melalui kewajiban materi", "Melalui pengajaran moral gereja"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2016/10/10/09/44/ceremony-1723617_960_720.jpg"
+    },
+    {
+        "question": "Dalam sakramen imamat, siapa yang melayani umat Katolik?",
+        "options": ["Imam dan diakon", "Semua umat Katolik", "Uskup saja", "Santo dan santa"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2017/07/14/12/10/church-2502283_960_720.jpg"
+    },
+    {
+        "question": "Apa yang dimaksud dengan pembangunan masa depan dalam iman Katolik?",
+        "options": ["Membangun hidup yang berlandaskan kasih dan keadilan", "Menjaga status sosial gereja", "Mengumpulkan banyak uang untuk gereja", "Mencari ketenaran duniawi"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2017/03/21/18/53/church-2160339_960_720.jpg"
+    },
+    {
+        "question": "Apa peran umat Katolik dalam masyarakat berdasarkan ajaran gereja?",
+        "options": ["Mewujudkan kasih dan keadilan", "Menjaga tradisi gereja", "Menghindari pertemuan sosial", "Mencari kekayaan materi"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2016/09/06/16/48/community-1658509_960_720.jpg"
+    },
+    {
+        "question": "Dalam ajaran Katolik, apa yang seharusnya dilakukan setiap anggota jemaat?",
+        "options": ["Berpartisipasi dalam kegiatan liturgi dan sosial gereja", "Menghindari kegiatan di luar gereja", "Menjaga jarak dengan orang-orang yang tidak seiman", "Mengumpulkan banyak harta untuk gereja"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2015/06/22/15/43/group-817393_960_720.jpg"
+    },
+    {
+        "question": "Apa yang dimaksud dengan tanggapan umat terhadap karya keselamatan Allah?",
+        "options": ["Menghidupi ajaran kasih dalam kehidupan sehari-hari", "Menjaga diri dari dosa", "Meningkatkan kekayaan pribadi", "Menghindari dunia luar"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2017/11/06/21/47/gathering-2917639_960_720.jpg"
+    },
+    {
+        "question": "Apa yang menjadi hak setiap anggota jemaat Katolik?",
+        "options": ["Berpartisipasi dalam sakramen dan kegiatan gereja", "Mendapatkan kekayaan dari gereja", "Menjadi pemimpin dalam gereja", "Menghindari seluruh kegiatan sosial gereja"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2016/10/21/15/53/church-1756332_960_720.jpg"
+    },
+    {
+        "question": "Apa yang dimaksud dengan kebersamaan dalam jemaat Katolik?",
+        "options": ["Berdoa bersama dan saling mendukung", "Menghindari kontak sosial", "Mengutamakan kepentingan pribadi dalam gereja", "Mengikuti ajaran gereja tanpa tindakan nyata"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2017/06/23/13/14/church-2432393_960_720.jpg"
+    },
+    {
+        "question": "Apa yang menjadi tugas utama suami istri dalam sakramen perkawinan Katolik?",
+        "options": ["Membesarkan anak-anak dalam iman dan kasih", "Menjadi contoh dalam kegiatan sosial", "Mencari keuntungan ekonomi", "Menghindari tanggung jawab sosial"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2017/06/19/14/11/wedding-2426790_960_720.jpg"
+    },
+    {
+        "question": "Iman dalam Katolik melibatkan hubungan antara?",
+        "options": ["Manusia dengan Allah dan sesama", "Manusia dengan kekayaan duniawi", "Manusia dengan kedudukan sosial", "Manusia dengan ajaran gereja saja"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2017/08/03/09/40/jesus-2571633_960_720.jpg"
+    },
+    {
+        "question": "Bagaimana cara kita membangun masa depan dalam iman Katolik?",
+        "options": ["Dengan melayani sesama dan hidup dalam kasih", "Dengan mencari harta dan kekuasaan", "Dengan menghindari interaksi sosial", "Dengan menjaga jarak dari orang lain"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2016/05/06/22/22/cross-1378719_960_720.jpg"
+    },
+    {
+        "question": "Apa yang dimaksud dengan sakramen imamat?",
+        "options": ["Sakramen yang menguduskan dan menguatkan umat dalam pelayanan gereja", "Sakramen untuk memperkaya hidup sosial umat", "Sakramen untuk pemberkatan rumah dan pekerjaan", "Sakramen yang hanya diberikan pada orang kaya"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2016/08/01/15/44/altar-1560429_960_720.jpg"
+    },
+    {
+        "question": "Apa yang menjadi ciri khas kehidupan beriman dalam Katolik?",
+        "options": ["Menghidupi ajaran kasih dan pengampunan", "Menghindari segala bentuk kehidupan sosial", "Mencari kekayaan dan kekuasaan", "Mengikuti tradisi gereja tanpa partisipasi aktif"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2017/08/11/02/53/cross-2614961_960_720.jpg"
+    },
+    {
+        "question": "Apa yang dimaksud dengan kebersamaan dalam hidup berjemaat?",
+        "options": ["Berpartisipasi aktif dalam kegiatan sosial dan liturgi", "Menghindari seluruh interaksi dengan orang lain", "Meningkatkan status sosial pribadi", "Mengikuti kegiatan gereja hanya saat kebutuhan"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2016/11/14/10/28/church-1822555_960_720.jpg"
+    },
+    {
+        "question": "Dalam ajaran Katolik, apa tujuan utama dari sakramen perkawinan?",
+        "options": ["Menyatukan pasangan dalam kasih Allah", "Meningkatkan status sosial pasangan", "Mencapai tujuan ekonomi bersama", "Menjaga tradisi keluarga"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2017/03/29/16/56/wedding-2178734_960_720.jpg"
+    },
+    {
+        "question": "Apa yang dimaksud dengan sakramen penguatan dalam ajaran Katolik?",
+        "options": ["Sakramen yang memberikan kuasa untuk memimpin gereja", "Sakramen yang memperkuat iman umat", "Sakramen yang menyucikan pernikahan", "Sakramen untuk memberikan berkat ekonomi"],
         "answer": 1,
-        "image": "https://cdn.pixabay.com/photo/2016/09/10/01/56/fishing-1660807_960_720.jpg"
+        "image": "https://cdn.pixabay.com/photo/2017/06/13/13/32/altar-2401229_960_720.jpg"
     },
     {
-        "question": "Bagaimana cara menjaga keseimbangan ekosistem saat melakukan micro fishing?",
-        "options": ["Membatasi jumlah ikan yang ditangkap", "Memancing ikan besar saja", "Memancing hanya saat musim hujan", "Tidak memancing di pagi hari"],
+        "question": "Siapa yang merayakan sakramen imamat dalam gereja Katolik?",
+        "options": ["Imam dan uskup", "Pendeta Protestan", "Semua umat Katolik", "Keluarga katolik"],
         "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2017/08/09/17/45/fishing-2617419_960_720.jpg"
+        "image": "https://cdn.pixabay.com/photo/2016/11/29/03/33/church-1867663_960_720.jpg"
     },
     {
-        "question": "Berapa lama waktu yang dibutuhkan untuk memancing ikan kecil dalam micro fishing?",
-        "options": ["Beberapa menit", "Beberapa jam", "Beberapa hari", "Beberapa minggu"],
-        "answer": 1,
-        "image": "https://cdn.pixabay.com/photo/2017/10/28/11/58/fishing-2892341_960_720.jpg"
-    },
-    {
-        "question": "Apa yang harus dilakukan jika ikan kecil terjebak di kail?",
-        "options": ["Menarik cepat", "Melepaskan dengan hati-hati", "Membiarkannya mati", "Menggunakan alat pemotong"],
-        "answer": 1,
-        "image": "https://cdn.pixabay.com/photo/2017/08/30/03/14/fishing-2696844_960_720.jpg"
-    },
-    {
-        "question": "Bagaimana cara memilih alat yang tepat untuk micro fishing?",
-        "options": ["Berdasarkan ukuran ikan", "Berdasarkan cuaca", "Berdasarkan lokasi memancing", "Berdasarkan jenis kail"],
+        "question": "Dalam Katolik, bagaimana iman sebagai tanggapan terhadap karya keselamatan Allah?",
+        "options": ["Dengan hidup sesuai dengan ajaran kasih dan pengampunan", "Dengan memisahkan diri dari masyarakat", "Dengan meningkatkan status sosial pribadi", "Dengan menghindari dosa secara sempurna"],
         "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2017/05/22/16/18/fishing-2332741_960_720.jpg"
+        "image": "https://cdn.pixabay.com/photo/2016/12/21/10/46/church-1927505_960_720.jpg"
     },
     {
-        "question": "Apa tantangan utama dalam micro fishing?",
-        "options": ["Memilih ikan besar", "Menangkap ikan yang sangat kecil", "Menggunakan umpan buatan", "Menjaga alat tetap kering"],
-        "answer": 1,
-        "image": "https://cdn.pixabay.com/photo/2018/02/02/14/36/fishing-3121214_960_720.jpg"
-    },
-    {
-        "question": "Berapa panjang umpan yang biasa digunakan dalam micro fishing?",
-        "options": ["2-3 cm", "10-15 cm", "20-25 cm", "30-35 cm"],
+        "question": "Apa peran iman dalam berkomunitas bagi umat Katolik?",
+        "options": ["Menjadi kekuatan dalam kebersamaan dan pelayanan", "Menjaga jarak sosial antar umat", "Menghindari kehidupan sosial gereja", "Menekankan kepentingan individu di atas segalanya"],
         "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2017/08/04/10/28/fishing-2572272_960_720.jpg"
+        "image": "https://cdn.pixabay.com/photo/2017/01/12/00/55/church-1960595_960_720.jpg"
     },
     {
-        "question": "Apa kelebihan menggunakan pancing kecil dalam micro fishing?",
-        "options": ["Mempermudah menarik ikan besar", "Menghemat biaya", "Mudah ditemukan di toko", "Cocok untuk ikan kecil"],
-        "answer": 3,
-        "image": "https://cdn.pixabay.com/photo/2018/10/25/16/13/fishing-3760895_960_720.jpg"
-    },
-    {
-        "question": "Apakah alat pemantau kedalaman diperlukan dalam micro fishing?",
-        "options": ["Ya", "Tidak", "Tergantung lokasi", "Hanya pada musim tertentu"],
+        "question": "Apa yang dimaksud dengan beriman kristiani dalam ajaran Katolik?",
+        "options": ["Menerima Yesus Kristus sebagai Juruselamat dan hidup menurut ajaran-Nya", "Menghindari semua bentuk pergaulan sosial", "Mencari harta dan kekuasaan pribadi", "Menghormati tradisi tanpa partisipasi aktif"],
         "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2018/04/05/08/23/fishing-3293897_960_720.jpg"
+        "image": "https://cdn.pixabay.com/photo/2017/02/01/12/44/church-2024347_960_720.jpg"
     },
     {
-        "question": "Di manakah biasanya dilakukan micro fishing yang populer?",
-        "options": ["Danau kecil", "Sungai dengan arus deras", "Perairan tenang", "Sungai dengan banyak ikan"],
-        "answer": 2,
-        "image": "https://i.ytimg.com/vi/ClUEiL6UYF8/maxresdefault.jpg"
-    },
-    {
-        "question": "Apa yang membuat micro fishing menjadi kegiatan yang menyenangkan?",
-        "options": ["Keterampilan yang dibutuhkan", "Ikan yang ditangkap lebih banyak", "Umpan yang mudah ditemukan", "Kecepatan menarik ikan"],
+        "question": "Dalam ajaran Katolik, apakah hak setiap anggota jemaat?",
+        "options": ["Untuk menerima sakramen dan berpartisipasi dalam kehidupan gereja", "Hanya mengikuti kebaktian tanpa partisipasi aktif", "Mencari kekayaan melalui gereja", "Menjaga jarak dengan anggota jemaat lain"],
         "answer": 0,
-        "image": "https://i.ytimg.com/vi/08h01UIiua4/maxresdefault.jpg"
+        "image": "https://cdn.pixabay.com/photo/2016/03/05/19/02/altar-1237033_960_720.jpg"
     },
     {
-        "question": "Bagaimana cara mempersiapkan tali pancing untuk micro fishing?",
-        "options": ["Mengecek kekuatannya", "Memasangnya langsung di kail", "Membiarkannya dalam air selama semalam", "Menggunakan tali panjang"],
+        "question": "Apa kewajiban setiap anggota jemaat dalam kehidupan gereja?",
+        "options": ["Untuk berpartisipasi dalam kegiatan liturgi dan pelayanan sosial", "Menghindari seluruh kegiatan di luar gereja", "Menjaga status sosial agar tidak dipandang rendah", "Mematuhi semua aturan tanpa memberikan kontribusi nyata"],
         "answer": 0,
-        "image": "https://i.ytimg.com/vi/TiP5aeADiAs/maxresdefault.jpg"
+        "image": "https://cdn.pixabay.com/photo/2017/06/29/22/25/group-2458985_960_720.jpg"
     },
     {
-        "question": "Apakah pancing dengan umpan buatan efektif dalam micro fishing?",
-        "options": ["Ya", "Tidak", "Tergantung pada ikan", "Tergantung pada lokasi"],
-        "answer": 2,
-        "image": "https://cdn.pixabay.com/photo/2016/08/16/16/47/fishing-1606929_960_720.jpg"
+        "question": "Apa yang dimaksud dengan 'hak dan kewajiban' dalam konteks Katolik?",
+        "options": ["Berpartisipasi aktif dalam hidup gereja dan membantu sesama", "Menjaga jarak dengan gereja dan umat lainnya", "Mencari posisi terhormat dalam gereja", "Menghindari segala bentuk pelayanan sosial"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2016/12/22/06/46/cross-1923159_960_720.jpg"
     },
     {
-        "question": "Apa itu teknik casting dalam micro fishing?",
-        "options": ["Memasang umpan di kail", "Menggulung tali pancing", "Melemparkan pancing ke jarak tertentu", "Menyelam ke dalam air"],
-        "answer": 2,
-        "image": "https://th.bing.com/th/id/OIP.D7kr-ncasXojT1ehlAY_sAHaFj?rs=1&pid=ImgDetMain"
+        "question": "Apa arti kebersamaan dalam kehidupan berjemaat dalam Katolik?",
+        "options": ["Berdoa dan melayani sesama dalam kasih", "Menghindari hubungan dengan anggota gereja lain", "Mengutamakan keberhasilan pribadi di atas segalanya", "Menghormati tradisi tanpa tindakan nyata"],
+        "answer": 0,
+        "image": "https://cdn.pixabay.com/photo/2017/05/21/22/12/church-2337783_960_720.jpg"
     }
 ]
+
+
 ;
 
         let timeRemaining = 30 * 60;
