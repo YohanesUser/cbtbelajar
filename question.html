@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Question Page</title>
+    <title>Bahasa Indonesia</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('https://th.bing.com/th/id/OIP.gTdTnI0RG8Xgt6a4fLFyZQAAAA?rs=1&pid=ImgDetMain') no-repeat center center fixed;
+            background: url('https://asset.kompas.com/crops/JgW6COzaeybi3GgugkUgVDLfzIU=/0x0:640x427/750x500/data/photo/2021/11/29/61a3d93b2d1e4.jpg') no-repeat center center fixed;
             background-size: cover;
         }
 
@@ -136,181 +136,589 @@
             <button id="close-list">Tutup</button>
         </div>
     </div>
+    <footer style="background-color: #333; color: #fff; padding: 20px 0; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+          <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+            <!-- Informasi Perusahaan -->
+            <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+              <h4 style="margin: 0 0 10px;">Tentang Kami</h4>
+              <p style="margin: 0;">Kami menyediakan layanan cbt terbaik untuk kebutuhan Belajar.</p>
+            </div>
+
+            <!-- Media Sosial -->
+<div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+    <h4 style="margin: 0 0 10px;">Ikuti Kami</h4>
+    <div style="display: flex; gap: 10px; justify-content: center;">
+      <a href="https://www.facebook.com/profile.php?id=100085367364559" target="_blank" style="color: #fff; font-size: 20px; text-decoration: none;">&#x1F426;</a> <!-- Facebook -->
+      <a href="https://www.github.com/YohanesUser" target="_blank" style="color: #fff; font-size: 20px; text-decoration: none;">&#x1F4F1;</a> <!-- Twitter -->
+      <a href="https://www.instagram.com/yohanes_af_sr" target="_blank" style="color: #fff; font-size: 20px; text-decoration: none;">&#x1F4F6;</a> <!-- Instagram -->
+    </div>
+  </div>
+  
+      
+          <!-- Hak Cipta -->
+          <div style="margin-top: 20px; border-top: 1px solid #444; padding-top: 10px; font-size: 14px;">
+            <p style="margin: 0;">&copy; 2024 Cbt RT03 Kanutan. Semua hak dilindungi.</p>
+          </div>
+        </div>
+      </footer>
+      
+      <style>
+        /* Reset margin dan padding */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Memastikan tinggi penuh */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Tinggi body mencakup seluruh viewport */
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 16px;
+  margin-top: auto; /* Pastikan footer selalu di bawah */
+}
+
+/* Menambahkan jarak yang cukup jauh antara footer dan elemen di atasnya */
+.content {
+  margin-bottom: 50px; /* Menambah jarak antara konten dan footer */
+}
+
+@media (min-width: 992px) {
+  footer {
+    padding: 10px 0;
+    font-size: 14px;
+  }
+  footer h4 {
+    font-size: 16px;
+  }
+  footer p {
+    font-size: 12px;
+  }
+}
+
+
+
+      </style>
+      
+      
 
     <script>
         const questions = [
-    {
-        "question": "Siapa penemu listrik?",
-        "options": ["Nikola Tesla", "Albert Einstein", "Thomas Edison", "Michael Faraday"],
-        "answer": 2,
-        "image": "https://th.bing.com/th/id/OIP.msDuQv5njLwKJmS_QIiA4AHaEK?rs=1&pid=ImgDetMain"
-    },
-    {
-        "question": "Apa ibu kota Jepang?",
-        "options": ["Kyoto", "Osaka", "Hokkaido", "Tokyo"],
-        "answer": 3,
-        "image": "https://cdn.pixabay.com/photo/2016/10/13/18/55/japan-1733554_960_720.jpg"
-    },
-    {
-        "question": "Apa nama planet terbesar di tata surya?",
-        "options": ["Bumi", "Mars", "Jupiter", "Saturnus"],
-        "answer": 2,
-        "image": "https://th.bing.com/th/id/OIP.DLdsHTjAgFxMCJs13su2mgHaDt?rs=1&pid=ImgDetMain"
-    },
-    {
-        "question": "Siapa yang menulis novel 'Laskar Pelangi'?",
-        "options": ["Andrea Hirata", "Tere Liye", "Pramoedya Ananta Toer", "Bram Stoker"],
-        "answer": 0,
-        "image": "https://www.wartajuara.com/wp-content/uploads/2023/01/laskar_pelangi-removebg-preview.png"
-    },
-    {
-        "question": "Apa nama sistem pemerintahan di Indonesia?",
-        "options": ["Monarki", "Demokrasi", "Oligarki", "Teokrasi"],
-        "answer": 1,
-        "image": "https://cdn.pixabay.com/photo/2016/11/18/17/17/indonesia-1837817_960_720.jpg"
-    },
-    {
-        "question": "Siapa presiden pertama Indonesia?",
-        "options": ["Soeharto", "Bacharuddin Jusuf Habibie", "Megawati Soekarnoputri", "Soekarno"],
-        "answer": 3,
-        "image": "https://cdn.pixabay.com/photo/2015/12/01/04/06/soekarno-1077101_960_720.jpg"
-    },
-    {
-        "question": "Apa yang dimaksud dengan fotosintesis?",
-        "options": ["Proses pembuatan makanan oleh tumbuhan", "Proses pertumbuhan tumbuhan", "Proses respirasi tumbuhan", "Proses pembuatan air oleh tumbuhan"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2016/10/16/17/32/plants-1741771_960_720.jpg"
-    },
-    {
-        "question": "Berapa jumlah pulau di Indonesia?",
-        "options": ["10.000", "13.466", "17.000", "20.000"],
-        "answer": 2,
-        "image": "https://2.bp.blogspot.com/-oR5M2YCGFTw/WGNMbkiRX_I/AAAAAAAAACQ/3fg7Oe6_zzMK2lnA-GhhtZckxjb6IH7qgCLcB/s1600/29989414_2c6749b494_o.jpg"
-    },
-    {
-        "question": "Siapa yang menemukan hukum gravitasi?",
-        "options": ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Nicolaus Copernicus"],
-        "answer": 0,
-        "image": "https://img2.djawanews.com/4_eVQfT45S5ylbmozNc48GtwoxaGlsU7Tdv5EDfu7rM/rs:fill:600:338:1/g:no/aHR0cHM6Ly9kamF3YW5ld3MuY29tL3Bob3Rvcy9rdWRhcGFuLXBhZ2kvNWUwM2IyNTkzZjhlODAzMzJiMmUyOTU5ZDY5Y2NjMWM2MTMxMDYxOC5qcGc.jpg"
-    },
-    {
-        "question": "Apa mata uang yang digunakan di Amerika Serikat?",
-        "options": ["Euro", "Pound", "Yen", "Dollar"],
-        "answer": 3,
-        "image": "https://cdn.pixabay.com/photo/2017/03/29/20/14/us-2187424_960_720.jpg"
-    },
-    {
-        "question": "Apa nama benua yang terletak di selatan Bumi?",
-        "options": ["Afrika", "Asia", "Antartika", "Australia"],
-        "answer": 2,
-        "image": "https://iluminasi.com/img/upload/antartika-600.jpg"
-    },
-    {
-        "question": "Siapa penemu telepon?",
-        "options": ["Alexander Graham Bell", "Thomas Edison", "Nikola Tesla", "Michael Faraday"],
-        "answer": 0,
-        "image": "https://i.ytimg.com/vi/Xe5ozRKx81c/maxresdefault.jpg"
-    },
-    {
-        "question": "Apa nama laut yang memisahkan Indonesia dengan Australia?",
-        "options": ["Samudera Hindia", "Laut Cina Selatan", "Laut Timor", "Laut Arafura"],
-        "answer": 3,
-        "image": "https://th.bing.com/th/id/OIP.vcsit9tkHHVqXnBHDZRUnQHaFw?rs=1&pid=ImgDetMain"
-    },
-    {
-        "question": "Siapa yang menciptakan teori evolusi?",
-        "options": ["Charles Darwin", "Albert Einstein", "Galileo Galilei", "Isaac Newton"],
-        "answer": 0,
-        "image": "https://image.slidesharecdn.com/a-ppt-beginners-guide-to-internet-02-1998-131125090727-phpapp02/95/teori-evolusi-6-638.jpg?cb=1385370544"
-    },
-    {
-        "question": "Apa yang dimaksud dengan pluralisme?",
-        "options": ["Kesatuan dalam keberagaman", "Sistem pemerintahan yang demokratis", "Kepercayaan terhadap satu agama", "Pertukaran budaya antar negara"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2017/09/04/18/38/multicultural-2715140_960_720.jpg"
-    },
-    {
-        "question": "Apa nama negara yang dikenal sebagai Negeri Sakura?",
-        "options": ["Korea Selatan", "Thailand", "Jepang", "Vietnam"],
-        "answer": 2,
-        "image": "https://cdn.pixabay.com/photo/2017/03/27/00/17/japan-2177540_960_720.jpg"
-    },
-    {
-        "question": "Siapa yang menemukan lampu pijar?",
-        "options": ["Nikola Tesla", "Thomas Edison", "Michael Faraday", "Galileo Galilei"],
-        "answer": 1,
-        "image": "https://th.bing.com/th/id/OIP.2Uayp-_K2FGfslcQp5xQggHaFP?rs=1&pid=ImgDetMain"
-    },
-    {
-        "question": "Apa yang dimaksud dengan demokrasi?",
-        "options": ["Sistem pemerintahan oleh rakyat", "Pemerintahan militer", "Pemerintahan oleh satu orang", "Sistem pemerintahan oleh para pemimpin agama"],
-        "answer": 0,
-        "image": "https://th.bing.com/th/id/OIP.JaK5D4lgjyW2B4pZ7qkKGgHaEo?rs=1&pid=ImgDetMain"
-    },
-    {
-        "question": "Apa alat yang digunakan untuk mengukur suhu?",
-        "options": ["Thermometer", "Barometer", "Altimeter", "Anemometer"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2018/05/28/08/31/thermometer-3433989_960_720.jpg"
-    },
-    {
-        "question": "Apa nama organisasi yang mengatur sepak bola dunia?",
-        "options": ["FIFA", "NBA", "ICC", "IOC"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2017/06/30/01/51/soccer-2459751_960_720.jpg"
-    },
-    {
-        "question": "Siapa penulis novel 'Harry Potter'?",
-        "options": ["J.R.R. Tolkien", "J.K. Rowling", "C.S. Lewis", "George R.R. Martin"],
-        "answer": 1,
-        "image": "https://i.ytimg.com/vi/h3xZKGE4VvQ/maxresdefault.jpg"
-    },
-    {
-        "question": "Di manakah Candi Borobudur berada?",
-        "options": ["Jawa Barat", "Jawa Tengah", "Bali", "Sumatra"],
-        "answer": 1,
-        "image": "https://1001indonesia.net/asset/2016/01/borobudur.jpg"
-    },
-    {
-        "question": "Apa nama alat transportasi yang menggunakan rel?",
-        "options": ["Kereta Api", "Bus", "Pesawat", "Mobil"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2017/08/02/13/13/rail-2570997_960_720.jpg"
-    },
-    {
-        "question": "Siapa yang menemukan teori relativitas?",
-        "options": ["Albert Einstein", "Isaac Newton", "Nikola Tesla", "Galileo Galilei"],
-        "answer": 0,
-        "image": "https://superapp.id/blog/wp-content/uploads/2022/06/3-9.webp"
-    },
-    {
-        "question": "Apa nama sungai terpanjang di dunia?",
-        "options": ["Sungai Nil", "Sungai Amazon", "Sungai Mississippi", "Sungai Mekong"],
-        "answer": 1,
-        "image": "https://cdn.pixabay.com/photo/2018/11/21/06/47/river-3832056_960_720.jpg"
-    },
-    {
-        "question": "Siapa yang menciptakan Facebook?",
-        "options": ["Mark Zuckerberg", "Steve Jobs", "Bill Gates", "Larry Page"],
-        "answer": 0,
-        "image": "https://www.biografiku.com/wp-content/uploads/2009/10/v912.jpg"
-    },
-    {
-        "question": "Apa yang dimaksud dengan globalisasi?",
-        "options": ["Proses integrasi ekonomi dan budaya antar negara", "Proses penyebaran agama ke seluruh dunia", "Proses pemberantasan kemiskinan", "Proses penurunan jumlah penduduk dunia"],
-        "answer": 0,
-        "image": "https://cdn-2.tstatic.net/tribunnews/foto/bank/images/ilustrasi-upaya-menghadapai-modernisasi-dan-globalisasi.jpg"
-    },
-    {
-        "question": "Apa nama gunung tertinggi di dunia?",
-        "options": ["Gunung Merapi", "Gunung Everest", "Gunung Kilimanjaro", "Gunung Fuji"],
-        "answer": 1,
-        "image": "https://cdn.pixabay.com/photo/2017/10/01/16/11/mountains-2801573_960_720.jpg"
-    }
+  {
+    "question": "Apa tujuan utama dari penulisan teks deskripsi?",
+    "options": [
+      "Menyampaikan informasi dengan singkat",
+      "Memberikan gambaran rinci tentang suatu objek",
+      "Mempengaruhi pembaca untuk melakukan sesuatu",
+      "Menceritakan pengalaman pribadi"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Apa ide pokok paragraf berikut: 'Pantai Parangtritis memiliki pasir putih yang indah. Ombaknya cukup besar sehingga sering digunakan untuk berselancar. Di tepi pantai, banyak warung yang menjual makanan khas Yogyakarta.'?",
+    "options": [
+      "Pantai Parangtritis sering digunakan untuk berselancar.",
+      "Pantai Parangtritis memiliki pasir putih yang indah.",
+      "Pantai Parangtritis memiliki banyak warung makanan khas.",
+      "Pantai Parangtritis adalah tempat wisata favorit."
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Apa yang dimaksud dengan kopula dalam paragraf deskripsi?",
+    "options": [
+      "Kata yang digunakan untuk menghubungkan subjek dan predikat",
+      "Kata yang menjelaskan lokasi suatu objek",
+      "Kata yang menunjukkan perbandingan",
+      "Kata yang menghubungkan kalimat dalam paragraf"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Kalimat manakah yang merupakan kalimat definisi?",
+    "options": [
+      "Gunung adalah tempat yang tinggi.",
+      "Di gunung, kita bisa menemukan udara segar.",
+      "Gunung memiliki puncak yang sangat indah.",
+      "Gunung sering dikunjungi oleh wisatawan."
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Makna kata 'bentang' dalam kalimat 'Bentang sawah di desa itu sangat luas' adalah...",
+    "options": [
+      "Pemandangan",
+      "Luas",
+      "Hamparan",
+      "Jalan"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Bagaimana pola pengembangan paragraf berikut: 'Pantai Kuta terkenal karena pasir putihnya yang halus. Di sana, banyak wisatawan bermain atau bersantai menikmati matahari terbenam.'?",
+    "options": [
+      "Deduktif",
+      "Induktif",
+      "Iteratif",
+      "Campuran"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Struktur teks deskripsi terdiri dari...",
+    "options": [
+      "Pernyataan umum, deskripsi bagian, simpulan",
+      "Identifikasi, deskripsi bagian, penutup",
+      "Orientasi, komplikasi, resolusi",
+      "Judul, isi, kesimpulan"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Konjungsi sebab-akibat pada kalimat berikut adalah: 'Pemandangan gunung menjadi menarik karena bunga edelweiss sedang bermekaran.'",
+    "options": [
+      "Menjadi",
+      "Menarik",
+      "Karena",
+      "Sedang"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Kata benda konkret dalam paragraf 'Di tepi pantai, terdapat batu-batu besar yang berjejer rapi.' adalah...",
+    "options": [
+      "Tepi",
+      "Pantai",
+      "Batu-batu",
+      "Rapi"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Koherensi paragraf dapat dilihat dari...",
+    "options": [
+      "Penggunaan kalimat majemuk",
+      "Kesinambungan antara kalimat satu dan lainnya",
+      "Kepadatan informasi dalam paragraf",
+      "Panjang kalimat dalam paragraf"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Kalimat berikut menggunakan indra penciuman:...",
+    "options": [
+      "Bau harum bunga melati terasa di udara.",
+      "Air sungai itu sangat dingin di pagi hari.",
+      "Langit biru tampak cerah di atas gunung.",
+      "Bunyi gemericik air menenangkan hati."
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Majas yang digunakan dalam kalimat 'Bunga mawar itu tersenyum indah di pagi hari.' adalah...",
+    "options": [
+      "Personifikasi",
+      "Simile",
+      "Hiperbola",
+      "Metonimia"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Kata serapan dalam paragraf 'Restoran itu terkenal dengan menu spesialnya, terutama steak sapi.' adalah...",
+    "options": [
+      "Restoran",
+      "Terkenal",
+      "Menu",
+      "Steak"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Konjungsi antarkalimat yang tepat untuk melengkapi kalimat: 'Pemandangan di desa itu sangat indah. ..., desa itu sering dikunjungi wisatawan.'",
+    "options": [
+      "Namun",
+      "Karena itu",
+      "Meskipun begitu",
+      "Sebaliknya"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Kalimat berikut menggunakan indra penglihatan:...",
+    "options": [
+      "Langit cerah dengan awan putih menggantung.",
+      "Suara burung berkicau di pagi hari.",
+      "Aroma bunga melati tercium segar.",
+      "Sentuhan kain sutra terasa halus."
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Kata 'indah' pada kalimat 'Pemandangan gunung itu sangat indah.' termasuk jenis kata...",
+    "options": [
+      "Benda",
+      "Sifat",
+      "Kerja",
+      "Keterangan"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Kata kerja material pada kalimat 'Anak-anak itu berlari di lapangan yang luas.' adalah...",
+    "options": [
+      "Berlari",
+      "Anak-anak",
+      "Luas",
+      "Lapangan"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Manakah sinonim kata 'luas' dalam konteks deskripsi tempat?",
+    "options": [
+      "Lebar",
+      "Tinggi",
+      "Panjang",
+      "Besar"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Jenis paragraf yang bertujuan untuk menggambarkan objek atau peristiwa secara rinci adalah...",
+    "options": [
+      "Paragraf argumentasi",
+      "Paragraf narasi",
+      "Paragraf deskripsi",
+      "Paragraf eksposisi"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Frasa berikut yang termasuk frasa deskripsi adalah...",
+    "options": [
+      "Tinggi badan",
+      "Langit biru cerah",
+      "Rumah tetangga",
+      "Air sungai"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Objek dalam teks deskripsi harus bersifat...",
+    "options": [
+      "Faktual dan imajiner",
+      "Konkret dan nyata",
+      "Abstrak dan teoretis",
+      "Terencana dan terarah"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Kalimat yang menggunakan kata sifat dominan adalah...",
+    "options": [
+      "Pantai itu terkenal dengan pasirnya.",
+      "Ombak laut itu sangat besar dan kuat.",
+      "Wisatawan menikmati suasana di sana.",
+      "Gunung terlihat dari kejauhan."
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Kata 'menenangkan' pada kalimat 'Suara air terjun menenangkan hati.' merupakan...",
+    "options": [
+      "Kata sifat",
+      "Kata kerja",
+      "Kata keterangan",
+      "Kata benda"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Penggunaan majas hiperbola dalam deskripsi adalah untuk...",
+    "options": [
+      "Menambahkan kesan dramatis",
+      "Memberikan gambaran rinci",
+      "Menyampaikan informasi faktual",
+      "Menghubungkan ide-ide utama"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Perbaikan terbaik untuk kalimat berikut: 'Burung itu terbang di langit dan sangat biru.' adalah...",
+    "options": [
+      "Burung itu terbang di langit biru.",
+      "Burung itu terbang dan langit sangat biru.",
+      "Langit sangat biru dan burung itu terbang.",
+      "Burung terbang dan sangat biru di langit."
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Kalimat yang mencerminkan aspek visual adalah...",
+    "options": [
+      "Langit senja berwarna jingga kemerahan.",
+      "Angin dingin menyapa kulit di sore hari.",
+      "Suara ombak bergemuruh di kejauhan.",
+      "Harum bunga melati tercium di taman."
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Bagian teks deskripsi yang menjelaskan detail dari objek adalah...",
+    "options": [
+      "Identifikasi",
+      "Deskripsi bagian",
+      "Simpulan",
+      "Pernyataan umum"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Kata 'megah' pada kalimat 'Istana itu terlihat megah dan elegan.' memiliki arti...",
+    "options": [
+      "Besar",
+      "Mewah",
+      "Unik",
+      "Panjang"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Konjungsi yang menunjukkan perbandingan adalah...",
+    "options": [
+      "Namun",
+      "Karena",
+      "Seperti",
+      "Sehingga"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Jenis kata yang dominan dalam teks deskripsi adalah...",
+    "options": [
+      "Kata kerja",
+      "Kata sifat",
+      "Kata benda",
+      "Kata keterangan"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Kalimat yang menggunakan aspek panca indra perasa adalah...",
+    "options": [
+      "Roti itu terasa lembut dan manis.",
+      "Aroma kue menyebar ke seluruh ruangan.",
+      "Warna daun hijau terlihat segar.",
+      "Angin terasa dingin di pagi hari."
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Kalimat berikut menggunakan majas metafora:...",
+    "options": [
+      "Gunung itu adalah ibu bagi masyarakat sekitarnya.",
+      "Gunung itu sangat indah di pagi hari.",
+      "Gunung itu sering dikunjungi wisatawan.",
+      "Gunung itu tampak besar dan kokoh."
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Tujuan utama teks deskripsi adalah...",
+    "options": [
+      "Menyampaikan pendapat penulis",
+      "Menggambarkan objek secara rinci",
+      "Menguraikan langkah-langkah",
+      "Menyampaikan ide-ide utama"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Kata kerja pada kalimat 'Pemandangan itu memukau mata setiap pengunjung.' adalah...",
+    "options": [
+      "Memukau",
+      "Pemandangan",
+      "Pengunjung",
+      "Setiap"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Sinonim dari kata 'indah' dalam deskripsi adalah...",
+    "options": [
+      "Bagus",
+      "Cantik",
+      "Megah",
+      "Luar biasa"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Bagian teks deskripsi yang menggambarkan keseluruhan objek disebut...",
+    "options": [
+      "Identifikasi",
+      "Deskripsi umum",
+      "Deskripsi bagian",
+      "Kesimpulan"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Kata 'kagum' pada kalimat 'Dia merasa kagum melihat air terjun itu.' merupakan...",
+    "options": [
+      "Kata benda",
+      "Kata kerja",
+      "Kata sifat",
+      "Kata keterangan"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Teks deskripsi menggunakan kalimat yang bersifat...",
+    "options": [
+      "Naratif",
+      "Argumentatif",
+      "Eksploratif",
+      "Deskriptif"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Frasa berikut yang mencerminkan sifat sensorik adalah...",
+    "options": [
+      "Langit mendung",
+      "Suara burung merdu",
+      "Pohon tinggi",
+      "Rumah besar"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Penggunaan kata-kata seperti 'sangat', 'sekali', dan 'amat' bertujuan untuk...",
+    "options": [
+      "Memberi penekanan",
+      "Menyampaikan fakta",
+      "Menambah panjang kalimat",
+      "Mengaburkan makna"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Kata 'damai' pada kalimat 'Suasana pagi yang damai membuat semua orang tenang.' adalah...",
+    "options": [
+      "Kata kerja",
+      "Kata sifat",
+      "Kata keterangan",
+      "Kata benda"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Jenis majas yang membandingkan dua hal secara implisit adalah...",
+    "options": [
+      "Metafora",
+      "Hiperbola",
+      "Personifikasi",
+      "Simile"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Kalimat yang menggunakan aspek indra penciuman adalah...",
+    "options": [
+      "Aroma bunga mawar memenuhi taman.",
+      "Bunga-bunga bermekaran dengan warna cerah.",
+      "Angin sepoi-sepoi membuat suasana nyaman.",
+      "Langit tampak cerah di pagi hari."
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Teks deskripsi biasanya menggunakan bahasa yang...",
+    "options": [
+      "Puitis",
+      "Santai",
+      "Formal",
+      "Konkret"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Kalimat berikut yang menggunakan majas personifikasi adalah...",
+    "options": [
+      "Angin sepoi-sepoi menyapa dedaunan.",
+      "Laut biru menyimpan keindahan tak terkira.",
+      "Bukit itu penuh dengan rumput hijau.",
+      "Langit di sore hari sangat memesona."
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Kata 'megah' dalam kalimat 'Bangunan itu sangat megah.' bermakna...",
+    "options": [
+      "Tinggi",
+      "Besar",
+      "Mewah",
+      "Unik"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Kalimat yang mencerminkan panca indra penglihatan adalah...",
+    "options": [
+      "Langit senja tampak jingga kemerahan.",
+      "Angin malam terasa dingin.",
+      "Suara ombak terdengar keras.",
+      "Aroma tanah basah menyeruak."
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Kalimat deskripsi yang baik harus bersifat...",
+    "options": [
+      "Objektif",
+      "Subjektif",
+      "Argumentatif",
+      "Naratif"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Kata 'sejuk' dalam kalimat 'Udara pagi terasa sangat sejuk.' adalah...",
+    "options": [
+      "Kata kerja",
+      "Kata benda",
+      "Kata sifat",
+      "Kata keterangan"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Kalimat berikut ini termasuk kalimat deskripsi adalah...",
+    "options": [
+      "Gunung Merapi adalah salah satu gunung aktif di Indonesia.",
+      "Suara gemuruh terdengar dari kejauhan.",
+      "Kabut tipis menyelimuti puncak gunung itu.",
+      "Wisatawan sering mendaki gunung tersebut."
+    ],
+    "answer": 2
+  },
 ]
+
+
+
 ;
 
-        let timeRemaining = 20 * 60;
+        let timeRemaining = 25 * 60;
         let timerInterval = setInterval(() => {
             timeRemaining -= 1;
             document.getElementById('time').textContent = formatTime(timeRemaining);
