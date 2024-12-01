@@ -211,217 +211,231 @@ footer {
       
 
     <script>
-        const questions = [
-  {
-    "soal": "Apa tujuan utama dari penulisan teks?",
-    "pilihan": [
-      "Untuk menyampaikan informasi atau pesan kepada pembaca",
-      "Untuk membuat teks yang panjang",
-      "Untuk menggunakan bahasa yang sulit",
-      "Untuk menguji pemahaman pembaca"
-    ],
-    "jawaban": 0,
-    "gambar": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z..."
-  },
-  {
-    "soal": "Bagaimana cara menganalisis ide pokok dalam sebuah paragraf?",
-    "pilihan": [
-      "Dengan membaca seluruh paragraf secara cepat",
-      "Dengan mencari kalimat yang mendukung ide utama dalam paragraf",
-      "Dengan mencari kata-kata sulit dalam paragraf",
-      "Dengan menebak isi paragraf"
-    ],
-    "jawaban": 1,
-    "gambar": "https://assets.digination.id/crop/100"
-  },
-  {
-    "soal": "Apa yang dimaksud dengan kalimat utama dalam sebuah paragraf?",
-    "pilihan": [
-      "Kalimat yang paling panjang",
-      "Kalimat yang menjelaskan ide utama dari paragraf",
-      "Kalimat yang paling sulit dipahami",
-      "Kalimat yang tidak berhubungan dengan ide utama"
-    ],
-    "jawaban": 1,
-    "gambar": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDBAYFhgYQHhUhJS8kL2nR4lLz7uX1vHUs7R7F7Hdh5gw0=1zAbc8="
-  },
-  {
-    "soal": "Bagaimana cara menemukan informasi tersurat dalam teks?",
-    "pilihan": [
-      "Dengan membaca dan mencari kata kunci yang jelas",
-      "Dengan menebak berdasarkan pemahaman pribadi",
-      "Dengan menganalisis gambar yang ada dalam teks",
-      "Dengan mencari informasi yang tidak disebutkan"
-    ],
-    "jawaban": 0,
-    "gambar": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALwAAAAeCAIAAADz3H4NAAAAmklEQVR4nOzdeXQkZf7H8X5de0taqHzg2VeS6zQBhgUccp2tvQSo0fGHgjZGgHoMAq0D1gNeYnA1xaNr9tAqzBzYwqvvZ+tcJb7z/Otffb/z73+uR8twXjvGlkpkOQ1pNz5Gn7xFJw=="
-  },
-  {
-    "soal": "Apa itu inferensi dalam membaca teks?",
-    "pilihan": [
-      "Menebak isi teks berdasarkan pengalaman dan pengetahuan",
-      "Membaca teks secara cepat",
-      "Menghitung jumlah kata dalam teks",
-      "Menemukan kata-kata yang tidak dikenal dalam teks"
-    ],
-    "jawaban": 0,
-    "gambar": "https://via.placeholder.com/100"
-  },
-  {
-    "soal": "Apa yang harus dilakukan jika menemukan kata yang tidak dikenal saat membaca?",
-    "pilihan": [
-      "Mengabaikannya",
-      "Mencari arti kata tersebut dalam kamus",
-      "Mencatat kata tersebut tanpa mencari artinya",
-      "Membaca bagian lain dari teks"
-    ],
-    "jawaban": 1,
-    "gambar": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAAAjCAYAAAA8g5b2AAAAGElEQVR4nOzdeXHkCZjH8Y0kpzqF2n7tFEyS9R+MeCE9zljPp6FwubLz6Hj3OX4/pvFzXcP85g1bH3S5Gs9AfzHk5lm3HGtQX60uNwpUk6b79ocOXyznE1wGl9xnxbGVjsLUjsDpc0Uw7Te73w3pt3v/t1oKn98+22MrfHgZ1XN0WjgyQ=="
-  },
-  {
-    "soal": "Apa yang dimaksud dengan paragraf deduktif?",
-    "pilihan": [
-      "Paragraf yang ide pokoknya ada di akhir paragraf",
-      "Paragraf yang ide pokoknya ada di awal paragraf",
-      "Paragraf yang memiliki lebih dari satu ide pokok",
-      "Paragraf yang tidak memiliki kalimat utama"
-    ],
-    "jawaban": 1,
-    "gambar": "https://via.placeholder.com/100"
-  },
-  {
-    "soal": "Apa yang dimaksud dengan kalimat penjelas?",
-    "pilihan": [
-      "Kalimat yang mendukung ide utama",
-      "Kalimat yang memperkenalkan ide utama",
-      "Kalimat yang menyimpulkan isi paragraf",
-      "Kalimat yang tidak relevan"
-    ],
-    "jawaban": 0,
-    "gambar": "https://via.placeholder.com/100"
-  },
-  {
-    "soal": "Bagaimana cara membaca teks dengan cepat namun tetap memahami isinya?",
-    "pilihan": [
-      "Dengan membaca setiap kata secara perlahan",
-      "Dengan fokus pada kata kunci dan ide utama",
-      "Dengan membaca hanya bagian pertama paragraf",
-      "Dengan melewatkan kata-kata sulit"
-    ],
-    "jawaban": 1,
-    "gambar": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDBAYFhgYQHhUhJS8kL2nR4lLz7uX1vHUs7R7F7Hdh5gw0=1zAbc8="
-  },
-  {
-    "soal": "Apa yang dimaksud dengan teks eksposisi?",
-    "pilihan": [
-      "Teks yang mengajak pembaca untuk melakukan sesuatu",
-      "Teks yang berisi penjelasan tentang suatu hal",
-      "Teks yang berisi cerita fiksi",
-      "Teks yang mengungkapkan perasaan penulis"
-    ],
-    "jawaban": 1,
-    "gambar": "https://via.placeholder.com/100"
-  },
-  {
-    "soal": "Apa yang termasuk dalam informasi tersirat?",
-    "pilihan": [
-      "Informasi yang tidak secara langsung disebutkan dalam teks",
-      "Informasi yang sudah jelas dan eksplisit",
-      "Informasi yang hanya berupa angka",
-      "Informasi yang terletak di bagian akhir teks"
-    ],
-    "jawaban": 0,
-    "gambar": "https://via.placeholder.com/100"
-  },
-  {
-    "soal": "Apa yang dimaksud dengan kalimat penegasan?",
-    "pilihan": [
-      "Kalimat yang memberikan penekanan atau penguatan terhadap ide utama",
-      "Kalimat yang merangkum isi paragraf",
-      "Kalimat yang mengajukan pertanyaan",
-      "Kalimat yang berisi perbandingan"
-    ],
-    "jawaban": 0,
-    "gambar": "https://via.placeholder.com/100"
-  },
-  {
-    "soal": "Bagaimana cara menemukan kata kunci dalam teks?",
-    "pilihan": [
-      "Dengan mencari kata yang paling sering muncul",
-      "Dengan memperhatikan kata yang paling panjang",
-      "Dengan mencari kata yang tidak diketahui",
-      "Dengan mencari kata yang memiliki arti ambigu"
-    ],
-    "jawaban": 0,
-    "gambar": "https://via.placeholder.com/100"
-  },
-  {
-    "soal": "Apa yang dimaksud dengan ide pokok dalam sebuah teks?",
-    "pilihan": [
-      "Informasi tambahan yang mendukung ide utama",
-      "Kesimpulan dari teks",
-      "Pokok pikiran yang menjadi dasar pengembangan teks",
-      "Kata-kata sulit yang digunakan dalam teks"
-    ],
-    "jawaban": 2,
-    "gambar": "https://via.placeholder.com/100"
-  },
-  {
-    "soal": "Apa yang dimaksud dengan kalimat konklusif?",
-    "pilihan": [
-      "Kalimat yang menyimpulkan isi teks",
-      "Kalimat yang mengajukan pertanyaan",
-      "Kalimat yang memberikan contoh",
-      "Kalimat yang menambahkan informasi baru"
-    ],
-    "jawaban": 0,
-    "gambar": "https://via.placeholder.com/100"
-  },
-  {
-    "soal": "Apa yang dimaksud dengan teks deskripsi?",
-    "pilihan": [
-      "Teks yang memberikan gambaran tentang suatu objek atau tempat",
-      "Teks yang menyampaikan pendapat atau argumen",
-      "Teks yang menceritakan sebuah peristiwa",
-      "Teks yang menyajikan data atau informasi statistik"
-    ],
-    "jawaban": 0,
-    "gambar": "https://via.placeholder.com/100"
-  },
-  {
-    "soal": "Apa yang dimaksud dengan membaca intensif?",
-    "pilihan": [
-      "Membaca dengan tujuan untuk memahami teks secara mendalam",
-      "Membaca dengan cepat untuk mencari informasi penting",
-      "Membaca dengan suara keras",
-      "Membaca hanya bagian terakhir dari teks"
-    ],
-    "jawaban": 0,
-    "gambar": "https://via.placeholder.com/100"
-  },
-  {
-    "soal": "Bagaimana cara memahami maksud dari sebuah teks?",
-    "pilihan": [
-      "Dengan membaca hanya bagian pertama teks",
-      "Dengan membaca seluruh teks secara menyeluruh",
-      "Dengan menebak isi teks",
-      "Dengan menghitung jumlah kata dalam teks"
-    ],
-    "jawaban": 1,
-    "gambar": "https://via.placeholder.com/100"
-  },
-  {
-    "soal": "Apa yang harus diperhatikan ketika membaca teks ilmiah?",
-    "pilihan": [
-      "Membaca secara cepat tanpa memperhatikan detail",
-      "Memperhatikan sumber referensi dan argumen yang disajikan",
-      "Mengabaikan kata-kata yang tidak dimengerti",
-      "Membaca hanya judul dan kesimpulan"
-    ],
-    "jawaban": 1,
-    "gambar": "https://via.placeholder.com/100"
-  },
+        const questions =  
+
+        [
     {
+        "question": "Apa yang dimaksud dengan kalimat utama dalam sebuah paragraf? Jelaskan cara menemukan kalimat utama pada teks deskripsi.",
+        "options": [
+            "Kalimat utama adalah kalimat pertama yang memperkenalkan topik paragraf.",
+            "Kalimat utama adalah kalimat yang menjelaskan penjelasan detail dalam paragraf.",
+            "Kalimat utama adalah kalimat yang menunjukkan inti atau pokok pembicaraan dalam paragraf.",
+            "Kalimat utama adalah kalimat terakhir yang memberikan kesimpulan."
+        ],
+        "answer": 3,
+        "image": "https://cdn.pixabay.com/photo/2017/09/01/17/29/coffee-2704699_960_720.jpg"
+    },
+    {
+        "question": "Apa perbedaan antara kalimat tanya dan kalimat perintah dalam teks?",
+        "options": [
+            "Kalimat tanya meminta informasi, sedangkan kalimat perintah meminta tindakan.",
+            "Kalimat tanya digunakan untuk memberikan instruksi, sedangkan kalimat perintah digunakan untuk bertanya.",
+            "Kalimat tanya menggunakan tanda seru, sedangkan kalimat perintah menggunakan tanda tanya.",
+            "Kalimat tanya dan kalimat perintah tidak memiliki perbedaan."
+        ],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2015/12/29/03/51/rising-1102986_960_720.jpg"
+    },
+    {
+        "question": "Bagaimana cara mengetahui struktur teks prosedur yang benar?",
+        "options": [
+            "Teks prosedur dimulai dengan penjelasan tujuan, dilanjutkan langkah-langkah, dan diakhiri dengan kesimpulan.",
+            "Teks prosedur dimulai dengan langkah-langkah, diikuti dengan tujuan, dan tidak memiliki kesimpulan.",
+            "Teks prosedur dimulai dengan tujuan, kemudian disusul oleh langkah-langkah, dan diakhiri dengan evaluasi.",
+            "Teks prosedur dimulai dengan pengantar, dilanjutkan dengan tujuan, langkah-langkah, dan diakhiri dengan evaluasi."
+        ],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2017/09/04/10/26/school-2713743_960_720.jpg"
+    },
+    {
+        "question": "Apa yang dimaksud dengan kalimat argumentasi dalam teks argumentasi?",
+        "options": [
+            "Kalimat argumentasi adalah kalimat yang menyatakan alasan untuk mendukung pendapat.",
+            "Kalimat argumentasi adalah kalimat yang menyatakan pendapat tanpa alasan.",
+            "Kalimat argumentasi adalah kalimat yang memberikan contoh untuk mendukung pendapat.",
+            "Kalimat argumentasi adalah kalimat yang menjelaskan latar belakang topik."
+        ],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2016/04/06/00/16/debate-1314251_960_720.jpg"
+    },
+    {
+        "question": "Bagaimana cara mengetahui ide pokok dalam sebuah paragraf?",
+        "options": [
+            "Ide pokok adalah gagasan utama yang mendasari seluruh isi paragraf, dan dapat ditemukan dengan mencari kalimat utama yang menjelaskan tema paragraf tersebut.",
+            "Ide pokok adalah kalimat terakhir dalam paragraf.",
+            "Ide pokok adalah rincian tambahan yang mendukung pernyataan dalam paragraf.",
+            "Ide pokok adalah kalimat yang tidak terlalu penting dalam paragraf."
+        ],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2016/03/05/19/02/altar-1237033_960_720.jpg"
+    },
+    {
+        "question": "Apa yang dimaksud dengan teks deskripsi?",
+        "options": [
+            "Teks deskripsi adalah teks yang mengungkapkan pendapat atau pandangan penulis terhadap suatu hal.",
+            "Teks deskripsi adalah teks yang menggambarkan suatu objek, tempat, atau peristiwa secara detail.",
+            "Teks deskripsi adalah teks yang berisi urutan kejadian atau langkah-langkah dalam sebuah proses.",
+            "Teks deskripsi adalah teks yang memberikan instruksi tentang bagaimana cara melakukan sesuatu."
+        ],
+        "answer": 2,
+        "image": "https://cdn.pixabay.com/photo/2017/05/31/11/38/bridge-2355707_960_720.jpg"
+    },
+    {
+        "question": "Bagaimana cara menganalisis penggunaan kopula dalam paragraf teks deskripsi?",
+        "options": [
+            "Kopula digunakan untuk menghubungkan subjek dengan predikat yang menjelaskan keadaan atau sifat subjek.",
+            "Kopula digunakan untuk menyatakan aksi yang dilakukan subjek.",
+            "Kopula digunakan untuk menyatakan hubungan sebab-akibat dalam kalimat.",
+            "Kopula tidak digunakan dalam teks deskripsi."
+        ],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2017/04/19/23/39/water-2240849_960_720.jpg"
+    },
+    {
+        "question": "Apa yang dimaksud dengan kalimat penegasan dalam teks eksposisi?",
+        "options": [
+            "Kalimat penegasan adalah kalimat yang mengulang kembali pokok masalah untuk memberikan penegasan.",
+            "Kalimat penegasan adalah kalimat yang memberikan pendapat penulis tentang suatu hal.",
+            "Kalimat penegasan adalah kalimat yang mengemukakan bukti atau alasan untuk memperkuat argumen.",
+            "Kalimat penegasan adalah kalimat yang memberikan kesimpulan dari teks."
+        ],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2017/11/28/23/36/hand-2983089_960_720.jpg"
+    },
+    {
+        "question": "Apa tujuan dari teks naratif?",
+        "options": [
+            "Teks naratif bertujuan untuk menyampaikan informasi dengan tujuan memberikan pengetahuan.",
+            "Teks naratif bertujuan untuk menceritakan suatu kejadian atau peristiwa dalam urutan waktu.",
+            "Teks naratif bertujuan untuk menginformasikan cara melakukan sesuatu.",
+            "Teks naratif bertujuan untuk mengajak pembaca untuk berpikir kritis."
+        ],
+        "answer": 2,
+        "image": "https://cdn.pixabay.com/photo/2016/10/28/17/51/road-1786546_960_720.jpg"
+    },
+    {
+        "question": "Dalam teks prosedur, apa yang dimaksud dengan langkah-langkah?",
+        "options": [
+            "Langkah-langkah adalah bagian yang menjelaskan tujuan dari prosedur tersebut.",
+            "Langkah-langkah adalah bagian yang memberikan instruksi atau petunjuk untuk melakukan suatu hal.",
+            "Langkah-langkah adalah bagian yang menyarankan peralatan yang digunakan dalam prosedur.",
+            "Langkah-langkah adalah bagian yang menegaskan kembali hasil akhir dari prosedur."
+        ],
+        "answer": 2,
+        "image": "https://cdn.pixabay.com/photo/2017/07/11/06/29/coffee-2488587_960_720.jpg"
+    },
+    {
+        "question": "Bagaimana cara menentukan opini dalam teks argumentasi?",
+        "options": [
+            "Opini adalah pendapat pribadi penulis yang didukung oleh argumen atau alasan.",
+            "Opini adalah kalimat yang berisi fakta yang dapat dibuktikan kebenarannya.",
+            "Opini adalah pendapat yang tidak memerlukan dukungan argumen atau alasan.",
+            "Opini adalah kalimat yang hanya menjelaskan informasi tanpa pandangan pribadi penulis."
+        ],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2015/12/23/19/22/people-1112350_960_720.jpg"
+    },
+    {
+        "question": "Apa yang dimaksud dengan teks eksplanasi?",
+        "options": [
+            "Teks eksplanasi adalah teks yang bertujuan untuk menjelaskan proses terjadinya sesuatu.",
+            "Teks eksplanasi adalah teks yang berisi informasi umum tanpa penjelasan mendalam.",
+            "Teks eksplanasi adalah teks yang mengemukakan pandangan penulis mengenai suatu hal.",
+            "Teks eksplanasi adalah teks yang berisi panduan langkah-langkah untuk melakukan sesuatu."
+        ],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2015/11/06/11/06/telescope-1029370_960_720.jpg"
+    },
+    {
+        "question": "Apa ciri-ciri teks naratif?",
+        "options": [
+            "Teks naratif menggunakan bahasa yang mengandung emosi dan konflik.",
+            "Teks naratif hanya berisi informasi faktual dan objektif.",
+            "Teks naratif berfokus pada deskripsi suatu objek atau tempat.",
+            "Teks naratif adalah teks yang memberikan instruksi atau prosedur."
+        ],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2015/12/01/19/04/food-1070987_960_720.jpg"
+    },
+    {
+        "question": "Apa yang dimaksud dengan teks eksposisi?",
+        "options": [
+            "Teks eksposisi bertujuan untuk menyampaikan informasi secara objektif dan menjelaskan topik tertentu.",
+            "Teks eksposisi bertujuan untuk memberikan pendapat atau pandangan pribadi penulis.",
+            "Teks eksposisi bertujuan untuk mengisahkan suatu kejadian atau peristiwa.",
+            "Teks eksposisi bertujuan untuk menggambarkan suatu objek atau tempat secara detail."
+        ],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2016/05/25/16/03/sunset-1414116_960_720.jpg"
+    },
+    {
+        "question": "Bagaimana cara menulis kesimpulan yang baik dalam teks argumentasi?",
+        "options": [
+            "Kesimpulan harus mengulang kembali argumen utama dan menegaskan kembali pendapat penulis.",
+            "Kesimpulan harus berisi informasi baru yang tidak dijelaskan sebelumnya.",
+            "Kesimpulan harus memberikan pertanyaan bagi pembaca untuk dipikirkan.",
+            "Kesimpulan harus menyajikan bukti atau fakta untuk mendukung argumen."
+        ],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2018/08/24/17/26/sunset-3632710_960_720.jpg"
+    },
+    {
+        "question": "Apa yang dimaksud dengan kalimat deduktif?",
+        "options": [
+            "Kalimat deduktif adalah kalimat yang memberikan kesimpulan setelah menyajikan argumen.",
+            "Kalimat deduktif adalah kalimat yang memberikan informasi secara langsung tanpa pembuktian.",
+            "Kalimat deduktif adalah kalimat yang memulai dengan pernyataan umum dan diikuti dengan penjelasan spesifik.",
+            "Kalimat deduktif adalah kalimat yang bertanya tentang hal tertentu."
+        ],
+        "answer": 3,
+        "image": "https://cdn.pixabay.com/photo/2015/08/05/23/20/people-878124_960_720.jpg"
+    },
+    {
+        "question": "Bagaimana cara mengetahui struktur teks prosedur yang benar?",
+        "options": [
+            "Teks prosedur dimulai dengan penjelasan tujuan, dilanjutkan langkah-langkah, dan diakhiri dengan kesimpulan.",
+            "Teks prosedur dimulai dengan langkah-langkah, diikuti dengan tujuan, dan tidak memiliki kesimpulan.",
+            "Teks prosedur dimulai dengan tujuan, kemudian disusul oleh langkah-langkah, dan diakhiri dengan evaluasi.",
+            "Teks prosedur dimulai dengan pengantar, dilanjutkan dengan tujuan, langkah-langkah, dan diakhiri dengan evaluasi."
+        ],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2017/09/04/10/26/school-2713743_960_720.jpg"
+    },
+    {
+        "question": "Apa yang dimaksud dengan kalimat argumentasi dalam teks argumentasi?",
+        "options": [
+            "Kalimat argumentasi adalah kalimat yang menyatakan alasan untuk mendukung pendapat.",
+            "Kalimat argumentasi adalah kalimat yang menyatakan pendapat tanpa alasan.",
+            "Kalimat argumentasi adalah kalimat yang memberikan contoh untuk mendukung pendapat.",
+            "Kalimat argumentasi adalah kalimat yang menjelaskan latar belakang topik."
+        ],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2016/04/06/00/16/debate-1314251_960_720.jpg"
+    },
+    {
+        "question": "Bagaimana cara mengetahui ide pokok dalam sebuah paragraf?",
+        "options": [
+            "Ide pokok adalah gagasan utama yang mendasari seluruh isi paragraf, dan dapat ditemukan dengan mencari kalimat utama yang menjelaskan tema paragraf tersebut.",
+            "Ide pokok adalah kalimat terakhir dalam paragraf.",
+            "Ide pokok adalah rincian tambahan yang mendukung pernyataan dalam paragraf.",
+            "Ide pokok adalah kalimat yang tidak terlalu penting dalam paragraf."
+        ],
+        "answer": 1,
+        "image": "https://cdn.pixabay.com/photo/2016/03/05/19/02/altar-1237033_960_720.jpg"
+    },
+    {
+        "question": "Apa yang dimaksud dengan teks deskripsi?",
+        "options": [
+            "Teks deskripsi adalah teks yang mengungkapkan pendapat atau pandangan penulis terhadap suatu hal.",
+            "Teks deskripsi adalah teks yang menggambarkan suatu objek, tempat, atau peristiwa secara detail.",
+            "Teks deskripsi adalah teks yang berisi urutan kejadian atau langkah-langkah dalam sebuah proses.",
+            "Teks deskripsi adalah teks yang memberikan instruksi tentang bagaimana cara melakukan sesuatu."
+        ],
+        "answer": 2,
+        "image": "https://cdn.pixabay.com/photo/2017/05/31/11/38/bridge-2355707_960_720.jpg"
+    },
+
+          {
         "question": "Apa yang dimaksud dengan ide pokok dalam sebuah paragraf? Jelaskan bagaimana cara menemukan ide pokok dalam teks yang panjang dan berikan contoh dari teks yang menggunakan paragraf panjang.",
         "options": ["Ide pokok adalah gagasan utama yang mendasari seluruh isi paragraf, dan dapat ditemukan dengan mencari kalimat utama yang menjelaskan tema paragraf tersebut", "Ide pokok adalah kalimat terakhir dalam paragraf", "Ide pokok adalah rincian tambahan yang mendukung pernyataan dalam paragraf", "Ide pokok adalah kalimat yang tidak terlalu penting dalam paragraf"],
         "answer": 1,
@@ -681,17 +695,6 @@ footer {
         "image": "https://cdn.pixabay.com/photo/2016/07/29/07/47/city-1553309_960_720.jpg"
     },
     {
-        "question": "Bagaimana cara menganalisis pola pengembangan paragraf deduktif dalam teks? Jelaskan dengan memberikan contoh paragraf yang dimulai dengan kalimat utama diikuti oleh penjelasan.",
-        "options": [
-            "Pola pengembangan deduktif dimulai dengan kalimat utama yang diikuti oleh kalimat penjelas atau bukti",
-            "Pola pengembangan deduktif dimulai dengan kalimat penjelas, diikuti oleh kalimat utama",
-            "Pola pengembangan deduktif tidak menggunakan kalimat utama",
-            "Pola pengembangan deduktif mengutamakan penggunaan kalimat tanya"
-        ],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2016/12/05/03/52/computer-1889002_960_720.jpg"
-    },
-    {
         "question": "Bagaimana cara menganalisis penggunaan majas personifikasi dalam kalimat? Jelaskan dengan memberikan contoh kalimat yang menggunakan majas personifikasi.",
         "options": [
             "Majas personifikasi memberikan sifat manusia kepada benda atau objek non-manusia, seperti 'Angin berbisik lembut'",
@@ -702,17 +705,6 @@ footer {
         "answer": 3,
         "image": "https://cdn.pixabay.com/photo/2015/10/07/17/02/road-977156_960_720.jpg"
     },
-    {
-        "question": "Bagaimana cara mengidentifikasi kalimat yang mengandung kalimat definisi dalam teks? Jelaskan dengan memberikan contoh kalimat yang mendefinisikan suatu konsep atau istilah.",
-        "options": [
-            "Kalimat definisi memberikan penjelasan tentang makna suatu kata atau konsep, seperti 'Ekonomi adalah ilmu yang mempelajari produksi dan distribusi barang dan jasa'",
-            "Kalimat definisi hanya digunakan untuk memberikan instruksi",
-            "Kalimat definisi selalu diawali dengan pertanyaan",
-            "Kalimat definisi tidak menggunakan kata-kata yang spesifik"
-        ],
-        "answer": 1,
-        "image": "https://cdn.pixabay.com/photo/2015/12/01/15/14/keyboard-1073140_960_720.jpg"
-    }
   ]
 
 
