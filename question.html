@@ -212,114 +212,215 @@ footer {
 
     <script>
         const questions = [
-    {
-        "question": "Apa tujuan utama dari penulisan teks?",
-        "options": ["Untuk menyampaikan informasi atau pesan kepada pembaca", "Untuk membuat teks yang panjang", "Untuk menggunakan bahasa yang sulit", "Untuk menguji pemahaman pembaca"],
-        "answer": 0,
-        "image": "data:image/jpeg;base64,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"
-    },
-    {
-        "question": "Bagaimana cara menganalisis ide pokok dalam sebuah paragraf?",
-        "options": ["Dengan mencari kalimat yang mendukung ide utama dalam paragraf", "Dengan membaca seluruh paragraf secara cepat", "Dengan mencari kata-kata sulit dalam paragraf", "Dengan menebak isi paragraf"],
-        "answer": 0,
-        "image": "https://assets.digination.id/crop/100x66:900x639/x/photo/2018/11/12/3035853956.jpg"
-    },
-    {
-        "question": "Apa yang dimaksud dengan kopula dalam paragraf?",
-        "options": ["Kata penghubung yang menyatakan hubungan antara subjek dan predikat", "Kata kerja yang menunjukkan aksi", "Kata sifat dalam kalimat", "Kata benda dalam kalimat"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2016/11/21/16/46/education-1846684_960_720.jpg"
-    },
-    {
-        "question": "Bagaimana cara menentukan kalimat definisi dalam teks?",
-        "options": ["Mencari kalimat yang menjelaskan makna atau ciri-ciri suatu objek", "Mencari kalimat yang mengandung pertanyaan", "Mencari kalimat yang memberikan pendapat pribadi", "Mencari kalimat yang memberi penjelasan waktu"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2016/11/19/17/15/books-1836594_960_720.jpg"
-    },
-    {
-        "question": "Apa yang dimaksud dengan kalimat deduktif dalam pola pengembangan paragraf?",
-        "options": ["Kalimat yang dimulai dengan pernyataan umum dan diikuti dengan rincian", "Kalimat yang dimulai dengan rincian dan diikuti dengan pernyataan umum", "Kalimat yang tidak jelas tujuannya", "Kalimat yang berbentuk pertanyaan"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2016/04/15/08/44/reading-1331745_960_720.jpg"
-    },
-    {
-        "question": "Bagaimana cara menganalisis bagian/struktur teks?",
-        "options": ["Dengan mengidentifikasi bagian pendahuluan, isi, dan penutup dalam teks", "Dengan membaca teks secara cepat", "Dengan hanya fokus pada kalimat pertama", "Dengan mencari kalimat panjang dalam teks"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2015/09/18/21/02/desk-943384_960_720.jpg"
-    },
-    {
-        "question": "Apa fungsi konjungsi sebab-akibat dalam paragraf?",
-        "options": ["Untuk menghubungkan kalimat yang menunjukkan hubungan sebab dan akibat", "Untuk menghubungkan dua kalimat yang tidak saling terkait", "Untuk menambah informasi tambahan dalam paragraf", "Untuk memulai kalimat baru"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2016/08/15/00/29/conjunction-1604687_960_720.jpg"
-    },
-    {
-        "question": "Bagaimana cara menentukan kata benda konkret dalam paragraf?",
-        "options": ["Mencari kata yang merujuk pada benda atau objek yang dapat dilihat atau dirasakan", "Mencari kata yang menyatakan aksi atau kegiatan", "Mencari kata yang menunjukkan hubungan", "Mencari kata yang mengandung perasaan"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2016/10/17/19/58/hand-1742699_960_720.jpg"
-    },
-    {
-        "question": "Apa yang dimaksud dengan koherensi dalam paragraf?",
-        "options": ["Keterkaitan antar kalimat dalam paragraf yang membuatnya mudah dipahami", "Kalimat pertama yang panjang", "Kalimat yang tidak ada hubungan", "Menggunakan banyak kata sulit dalam paragraf"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2017/05/21/20/19/smartphone-2337585_960_720.jpg"
-    },
-    {
-        "question": "Bagaimana cara menganalisis majas atau gaya bahasa dalam kalimat?",
-        "options": ["Dengan mencari penggunaan bahasa yang memberi efek khusus, seperti personifikasi atau hiperbola", "Dengan mencari kalimat yang panjang", "Dengan hanya memperhatikan kata benda", "Dengan memfokuskan pada waktu yang digunakan"],
-        "answer": 0,
-        "image": "https://th.bing.com/th/id/OIP.ip5TjZBS1Wanh6OK1Dv2bwHaHa?rs=1&pid=ImgDetMain"
-    },
-    {
-        "question": "Bagaimana cara menentukan kata serapan dalam paragraf?",
-        "options": ["Mencari kata yang berasal dari bahasa asing dan diserap dalam bahasa Indonesia", "Mencari kata yang berasal dari bahasa daerah", "Mencari kata yang memiliki makna ganda", "Mencari kata yang jarang digunakan"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2017/06/10/18/58/education-2392895_960_720.jpg"
-    },
-    {
-        "question": "Apa fungsi konjungsi antarkalimat dalam paragraf?",
-        "options": ["Untuk menghubungkan ide atau gagasan antar kalimat dalam paragraf", "Untuk memulai paragraf baru", "Untuk menjelaskan arti kata", "Untuk memberi tambahan informasi"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2016/11/21/16/13/reading-1837319_960_720.jpg"
-    },
-    {
-        "question": "Bagaimana cara menginterpretasikan gambar dalam teks?",
-        "options": ["Dengan menganalisis elemen-elemen visual seperti warna dan bentuk untuk menyampaikan pesan", "Dengan melihat gambar secara sepintas lalu", "Dengan hanya mencari gambar yang besar", "Dengan mengabaikan gambar dan fokus pada teks"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2017/06/06/09/59/nature-2377369_960_720.jpg"
-    },
-    {
-        "question": "Apa yang dimaksud dengan struktur teks prosedur?",
-        "options": ["Bagian yang berisi langkah-langkah atau instruksi untuk melakukan suatu hal", "Bagian yang berisi pendahuluan dan kesimpulan", "Bagian yang hanya menjelaskan latar belakang", "Bagian yang mengandung opini pribadi penulis"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2016/08/28/07/43/cooking-1637461_960_720.jpg"
-    },
-    {
-        "question": "Bagaimana cara menganalisis isi teks berdasarkan jenis-jenis prosedur?",
-        "options": ["Dengan mencari langkah-langkah yang jelas dan urut dalam teks", "Dengan membaca teks secara keseluruhan", "Dengan mencari kalimat yang menyatakan pendapat", "Dengan hanya mencari informasi terkait lokasi"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2017/01/26/19/15/recipe-2004443_960_720.jpg"
-    },
-    {
-        "question": "Apa itu kalimat imperatif dalam teks prosedur?",
-        "options": ["Kalimat yang berisi perintah atau instruksi", "Kalimat yang menjelaskan fakta", "Kalimat yang mengajukan pertanyaan", "Kalimat yang berisi opini"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2015/09/03/08/09/arrow-918358_960_720.jpg"
-    },
-    {
-        "question": "Bagaimana cara menganalisis kalimat interogatif dalam teks prosedur?",
-        "options": ["Dengan mencari kalimat yang mengandung pertanyaan", "Dengan mencari kalimat yang memberikan instruksi", "Dengan mencari kalimat yang menjelaskan definisi", "Dengan mencari kalimat yang menunjukkan waktu"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2016/12/12/21/57/question-mark-1891270_960_720.jpg"
-    },
-    {
-        "question": "Dalam sebuah teks narasi, bagaimana cara menganalisis tujuan penulisan teks tersebut? Jelaskan dengan memberikan contoh dari teks yang menggunakan narasi untuk menyampaikan pesan moral.",
-        "options": ["Dengan mengidentifikasi pesan utama yang ingin disampaikan penulis melalui alur cerita", "Dengan mencari kata-kata yang tidak penting dalam teks", "Dengan membandingkan teks tersebut dengan teks lain", "Dengan menganalisis struktur kalimat dalam teks"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2017/09/26/14/39/books-2781292_960_720.jpg"
-    },
+  {
+    "soal": "Apa tujuan utama dari penulisan teks?",
+    "pilihan": [
+      "Untuk menyampaikan informasi atau pesan kepada pembaca",
+      "Untuk membuat teks yang panjang",
+      "Untuk menggunakan bahasa yang sulit",
+      "Untuk menguji pemahaman pembaca"
+    ],
+    "jawaban": 0,
+    "gambar": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z..."
+  },
+  {
+    "soal": "Bagaimana cara menganalisis ide pokok dalam sebuah paragraf?",
+    "pilihan": [
+      "Dengan membaca seluruh paragraf secara cepat",
+      "Dengan mencari kalimat yang mendukung ide utama dalam paragraf",
+      "Dengan mencari kata-kata sulit dalam paragraf",
+      "Dengan menebak isi paragraf"
+    ],
+    "jawaban": 1,
+    "gambar": "https://assets.digination.id/crop/100"
+  },
+  {
+    "soal": "Apa yang dimaksud dengan kalimat utama dalam sebuah paragraf?",
+    "pilihan": [
+      "Kalimat yang paling panjang",
+      "Kalimat yang menjelaskan ide utama dari paragraf",
+      "Kalimat yang paling sulit dipahami",
+      "Kalimat yang tidak berhubungan dengan ide utama"
+    ],
+    "jawaban": 1,
+    "gambar": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDBAYFhgYQHhUhJS8kL2nR4lLz7uX1vHUs7R7F7Hdh5gw0=1zAbc8="
+  },
+  {
+    "soal": "Bagaimana cara menemukan informasi tersurat dalam teks?",
+    "pilihan": [
+      "Dengan membaca dan mencari kata kunci yang jelas",
+      "Dengan menebak berdasarkan pemahaman pribadi",
+      "Dengan menganalisis gambar yang ada dalam teks",
+      "Dengan mencari informasi yang tidak disebutkan"
+    ],
+    "jawaban": 0,
+    "gambar": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALwAAAAeCAIAAADz3H4NAAAAmklEQVR4nOzdeXQkZf7H8X5de0taqHzg2VeS6zQBhgUccp2tvQSo0fGHgjZGgHoMAq0D1gNeYnA1xaNr9tAqzBzYwqvvZ+tcJb7z/Otffb/z73+uR8twXjvGlkpkOQ1pNz5Gn7xFJw=="
+  },
+  {
+    "soal": "Apa itu inferensi dalam membaca teks?",
+    "pilihan": [
+      "Menebak isi teks berdasarkan pengalaman dan pengetahuan",
+      "Membaca teks secara cepat",
+      "Menghitung jumlah kata dalam teks",
+      "Menemukan kata-kata yang tidak dikenal dalam teks"
+    ],
+    "jawaban": 0,
+    "gambar": "https://via.placeholder.com/100"
+  },
+  {
+    "soal": "Apa yang harus dilakukan jika menemukan kata yang tidak dikenal saat membaca?",
+    "pilihan": [
+      "Mengabaikannya",
+      "Mencari arti kata tersebut dalam kamus",
+      "Mencatat kata tersebut tanpa mencari artinya",
+      "Membaca bagian lain dari teks"
+    ],
+    "jawaban": 1,
+    "gambar": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAAAjCAYAAAA8g5b2AAAAGElEQVR4nOzdeXHkCZjH8Y0kpzqF2n7tFEyS9R+MeCE9zljPp6FwubLz6Hj3OX4/pvFzXcP85g1bH3S5Gs9AfzHk5lm3HGtQX60uNwpUk6b79ocOXyznE1wGl9xnxbGVjsLUjsDpc0Uw7Te73w3pt3v/t1oKn98+22MrfHgZ1XN0WjgyQ=="
+  },
+  {
+    "soal": "Apa yang dimaksud dengan paragraf deduktif?",
+    "pilihan": [
+      "Paragraf yang ide pokoknya ada di akhir paragraf",
+      "Paragraf yang ide pokoknya ada di awal paragraf",
+      "Paragraf yang memiliki lebih dari satu ide pokok",
+      "Paragraf yang tidak memiliki kalimat utama"
+    ],
+    "jawaban": 1,
+    "gambar": "https://via.placeholder.com/100"
+  },
+  {
+    "soal": "Apa yang dimaksud dengan kalimat penjelas?",
+    "pilihan": [
+      "Kalimat yang mendukung ide utama",
+      "Kalimat yang memperkenalkan ide utama",
+      "Kalimat yang menyimpulkan isi paragraf",
+      "Kalimat yang tidak relevan"
+    ],
+    "jawaban": 0,
+    "gambar": "https://via.placeholder.com/100"
+  },
+  {
+    "soal": "Bagaimana cara membaca teks dengan cepat namun tetap memahami isinya?",
+    "pilihan": [
+      "Dengan membaca setiap kata secara perlahan",
+      "Dengan fokus pada kata kunci dan ide utama",
+      "Dengan membaca hanya bagian pertama paragraf",
+      "Dengan melewatkan kata-kata sulit"
+    ],
+    "jawaban": 1,
+    "gambar": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDBAYFhgYQHhUhJS8kL2nR4lLz7uX1vHUs7R7F7Hdh5gw0=1zAbc8="
+  },
+  {
+    "soal": "Apa yang dimaksud dengan teks eksposisi?",
+    "pilihan": [
+      "Teks yang mengajak pembaca untuk melakukan sesuatu",
+      "Teks yang berisi penjelasan tentang suatu hal",
+      "Teks yang berisi cerita fiksi",
+      "Teks yang mengungkapkan perasaan penulis"
+    ],
+    "jawaban": 1,
+    "gambar": "https://via.placeholder.com/100"
+  },
+  {
+    "soal": "Apa yang termasuk dalam informasi tersirat?",
+    "pilihan": [
+      "Informasi yang tidak secara langsung disebutkan dalam teks",
+      "Informasi yang sudah jelas dan eksplisit",
+      "Informasi yang hanya berupa angka",
+      "Informasi yang terletak di bagian akhir teks"
+    ],
+    "jawaban": 0,
+    "gambar": "https://via.placeholder.com/100"
+  },
+  {
+    "soal": "Apa yang dimaksud dengan kalimat penegasan?",
+    "pilihan": [
+      "Kalimat yang memberikan penekanan atau penguatan terhadap ide utama",
+      "Kalimat yang merangkum isi paragraf",
+      "Kalimat yang mengajukan pertanyaan",
+      "Kalimat yang berisi perbandingan"
+    ],
+    "jawaban": 0,
+    "gambar": "https://via.placeholder.com/100"
+  },
+  {
+    "soal": "Bagaimana cara menemukan kata kunci dalam teks?",
+    "pilihan": [
+      "Dengan mencari kata yang paling sering muncul",
+      "Dengan memperhatikan kata yang paling panjang",
+      "Dengan mencari kata yang tidak diketahui",
+      "Dengan mencari kata yang memiliki arti ambigu"
+    ],
+    "jawaban": 0,
+    "gambar": "https://via.placeholder.com/100"
+  },
+  {
+    "soal": "Apa yang dimaksud dengan ide pokok dalam sebuah teks?",
+    "pilihan": [
+      "Informasi tambahan yang mendukung ide utama",
+      "Kesimpulan dari teks",
+      "Pokok pikiran yang menjadi dasar pengembangan teks",
+      "Kata-kata sulit yang digunakan dalam teks"
+    ],
+    "jawaban": 2,
+    "gambar": "https://via.placeholder.com/100"
+  },
+  {
+    "soal": "Apa yang dimaksud dengan kalimat konklusif?",
+    "pilihan": [
+      "Kalimat yang menyimpulkan isi teks",
+      "Kalimat yang mengajukan pertanyaan",
+      "Kalimat yang memberikan contoh",
+      "Kalimat yang menambahkan informasi baru"
+    ],
+    "jawaban": 0,
+    "gambar": "https://via.placeholder.com/100"
+  },
+  {
+    "soal": "Apa yang dimaksud dengan teks deskripsi?",
+    "pilihan": [
+      "Teks yang memberikan gambaran tentang suatu objek atau tempat",
+      "Teks yang menyampaikan pendapat atau argumen",
+      "Teks yang menceritakan sebuah peristiwa",
+      "Teks yang menyajikan data atau informasi statistik"
+    ],
+    "jawaban": 0,
+    "gambar": "https://via.placeholder.com/100"
+  },
+  {
+    "soal": "Apa yang dimaksud dengan membaca intensif?",
+    "pilihan": [
+      "Membaca dengan tujuan untuk memahami teks secara mendalam",
+      "Membaca dengan cepat untuk mencari informasi penting",
+      "Membaca dengan suara keras",
+      "Membaca hanya bagian terakhir dari teks"
+    ],
+    "jawaban": 0,
+    "gambar": "https://via.placeholder.com/100"
+  },
+  {
+    "soal": "Bagaimana cara memahami maksud dari sebuah teks?",
+    "pilihan": [
+      "Dengan membaca hanya bagian pertama teks",
+      "Dengan membaca seluruh teks secara menyeluruh",
+      "Dengan menebak isi teks",
+      "Dengan menghitung jumlah kata dalam teks"
+    ],
+    "jawaban": 1,
+    "gambar": "https://via.placeholder.com/100"
+  },
+  {
+    "soal": "Apa yang harus diperhatikan ketika membaca teks ilmiah?",
+    "pilihan": [
+      "Membaca secara cepat tanpa memperhatikan detail",
+      "Memperhatikan sumber referensi dan argumen yang disajikan",
+      "Mengabaikan kata-kata yang tidak dimengerti",
+      "Membaca hanya judul dan kesimpulan"
+    ],
+    "jawaban": 1,
+    "gambar": "https://via.placeholder.com/100"
+  },
     {
         "question": "Apa yang dimaksud dengan ide pokok dalam sebuah paragraf? Jelaskan bagaimana cara menemukan ide pokok dalam teks yang panjang dan berikan contoh dari teks yang menggunakan paragraf panjang.",
         "options": ["Ide pokok adalah gagasan utama yang mendasari seluruh isi paragraf, dan dapat ditemukan dengan mencari kalimat utama yang menjelaskan tema paragraf tersebut", "Ide pokok adalah kalimat terakhir dalam paragraf", "Ide pokok adalah rincian tambahan yang mendukung pernyataan dalam paragraf", "Ide pokok adalah kalimat yang tidak terlalu penting dalam paragraf"],
