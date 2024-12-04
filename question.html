@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bahasa Indonesia</title>
+    <title>ILMU PENGETAHUAN ALAM KUMER</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -112,21 +112,28 @@
         .zoomed {
             transform: scale(2);
         }
+        .option-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0; /* Memberikan jarak antara gambar dan teks */
+}
+
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <span id="time">20:00</span>
-            <div id="question-number">Question <span id="current-question">1</span></div>
+            <span id="time">120:00</span>
+            <div id="question-number">Nomor <span id="current-question">1</span></div>
         </div>
         <h2 id="question"></h2>
         <img id="question-image" class="question-image" src="" alt="" style="display: none;">
         <ul id="options"></ul>
         <div class="navigation">
-            <button id="back">Back</button>
-            <button id="next">Next</button>
-            <button id="submit" style="display: none;">Submit</button>
+            <button id="back">kembali</button>
+            <button id="next">lanjut</button>
+            <button id="submit" style="display: none;">Kirim (cek nilai)</button>
             <button id="view-questions">Daftar Soal</button>
         </div>
         <div class="result" id="result" style="display: none;"></div>
@@ -214,27 +221,505 @@ footer {
         const questions =  
 
         [
-    {
-        "question": "Apa yang dimaksud dengan kalimat utama dalam sebuah paragraf? Jelaskan cara menemukan kalimat utama pada teks deskripsi.",
-        "options": [
-            "Kalimat utama adalah kalimat pertama yang memperkenalkan topik paragraf.",
-            "Kalimat utama adalah kalimat yang menjelaskan penjelasan detail dalam paragraf.",
-            "Kalimat utama adalah kalimat yang menunjukkan inti atau pokok pembicaraan dalam paragraf.",
-            "Kalimat utama adalah kalimat terakhir yang memberikan kesimpulan."
-        ],
-        "answer": 2,
-        "image": "https://cdn.pixabay.com/photo/2017/09/01/17/29/coffee-2704699_960_720.jpg"
-    },
-    {
-    "question": "MOHON MAAF SERVER KAMI SEDANG ERROR & BUG, SEDANG DIPERIKSA OLEH DINAS TERKAIT ( SILAHKAN TEKAN TOMBOL OKE DAN SUBMIT LALU  SILAHKAN LANGSUNG KELUAR (sebelum waktu habis) )",
-        "options": [
-                  "(                  oke                )"
-        ],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2017/09/01/17/29/coffee-2704699_960_720.jpg"
-    }
-  ]
+        {
+    "question": "Berikut ini yang termasuk faktor internal yang terdapat pada suatu perkebunan Anggur adalah ....",
+    "options": [
+        "1) Rasa buah, 2) ketersediaan air, 3) tinggi tanaman",
+        "1) Rasa buah, 3) tinggi tanaman, 5) hormon pertumbuhan",
+        "3) tinggi tanaman, 5) hormon pertumbuhan, 6) cahaya matahari",
+        "2) ketersediaan air, 4) kesuburan tanah, 6) cahaya matahari"
+    ],
+    "answer": 2,
+    "image": "https://example.com/path-to-your-image.jpg"
+},
+{
+    "question": "Pertumbuhan dan perkembangan adalah dua proses yang berkaitan dengan perubahan biologis yang dialami oleh setiap makhluk hidup, termasuk manusia, hewan, dan tumbuhan. Keduanya merupakan proses yang berjalan sejajar, tetapi memiliki makna yang berbeda.\n1). Pertumbuhan dapat diukur dengan angka\n2). Pertumbuhan akan berhenti pada usia tertentu\n3). Perkembangan berkaitan dengan jumlah\n4). Perkembangan terjadi saat dewasa\nPernyataan yang tidak benar dari makna pertumbuhan dan perkembangan adalah.....",
+    "options": [
+        "A. 1 dan 2",
+        "B. 1 dan 3",
+        "C. 2 dan 4",
+        "D. 3 dan 4"
+    ],
+    "answer": 3,
+    "image": null
+},
+{
+    "question": "Dalam kehidupannya tanaman ini mengalami perubahan dari buah yang rasanya masam berubah menjadi manis. Peristiwa ini menunjukkan ciri dari .....",
+    "options": [
+        "A. perkembangan",
+        "B. pertumbuhan",
+        "C. regenerasi",
+        "D. reproduksi"
+    ],
+    "answer": 1,
+    "image": null
+},
+{
+    "question": "Jika diketahui nilai masing-masing hambatan adalah 3 Ω, maka urutan nilai hambatan pengganti dari yang terbesar sampai terkecil adalah .....",
+    "options": [
+        "A. K - L - M",
+        "B. M - L - K",
+        "C. K - M - L",
+        "D. L - K - M"
+    ],
+    "answer": 0,
+    "image": "https://github.com/YohanesUser/galeri/blob/main/Screenshot%202024-12-04%20202109.png?raw=true"
+},
+{
+    "question": "Faktor eksternal yang mempengaruhi pertumbuhan dan perkembangan manusia adalah .....\n1). Makanan \n2). Aktivitas \n3). Suhu lingkungan\n4). Fungsi hormonal\n5). Sifat yang diwariskan",
+    "options": [
+        "A. 1, 2 dan 3",
+        "B. 1, 3 dan 5",
+        "C. 3, 4 dan 5",
+        "D. 4 dan 5"
+    ],
+    "answer": 0,
+    "image": null
+}
+,
+{
+    "question": "Bagian dari telur yang menjaga posisi embrio agar stabil dan bagian yang menjaga kuning telur dari bakteri, berturut-turut ditunjukkan nomor ....",
+    "options": [
+        "A. 7 dan 6",
+        "B. 5 dan 4",
+        "C. 2 dan 5",
+        "D. 5 dan 3"
+    ],
+    "answer": 1,
+    "image": "https://github.com/YohanesUser/galeri/blob/main/Screenshot%202024-12-04%20202306.png?raw=true"
+}
+,
+{
+    "question": "Sebuah rancangan percobaan dengan menggunakan tabung yang diisi air sampai penuh. Pada tabung terdapat tiga kran air 1, 2 dan 3. Pada saat ketiga kran tadi dibuka secara bersamaan, maka pernyataan yang benar dari percobaan tersebut adalah ....\n1) aliran kran 1 lebih kuat karena paling atas\n2) aliran kran 2 lebih kuat daripada kran 1 karena tekanannya lebih rendah\n3) aliran kran 3 paling kuat karena tekanannya paling besar\n4) karena kran 1 paling atas maka tekanan dari atas sangat kecil",
+    "options": [
+        "A. 1 dan 2",
+        "B. 1 dan 4",
+        "C. 3 dan 4",
+        "D. 2 dan 4"
+    ],
+    "answer": 3,
+    "image": "https://github.com/YohanesUser/galeri/blob/main/Screenshot%202024-12-04%20202413.png?raw=true"
+}
+,
+{
+    "question": "Pada perkembangan embrio di dalam rahim, diawali dengan proses pembelahan sel secara mitosis. Tahapan pembelahan tersebut disebut dengan fase. Fase pertumbuhan zigot sampai menjadi embrio adalah ....\n1. morula\n2. zigot\n3. blastula\n4. gastrula\nUrutan yang tepat adalah ....",
+    "options": [
+        "A. 1-4-3-2",
+        "B. 2-1-3-4",
+        "C. 3-1-4-2",
+        "D. 2-1-4-3"
+    ],
+    "answer": 3,
+    "image": null
+}
+,
+{
+    "question": "Contoh pertumbuhan primer dan sekunder pada pohon berikut ini adalah .....",
+    "options": [
+        "A. Primer : daun Munggur lebat",
+        "B. Sekunder : bunga Munggur berwarna merah muda",
+        "C. Primer : cabang batang Munggur banyak",
+        "D. Sekunder : batang pohon Munggur membesar"
+    ],
+    "answer": 2,
+    "image": "https://seputargk.id/wp-content/uploads/2020/08/munggur.jpg"
+}
+,
+{
+    "question": "Perhatikan gambar balok di atas !\nUrutan balok yang memberikan tekanan dari yang terkecil sampai terbesar adalah ....",
+    "options": [
+        "A. 1 – 2 – 3 – 4",
+        "B. 2 – 4 – 1 – 3",
+        "C. 4 – 1 – 2 – 3",
+        "D. 3 – 2 – 1 – 4"
+    ],
+    "answer": 2,
+    "image": "https://github.com/YohanesUser/galeri/blob/main/Screenshot%202024-12-04%20202812.png?raw=true"
+}
+,
+{
+    "question": "Tekanan zat padat adalah besarnya gaya yang bekerja pada setiap luas bidang tekan pada zat padat. Luas bidang tekan hanya mengacu pada area yang mengalami penekanan saja, bukan luas seluruh permukaannya.\nRumus untuk menghitung tekanan benda padat adalah P = F/A, di mana: P adalah tekanan (N/m² atau Pa), F adalah gaya tekan (N), A adalah luas permukaan (m²).\nBesarnya tekanan pada balok adalah ....",
+    "options": [
+        "A. 0,0075 N/m²",
+        "B. 75 N/m²",
+        "C. 750 N/m²",
+        "D. 7500 N/m²"
+    ],
+    "answer": 0,
+    "image": "https://github.com/YohanesUser/galeri/blob/main/Screenshot%202024-12-04%20202933.png?raw=true"
+}
+,
+{
+    "question": "Hewan di bawah ini yang tidak mengalami metamorfosis sempurna adalah....",
+    "options": [
+        {
+            "option": "A",
+            "image": "https://th.bing.com/th/id/OIP.w5AVf8TMxQHnv-GlzqAmwAHaGt?rs=1&pid=ImgDetMain"
+        },
+        {
+            "option": "B",
+            "image": "https://th.bing.com/th/id/OIP.r3LYFZPkfsVXHlHf7x0k8wHaFq?rs=1&pid=ImgDetMain"
+        },
+        {
+            "option": "C",
+            "image": "https://jagad.id/wp-content/uploads/2018/07/Metamorfosis-Katak.jpeg"
+        },
+        {
+            "option": "D",
+            "image": "https://jagad.id/wp-content/uploads/2018/07/Metamorfosis-Lalat.png"
+        }
+    ],
+    "answer": 1,
+    "image": null
+}
+,
+{
+    "question": "Balok yang terendam air mengalami gaya apung atau gaya ke atas. Gaya apung ini membuat benda lebih ringan ketika berada di dalam air dibandingkan di udara.\nHukum Archimedes menjelaskan gaya apung yang terjadi pada benda yang berada di dalam air, baik yang tenggelam, terapung, atau melayang. Rumus hukum Archimedes adalah Fa = ρ . g . Vc, dengan:\nFa = gaya tekan keatas satuan Newton (N), ρ = massa jenis satuan Kg/L, g = gravitasi satuan N /Kg, Vc = volume tercelup satuan m³.\nm = 90 kg ➔F = 900N\nA = 40 . 30 = 1200 cm³ = 12 x 10^-4\nP = m/A ➔ 900/ 12 x 10^-4 = 75 x 10^-4 = 0,0075 N/m²\nJika gaya gravitasi sebesar 10 m/s² dan volume balok yang dipermukaan hanya 1/4 nya, maka besarnya gaya ke atas adalah ....",
+    "options": [
+        "A. 1 N",
+        "B. 10 N",
+        "C. 3 N",
+        "D. 30 N"
+    ],
+    "answer": 3,
+    "image": "https://github.com/YohanesUser/galeri/blob/main/Screenshot%202024-12-04%20204012.png?raw=true"
+},
+{
+    "question": "Berdasarkan gambar di atas, besarnya arus pada I2, dan I4 berturut-turut adalah ....",
+    "options": [
+        "A. 5 A dan 5,8 A",
+        "B. 5,8 A dan 5 A",
+        "C. 5 A dan 10 A",
+        "D. 5,8 A dan 10 A"
+    ],
+    "answer": 0,
+    "image": "https://github.com/YohanesUser/galeri/blob/main/Screenshot%202024-12-04%20204140.png?raw=true"
+}
+,{
+    "question": "Jika berat mobil 40.000 N dan luas penampang yang menyangganya 400 cm², sedangkan luas penampang tekan A1 sebesar 50 cm² maka besarnya gaya tekan agar mobil dapat terangkat adalah .....",
+    "options": [
+        "A. 500 N",
+        "B. 5000 N",
+        "C. 20.000 N",
+        "D. 200 N"
+    ],
+    "answer": 1,
+    "image": "https://github.com/YohanesUser/galeri/blob/main/Screenshot%202024-12-04%20204555.png?raw=true"
+},
+{
+    "question": "Balok Gaya (N) Luas Alas (m²)\n1 35 7\n2 24 6\n3 40 8\n4 15 5\nPerhatikan tabel tekanan Balok dengan cermat! Yang memberikan tekanan sama besar adalah Balok .....",
+    "options": [
+        "A. 1 dan 2",
+        "B. 1 dan 3",
+        "C. 2 dan 3",
+        "D. 3 dan 4"
+    ],
+    "answer": 0,
+    "image": null
+}
+,
+{
+    "question": "Berdasarkan gambar Neuron di atas, bagian yang berfungsi menerima rangsang pertama kali dan bagian yang berfungsi meneruskan rangsang dari badan sel saraf adalah ....",
+    "options": [
+        "A. Dendrit dan myelin",
+        "B. Akson dan modus renvier",
+        "C. Dendrit dan akson",
+        "D. Nukleus dan akson"
+    ],
+    "answer": 2,
+    "image": "https://th.bing.com/th/id/OIP.igJrK_irSMSZzd77h7nOJQHaD0?rs=1&pid=ImgDetMain"
+},
+{
+    "question": "Bagian dari otak yang berfungsi sebagai pusat kesadaran dan bagian yang berfungsi untuk keseimbangan serta gerakan otot adalah ....",
+    "options": [
+        "A. cerebrum dan cerebelum",
+        "B. pituitari dan pineal",
+        "C. cerebrum dan medula oblongata",
+        "D. Cerebelum dan pituitari"
+    ],
+    "answer": 0,
+    "image": "https://1.bp.blogspot.com/-GpHB7p4fVHw/WC27nFT3D9I/AAAAAAAABBQ/t9Dox6KP-qEU0GmHN_3DKIFPkubQKYtxQCEw/s1600/Bagian-bagian%2Botak%2Bmanusia2.jpg"
+}
+,
+{
+    "question": "Urutan gerak refleks yang benar adalah .....",
+    "options": [
+        "A. Indera – sensorik – otak – motorik – gerakan",
+        "B. Indera – motorik – sensorik – otak – gerakan",
+        "C. Indera – sensorik – STB – motorik – gerakan",
+        "D. Indera – motorik – STB – sensorik – gerakan"
+    ],
+    "answer": 0,
+    "image": null
+}
+,
+{
+    "question": "Mata adalah salah satu alat indera yang penting bagi manusia. Bagian-bagian mata dapat diamati pada gambar di atas. Kornea adalah lapisan tipis yang melindungi mata dan membantu memfokuskan cahaya yang masuk.\nLensa merupakan bagian yang bisa berubah bentuk untuk membantu memfokuskan objek yang berbeda. Retina adalah lapisan yang sensitif terhadap cahaya yang memiliki sel-sel fotoreseptor yang berfungsi untuk merespon cahaya dan mengirimkan sinyal ke otak melalui saraf optik.\nBerdasarkan narasi di atas, fungsi lensa adalah .....",
+    "options": [
+        "A. membantu memfokuskan cahaya ke dalam mata",
+        "B. melindungi mata dari cedera",
+        "C. merespon cahaya dan mengirimkan sinyal ke otak",
+        "D. membantu memfokuskan objek yang berbeda"
+    ],
+    "answer": 3,
+    "image": null
+}
+,
+{
+    "question": "Kelenjar yang berfungsi mengatur kadar gula darah dan produksi sel telur ditunjukkan nomor ...",
+    "options": [
+        "A. 5 dan 8",
+        "B. 3 dan 4",
+        "C. 4 dan 7",
+        "D. 5 dan 7"
+    ],
+    "answer": 3,
+    "image": "https://github.com/YohanesUser/galeri/blob/main/Screenshot%202024-12-04%20205143.png?raw=true"
+}
+,
+{
+    "question": "Saat cuaca panas tubuh lebih banyak mengeluarkan keringat dan sering haus. Sedangkan saat hujan dan suhu dingin, tubuh cenderung lebih banyak mengeluarkan urin. Hal ini dikarenakan ....",
+    "options": [
+        "A. Cara tubuh menjaga hormon",
+        "B. Cara tubuh menjaga kestabilan cairan",
+        "C. Tubuh sangat sensitif terhadap suhu dingin",
+        "D. Tubuh sangat rentan panas"
+    ],
+    "answer": 1,
+    "image": null
+}
+,
+{
+    "question": "Tekanan udara di ketinggian akan semakin rendah, karena semakin tinggi suatu tempat, maka semakin berkurang udara yang menekannya. Hal ini disebabkan karena semakin tinggi atmosfer, jumlah molekul udara yang menekan ke bawah pun semakin sedikit.\nRumus tekanan udara ini biasa kita pakai untuk mencari tahu tekanan udara pada ketinggian tertentu.\nh = (Pu – Ph) x 100 m\nKeterangan:\nPh = Tekanan udara pada ketinggian h\nPu = Tekanan udara permukaan air laut\nh = Tinggi tempat\n1 atm = 76 cmHg.\nJika tekanan udara yang berada di puncak gunung sebesar 40 atm, sedangkan tekanan udara di atas permukaan air laut sebesar 76 cmHg maka ketinggian puncak gunung tersebut adalah .....",
+    "options": [
+        "A. 4.000 m",
+        "B. 400 m",
+        "C. 3.600 m",
+        "D. 7.600 m"
+    ],
+    "answer": 2,
+    "image": null
+}
+,
+{
+    "question": "Perhatikan grafik siklus menstruasi di atas dengan cermat! Pernyataan yang sesuai dengan petunjuk grafik adalah ....\n1. Menstruasi selesai pada hari ke-7\n2. Hormon LH meningkat menjelang tanggal 14\n3. Hormon Estrogen mulai meningkat setelah selesai ovulasi\n4. Ovulasi terjadi pada hari ke-14\n5. Peningkatan hormon Progesteron ditandai meluruhnya dinding rahim\n6. Siklus berlangsung sampai hari ke-28",
+    "options": [
+        "A. 2, 3 dan 5",
+        "B. 1, 4 dan 6",
+        "C. 3, 5 dan 6",
+        "D. 2, 3 dan 4"
+    ],
+    "answer": 1,
+    "image": "https://th.bing.com/th/id/OIP.EMbtBuO9UocUjrlH9TmeNwHaGT?rs=1&pid=ImgDetMain"
+}
+,
+{
+    "question": "Proses kehamilan diawali dengan bertemunya sel sperma dan sel telur yang selanjutnya akan terbentuk zygot. Zygot akan membelah menjadi morula - blastula - gastrula dan selanjutnya akan terbentuk embrio. Embrio akan terimplantasi pada endometrium yang akan menyebabkan proses menstruasi akan terhenti.\nSetiap satu bulan sekali dinding endometrium akan mengelupas bersama ovum yang tidak dibuahi.\nJika terjadi kehamilan, nantinya bayi akan keluar melalui organ ini. Kedua organ yang dimaksud ditunjukkan nomor ....",
+    "options": [
+        "A. 1 dan 4",
+        "B. 2 dan 5",
+        "C. 3 dan 6",
+        "D. 4 dan 5"
+    ],
+    "answer": 3,
+    "image": null
+}
+,
+{
+    "question": "Dari tabel di atas yang sesuai dengan fungsinya adalah nomor .....",
+    "options": [
+        "A. 1, 2 dan 3",
+        "B. 1, 3 dan 5",
+        "C. 2, 3 dan 4",
+        "D. 3, 4 dan 5"
+    ],
+    "answer": 2,
+    "image": "https://github.com/YohanesUser/galeri/blob/main/Screenshot%202024-12-04%20205858.png?raw=true"
+}
+,
+{
+    "question": "Tekanan udara dipengaruhi oleh ketinggian suatu tempat. Tekanan di atas permukaan air laut sebesar 76 cmHg. Jika sebuah bukit memiliki ketinggian 600 m maka tekanan udaranya menjadi 70 cmHg. Pernyataan yang sesuai dari narasi adalah ....\n1. setiap naik 100 m, tekanan akan turun 1 cmHg\n2. semakin tinggi tempat maka tekanan akan turun\n3. pada ketinggian 1000 m tekanan udara berkurang 100 cmHg\n4. semakin dalam perairan maka tekanan udara sama dengan nol.",
+    "options": [
+        "A. 1 dan 2",
+        "B. 1 dan 3",
+        "C. 2 dan 4",
+        "D. 3 dan 4"
+    ],
+    "answer": 0,
+    "image": null
+}
+,{
+    "question": "Di dalam kawasan Telaga Putri Kaliurang udara terasa segar dan sejuk karena berdampingan dengan hutan Plawangan sehingga suplai oksigen di udara bebas melimpah. Kondisi ini akan berbeda saat kalian berlari, napas kalian akan terengah-engah seperti kekurangan oksigen.\nPernyataan yang tidak sesuai dengan narasi adalah .....",
+    "options": [
+        "A. Supalai oksigen di kawasan Kaliurang sangat banyak",
+        "B. Suplai oksigen di dalam tubuh menurun sedangkan suplai karbondioksida meningkat",
+        "C. Saat berolahraga suplai oksigen di dalam tubuh berkurang",
+        "D. Kondisi lingkungan yang sejuk menandakan suplai karbondioksida tinggi"
+    ],
+    "answer": 3,
+    "image": null
+}
+,
+{
+    "question": "Kontrasepsi adalah alat yang digunakan untuk mencegah terjadinya kehamilan. Teknisnya adalah sel telur tidak bisa bertemu dengan sel sperma. Metode kontrasepsi dapat dengan menggunakan alat yang dipasangkan pada organ reproduksi luar pada pria. Alat yang dimaksud adalah ......",
+    "options": [
+        "A. vasektomi",
+        "B. spiral",
+        "C. IUD",
+        "D. Kondom"
+    ],
+    "answer": 3,
+    "image": "https://cf.shopee.co.id/file/420445beb2121d893b9fb2bc7ac4e5c6"
+}
+,{
+    "question": "Urutan Tekanan yang dialami oleh ikan adalah ....",
+    "options": [
+        "A. 3 > 4 > 1 > 2",
+        "B. 2 > 1 > 4 > 3",
+        "C. 1 < 2 < 3 < 4",
+        "D. 3 < 1 < 4 < 2"
+    ],
+    "answer": 1,
+    "image": "https://github.com/YohanesUser/galeri/blob/main/Screenshot%202024-12-04%20210412.png?raw=true"
+}
+,{
+    "question": "Dua buah benda bermuatan listrik positif sebesar Q1 dan Q2 terpisah oleh jarak 'r'. Jika kedua muatan tetap tetapi jaraknya diubah menjadi 1/4-nya, maka besarnya Gaya tolak-menolak adalah ....",
+    "options": [
+        "A. 4 F semula",
+        "B. 1/4 F semula",
+        "C. 8 F semula",
+        "D. 16 F semula"
+    ],
+    "answer": 3,
+    "image": "https://github.com/YohanesUser/galeri/blob/main/Screenshot%202024-12-04%20210531.png?raw=true"
+}
+,
+{
+    "question": "Sebatang ebonit dan plastik digosok dengan kain Wool sedangkan sebatang kaca digosok dengan kain Sutera. Ketigabenda menjadi bermuatan listrik. Kemudian ketiga benda didekatkan secara bergantian sehingga terjadi interaksi seperti pada gambar. Interaksi yang benar ditunjukkan gambar .....",
+    "options": [
+        {
+            "option": "A",
+            "image": "https://github.com/YohanesUser/galeri/blob/main/Screenshot%202024-12-04%20210818.png?raw=true"
+        },
+        {
+            "option": "B",
+            "image": "https://example.com/imageB.jpg"
+        },
+        {
+            "option": "C",
+            "image": "https://example.com/imageC.jpg"
+        },
+        {
+            "option": "D",
+            "image": "https://github.com/YohanesUser/galeri/blob/main/Screenshot%202024-12-04%20210938.png?raw=true"
+        }
+    ],
+    "answer": 0,
+    "image": null
+},
+{
+    "question": "Elektroskop adalah alat yang dapat mendeteksi sebuah benda apakah bermuatan listrik atau tidak. Prinsip kerja elektroskop menekankan pada induksi listrik yang terdapat pada suatu benda.\nPerhatikan cara kerja elektroskop di bawah ini !\nPernyataan yang sesuai dengan gambar di atas adalah .....",
+    "options": [
+        "A. Gambar a : kondisi elektroskop bermuatan positif",
+        "B. Gambar b : daun elektroskop terbuka karena sisir bermuatan negatif sehingga elektron di kepala elektroskop pindah daun (bawah)",
+        "C. Gambar c : proton pindah ke daun elektroskop sehingga daun terbuka",
+        "D. Gambar a : daun elektroskop menutup karena didekati benda netral"
+    ],
+    "answer": 1,
+    "image": "https://github.com/YohanesUser/galeri/blob/main/Screenshot%202024-12-04%20211139.png?raw=true"
+},
+{
+    "question": "Empat buah bola bermuatan listrik S, M, P dan K digantung pada tali. Jika bola P menarik bola K, bola M menolak bola K dan bola P menolak bola S. Diketahui bola S bermuatan positif, maka muatan bola M, P dan K berturut-turut adalah ....",
+    "options": [
+        "A. positif - negatif - negatif",
+        "B. positif - negatif - positif",
+        "C. negatif - positif - negatif",
+        "D. negatif - positif - positif"
+    ],
+    "answer": 1,
+    "image": null
+},
+{
+    "question": "Pernyataan yang benar dari rangkaian di atas adalah ....\n1. Nilai hambatan pararelnya sebesar 30 Ω\n2. Nilai arus I1 lebih kecil dari pada I2\n3. Tegangan pararelnya (VB) 4 volt\n4. Arus yang mengalir pada rangkaian tersebut 0,4 A\n5. Nilai arus pada I1 sebesar 0,27 A",
+    "options": [
+        "A. 1, 3 dan 4",
+        "B. 2, 3 dan 5",
+        "C. 2, 3 dan 4",
+        "D. 3, 4 dan 5"
+    ],
+    "answer": 2,
+    "image": "https://github.com/YohanesUser/galeri/blob/main/Screenshot%202024-12-04%20211503.png?raw=true"
+}
+,{
+    "question": "Perhatikan tabel pemakaian peralatan listrik di bawah ini !\nBiaya rekening listrik yang harus dibayarkan selama 1 bulan (30 hari) jika biaya pemakaian Rp 1000,-/kWh adalah ....",
+    "options": [
+        "A. Rp 70.000,-",
+        "B. Rp 120.000,-",
+        "C. Rp 210.000,-",
+        "D. Rp 700.000,-"
+    ],
+    "answer": 2,
+    "image": "https://github.com/YohanesUser/galeri/blob/main/Screenshot%202024-12-04%20211631.png?raw=true"
+}
+,{
+    "question": "Keunggulan listrik menggunakan panel surya adalah .....",
+    "options": [
+        "A. energi listrik dari panel surya tidak dapat disimpan dalam baterai",
+        "B. energi listrik dari panel surya hanya dapat digunakan pada siang hari",
+        "C. energi listrik dari panel surya menghasilkan emisi gas rumah kaca",
+        "D. energi dari panel surya dapat digunakan untuk peralatan elektronik lain"
+    ],
+    "answer": 0,
+    "image": null
+},
+{
+    "question": "Sebuah paku dibuat magnet dengan cara elektromagnet. Kemudian paku tersebut didekatkan dengan jarum kompas.\nArah jarum kompas yang salah ditunjukkan oleh nomor ....",
+    "options": [
+        "A. 5 dan 6",
+        "B. 1 dan 4",
+        "C. 3 dan 6",
+        "D. 2 dan 5"
+    ],
+    "answer": 1,
+    "image": "https://github.com/YohanesUser/galeri/blob/main/Screenshot%202024-12-04%20211908.png?raw=true"
+},
+{
+    "question": "Yang termasuk jenis traffo Step Down dan Step Up yang benar berturut – turut adalah .....",
+    "options": [
+        "A. 1 dan 2",
+        "B. 2 dan 3",
+        "C. 3 dan 4",
+        "D. 2 dan 4"
+    ],
+    "answer": 0,
+    "image": "https://github.com/YohanesUser/galeri/blob/main/Screenshot%202024-12-04%20212058.png?raw=true"
+},
+{
+    "question": "Tegangan menggambarkan 'tekanan' yang mendorong listrik. Besarnya tegangan ditunjukkan dengan satuan yang dikenal sebagai volt (V), dan tegangan yang lebih tinggi menyebabkan lebih banyak listrik mengalir ke perangkat elektronik. Namun, perangkat elektronik dirancang untuk beroperasi pada tegangan tertentu; tegangan yang berlebihan dapat merusak sirkuit mereka.\nTegangan listrik merupakan hasil kali antara kuat arus (I) dengan hambatannya (R)\nV = I . R\nP = V²/R\nRumus ini menghitung daya listrik (P) dengan memperhitungkan tegangan listrik (V) dan hambatan listrik (R) dalam rangkaian. Ini menunjukkan bahwa daya berbanding kuadrat dengan tegangan listrik.\nBesarnya tegangan listrik sekunder (Vs), kuat arus listrik sekunder (Is), dan Daya Primer (Pp) dari rangkaian di atas adalah ....",
+    "options": [
+        "A. 20 volt ; 1 A ; 10 watt",
+        "B. 40 volt ; 5 A ; 200 watt",
+        "C. 50 volt ; 4 A ; 200 watt",
+        "D. 40 volt ; 10 A ; 400 watt"
+    ],
+    "answer": 1,
+    "image": "https://github.com/YohanesUser/galeri/blob/main/Screenshot%202024-12-04%20212219.png?raw=true"
+}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+]
 
 
 
@@ -244,101 +729,117 @@ footer {
 
 ;
 
-        let timeRemaining = 1 * 60;
-        let timerInterval = setInterval(() => {
-            timeRemaining -= 1;
-            document.getElementById('time').textContent = formatTime(timeRemaining);
-            if (timeRemaining <= 0) {
-                clearInterval(timerInterval);
-                alert('Waktu habis! Soal akan disubmit.');
-                submitQuiz();
-            }
-        }, 1000);
+let timeRemaining = 120 * 60;
+let timerInterval = setInterval(() => {
+    timeRemaining -= 1;
+    document.getElementById('time').textContent = formatTime(timeRemaining);
+    if (timeRemaining <= 0) {
+        clearInterval(timerInterval);
+        alert('Waktu habis! Soal akan disubmit.');
+        submitQuiz();
+    }
+}, 1000);
 
-        function formatTime(seconds) {
-            const minutes = Math.floor(seconds / 60);
-            const secondsRemaining = seconds % 60;
-            return `${minutes}:${secondsRemaining.toString().padStart(2, '0')}`;
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const secondsRemaining = seconds % 60;
+    return `${minutes}:${secondsRemaining.toString().padStart(2, '0')}`;
+}
+
+let currentPage = 1;
+const selectedAnswers = new Array(questions.length).fill(null);
+
+document.getElementById('current-question').textContent = currentPage;
+
+function loadQuestion() {
+    const questionData = questions[currentPage - 1];
+    document.getElementById('question').textContent = questionData.question;
+
+    // Tampilkan gambar soal jika ada
+    const questionImage = document.getElementById('question-image');
+    if (questionData.image) {
+        questionImage.src = questionData.image;
+        questionImage.style.display = 'block';
+    } else {
+        questionImage.style.display = 'none';
+    }
+
+    const optionsElement = document.getElementById('options');
+    optionsElement.innerHTML = '';
+
+    questionData.options.forEach((option, index) => {
+        const li = document.createElement('li');
+        
+        // Jika pilihan adalah gambar
+        if (option.image) {
+            const img = document.createElement('img');
+            img.src = option.image;  // URL gambar untuk pilihan
+            img.alt = option.alt || "Jawaban";
+            img.classList.add('option-image');
+            li.appendChild(img);
+        } else {
+            // Jika pilihan adalah teks
+            li.textContent = option.text || option;  // Menangani teks jika opsi berupa teks
         }
+        
+        li.addEventListener('click', () => selectOption(index));
+        
+        if (selectedAnswers[currentPage - 1] === index) {
+            li.classList.add('selected');
+        }
+        
+        optionsElement.appendChild(li);
+    });
 
-        let currentPage = 1;
-        const selectedAnswers = new Array(questions.length).fill(null);
+    document.getElementById('next').style.display = (currentPage === questions.length) ? 'none' : 'inline-block';
+    document.getElementById('submit').style.display = (currentPage === questions.length) ? 'inline-block' : 'none';
+}
 
+function selectOption(index) {
+    selectedAnswers[currentPage - 1] = index;
+    loadQuestion();
+}
+
+document.getElementById('next').addEventListener('click', () => {
+    if (currentPage < questions.length) {
+        currentPage++;
         document.getElementById('current-question').textContent = currentPage;
-
-        function loadQuestion() {
-            const questionData = questions[currentPage - 1];
-            document.getElementById('question').textContent = questionData.question;
-
-            // Tampilkan gambar jika ada
-            const questionImage = document.getElementById('question-image');
-            if (questionData.image) {
-                questionImage.src = questionData.image;
-                questionImage.style.display = 'block';
-            } else {
-                questionImage.style.display = 'none';
-            }
-
-            const optionsElement = document.getElementById('options');
-            optionsElement.innerHTML = '';
-            questionData.options.forEach((option, index) => {
-                const li = document.createElement('li');
-                li.textContent = option;
-                li.addEventListener('click', () => selectOption(index));
-                if (selectedAnswers[currentPage - 1] === index) {
-                    li.classList.add('selected');
-                }
-                optionsElement.appendChild(li);
-            });
-
-            document.getElementById('next').style.display = (currentPage === questions.length) ? 'none' : 'inline-block';
-            document.getElementById('submit').style.display = (currentPage === questions.length) ? 'inline-block' : 'none';
-        }
-
-        function selectOption(index) {
-            selectedAnswers[currentPage - 1] = index;
-            loadQuestion();
-        }
-
-        document.getElementById('next').addEventListener('click', () => {
-            if (currentPage < questions.length) {
-                currentPage++;
-                document.getElementById('current-question').textContent = currentPage;
-                loadQuestion();
-            }
-        });
-
-        document.getElementById('back').addEventListener('click', () => {
-            if (currentPage > 1) {
-                currentPage--;
-                document.getElementById('current-question').textContent = currentPage;
-                loadQuestion();
-            }
-        });
-
-        document.getElementById('submit').addEventListener('click', submitQuiz);
-
-        function submitQuiz() {
-            clearInterval(timerInterval);
-            const score = selectedAnswers.reduce((acc, answer, index) => {
-                return answer === questions[index].answer ? acc + 1 : acc;
-            }, 0);
-            const totalQuestions = questions.length;
-            const percentage = (score / totalQuestions) * 100;
-
-            document.getElementById('result').innerHTML = `Skor Anda: ${score} dari ${totalQuestions} (${percentage.toFixed(2)}%)`;
-            document.getElementById('result').style.display = 'block';
-            document.querySelector('.navigation').style.display = 'none';
-
-            setTimeout(() => {
-                const phoneNumber = "6289530067456";
-                const message = `Nilai ( Masukkan Nama Anda ) adalah: ${score} dari ${totalQuestions} (${percentage.toFixed(2)}%)`;
-                const whatsappURL = `https://wa.me/${6289530067456}?text=${encodeURIComponent(message)}`;
-                window.open(whatsappURL, '_blank');
-            }, 3000);
-        }
-
         loadQuestion();
+    }
+});
+
+document.getElementById('back').addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        document.getElementById('current-question').textContent = currentPage;
+        loadQuestion();
+    }
+});
+
+document.getElementById('submit').addEventListener('click', submitQuiz);
+
+function submitQuiz() {
+    clearInterval(timerInterval);
+    const score = selectedAnswers.reduce((acc, answer, index) => {
+        return answer === questions[index].answer ? acc + 1 : acc;
+    }, 0);
+    const totalQuestions = questions.length;
+    const percentage = (score / totalQuestions) * 100;
+
+    document.getElementById('result').innerHTML = `Skor Anda: ${score} dari ${totalQuestions} (${percentage.toFixed(2)}%)`;
+    document.getElementById('result').style.display = 'block';
+    document.querySelector('.navigation').style.display = 'none';
+
+    setTimeout(() => {
+        const phoneNumber = "6289530067456";
+        const message = `Nilai ( Masukkan Nama Anda ) adalah: ${score} dari ${totalQuestions} (${percentage.toFixed(2)}%)`;
+        const whatsappURL = `https://wa.me/${6289530067456}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappURL, '_blank');
+    }, 3000);
+}
+
+loadQuestion();
+
 
         let answeredQuestions = []; // Array to track answered questions
 
