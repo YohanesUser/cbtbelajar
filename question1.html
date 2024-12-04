@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PENDIDIKAN AGAMA KATOLIK</title>
+    <title>PENDIDIKAN JASMANI OLAHRAGA KESEHATAN</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -112,21 +112,27 @@
         .zoomed {
             transform: scale(2);
         }
+        .option-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0; /* Memberikan jarak antara gambar dan teks */
+}
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
             <span id="time">30:00</span>
-            <div id="question-number">Question <span id="current-question">1</span></div>
+            <div id="question-number">Nomor <span id="current-question">1</span></div>
         </div>
         <h2 id="question"></h2>
         <img id="question-image" class="question-image" src="" alt="" style="display: none;">
         <ul id="options"></ul>
         <div class="navigation">
-            <button id="back">Back</button>
-            <button id="next">Next</button>
-            <button id="submit" style="display: none;">Submit</button>
+            <button id="back">Kembali</button>
+            <button id="next">Lanjut</button>
+            <button id="submit" style="display: none;">Kirim (lihat nilai)</button>
             <button id="view-questions">Daftar Soal</button>
         </div>
         <div class="result" id="result" style="display: none;"></div>
@@ -211,270 +217,611 @@ footer {
     <script>
         const questions =[
     {
-        "question": "Apa tujuan utama dari Sakramen Perkawinan dalam Gereja Katolik?",
-        "options": ["Meningkatkan status sosial", "Membentuk keluarga yang suci", "Meningkatkan ekonomi keluarga", "Memperluas relasi sosial"],
+        "question": "Apa yang dimaksud dengan teknik dasar dalam lari estafet?",
+        "options": [
+            "A. Melakukan start dari posisi berdiri",
+            "B. Melakukan perpindahan tongkat dengan gerakan cepat",
+            "C. Berlari tanpa memperhatikan zona estafet",
+            "D. Menyerahkan tongkat pada pelari terakhir"
+        ],
         "answer": 1,
-        "image": "https://th.bing.com/th/id/OIP.rfqdQFshfx_RwQv37E2JEgAAAA?rs=1&pid=ImgDetMain"
+        "image": "https://example.com/path-to-your-image2.jpg"
     },
     {
-        "question": "Dalam Sakramen Imamat, apa yang diterima seorang imam saat tahbisan?",
-        "options": ["Hak untuk mengelola keuangan Gereja", "Kuasa untuk melayani umat dan sakramen", "Kekuasaan atas umat", "Keistimewaan khusus dalam Gereja"],
+        "question": "Apa tujuan utama dalam permainan sepak bola?",
+        "options": [
+            "A. Mencetak gol ke gawang lawan",
+            "B. Menghindari kartu merah",
+            "C. Mempertahankan bola di daerah sendiri",
+            "D. Menjaga pemain utama agar tetap berada di lapangan"
+        ],
+        "answer": 0,
+        "image": "https://example.com/path-to-your-image3.jpg"
+    },
+    {
+        "question": "Dalam lempar cakram, bagian tubuh yang paling banyak digunakan adalah ....",
+        "options": [
+            "A. Kaki",
+            "B. Tangan",
+            "C. Punggung",
+            "D. Leher"
+        ],
+        "answer": 1,
+        "image": "https://th.bing.com/th/id/OIP.w20Ofvijj2JDszxzBKi3OwHaE6?rs=1&pid=ImgDetMain"
+    },
+    {
+        "question": "Di bawah ini yang bukan merupakan teknik dasar dalam permainan basket adalah ....",
+        "options": [
+            "A. Dribbling",
+            "B. Shooting",
+            "C. Passing",
+            "D. Service"
+        ],
         "answer": 3,
-        "image": "https://i.ytimg.com/vi/5raOu5N72ms/maxresdefault.jpg"
+        "image": "https://example.com/path-to-your-image5.jpg"
     },
     {
-        "question": "Bagaimana Gereja Katolik memandang pernikahan?",
-        "options": ["Sebagai kontrak sosial", "Sebagai perjanjian kudus antara pria dan wanita", "Sebagai pilihan pribadi tanpa kewajiban moral", "Sebagai kewajiban keluarga"],
+        "question": "Pada permainan lari estafet, bagaimana cara yang benar untuk menyerahkan tongkat estafet?",
+        "options": [
+            "A. Menyerahkan tongkat dengan tangan kiri",
+            "B. Menyerahkan tongkat sambil berlari",
+            "C. Menyerahkan tongkat di luar zona estafet",
+            "D. Menyerahkan tongkat dengan posisi tangan terbuka"
+        ],
+        "answer": 3,
+        "image": "https://www.telkomsel.com/sites/default/files/2023-05/Untitled-6-08.png"
+    },
+    {
+        "question": "Di dalam olahraga silat, teknik ‘Tendangan’ biasanya digunakan untuk ....",
+        "options": [
+            "A. Menyerang bagian tubuh atas lawan",
+            "B. Menahan serangan lawan",
+            "C. Menghentikan serangan dari bawah",
+            "D. Menyerang bagian tubuh bawah lawan"
+        ],
+        "answer": 3,
+        "image": "https://img.okezone.com/okz/500/library/images/2021/09/13/kxx2vkq6ejkvj5g618fs_17969.jpg"
+    },
+    {
+        "question": "Apa yang dimaksud dengan 'Pencak Silat' dalam olahraga bela diri?",
+        "options": [
+            "A. Olahraga bela diri menggunakan senjata",
+            "B. Olahraga bela diri dengan seni tari",
+            "C. Olahraga bela diri yang menggabungkan seni dan teknik",
+            "D. Olahraga bela diri yang hanya mengandalkan kekuatan fisik"
+        ],
         "answer": 2,
-        "image": "https://i.pinimg.com/originals/26/f2/94/26f29465dd25f1c800f861994ae7719f.jpg"
+        "image": "https://th.bing.com/th/id/OIP.AoylaLOYyhorUoaiEXu8kQHaE7?rs=1&pid=ImgDetMain"
     },
     {
-        "question": "Dalam Sakramen Perkawinan, janji setia diucapkan di hadapan siapa?",
-        "options": ["Hanya keluarga", "Allah dan Gereja", "Teman dekat", "Komunitas masyarakat umum"],
+        "question": "Pada permainan sepak bola, berapa jumlah pemain di setiap tim?",
+        "options": [
+            "A. 11 pemain",
+            "B. 9 pemain",
+            "C. 7 pemain",
+            "D. 13 pemain"
+        ],
         "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2016/03/27/20/53/cross-1284393_960_720.jpg"
+        "image": "https://example.com/path-to-your-image9.jpg"
     },
     {
-        "question": "Apa tugas utama seorang imam setelah menerima Sakramen Imamat?",
-        "options": ["Memimpin kegiatan sosial", "Melayani umat melalui sakramen dan pengajaran", "Mengelola aset Gereja", "Mengatur acara keagamaan"],
+        "question": "Tindakan yang pertama dilakukan dalam P3K (Pertolongan Pertama pada Kecelakaan) saat seseorang pingsan adalah ....",
+        "options": [
+            "A. Memberikan pernapasan buatan",
+            "B. Memeriksa kondisi jalan napas",
+            "C. Memberikan obat-obatan",
+            "D. Menyuntikkan cairan ke tubuh"
+        ],
         "answer": 1,
-        "image": "https://th.bing.com/th/id/OIP.v4Qb4uEG4yYyMY4isOouGwHaEK?rs=1&pid=ImgDetMain"
+        "image": "https://example.com/path-to-your-image10.jpg"
     },
     {
-        "question": "Apa makna mendalam dari Sakramen Perkawinan?",
-        "options": ["Kesatuan cinta kasih yang tidak terpisahkan", "Perjanjian ekonomi antar keluarga", "Upaya menjaga tradisi adat", "Sebagai acara seremonial semata"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2020/03/14/15/54/marriage-4930727_960_720.jpg"
-    },
-    {
-        "question": "Apa yang menjadi dasar iman kristiani menurut Gereja Katolik?",
-        "options": ["Kitab Suci", "Tradisi Gereja", "Pengalaman hidup pribadi", "Kedua hal pertama bersama-sama"],
-        "answer": 3,
-        "image": "https://1.bp.blogspot.com/-FhelpUEVN7Y/XKjMJZa7khI/AAAAAAABfOQ/FteNEXpCn6QGjTlEqDqnEF-3b0-rQ3TxQCKgBGAs/s1600/IMG_0557.PNG"
-    },
-    {
-        "question": "Dalam membangun masa depan, apa yang diajarkan Gereja Katolik kepada umatnya?",
-        "options": ["Kerja keras, doa, dan iman", "Hanya bergantung pada doa", "Mengandalkan keberuntungan", "Tidak memikirkan masa depan"],
-        "answer": 0,
-        "image": "https://4.bp.blogspot.com/-7oRmvzu8z_A/WEpcxu4CldI/AAAAAAAAA4Q/SgnVHXwspNcxp7sPXGIFsukhUbigI03DwCLcB/s1600/Kesuksesan.jpg"
-    },
-    {
-        "question": "Apa makna Allah sebagai sumber keselamatan sejati dalam iman Katolik?",
-        "options": ["Segala keselamatan berasal dari kasih Allah", "Keselamatan ditentukan oleh usaha manusia", "Keselamatan tidak bisa diraih oleh manusia", "Hanya orang pilihan yang bisa selamat"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2016/07/26/23/35/hope-1544190_960_720.jpg"
-    },
-    {
-        "question": "Apa tanggapan iman seorang kristiani terhadap karya keselamatan Allah?",
-        "options": ["Kepercayaan dan tindakan kasih", "Hanya melakukan ibadah", "Tidak perlu melakukan apapun", "Mengutamakan kepentingan pribadi"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2020/03/09/12/02/prayer-4913422_960_720.jpg"
-    },
-    {
-        "question": "Dalam ajaran Katolik, apa tujuan utama Sakramen Perkawinan?",
-        "options": ["Meningkatkan kesejahteraan keluarga", "Menyatukan pasangan dalam kasih Allah", "Mengukuhkan status sosial", "Meningkatkan hubungan antar keluarga"],
-        "answer": 1,
-        "image": "https://cdn.pixabay.com/photo/2016/11/29/12/41/marriage-1869835_960_720.jpg"
-    },
-    {
-        "question": "Apa yang menjadi simbol kesetiaan dalam Sakramen Perkawinan?",
-        "options": ["Doa bersama", "Pertukaran cincin", "Pemberian bunga", "Pengucapan janji pernikahan"],
-        "answer": 3,
-        "image": "https://www.gerejaganjuran.org/assets/img/article/9c81ae674fa19d550abde702e68d4d9b.JPG"
-    },
-    {
-        "question": "Dalam Sakramen Imamat, apa peran seorang imam di komunitas gereja?",
-        "options": ["Sebagai pemimpin doa dan sakramen", "Sebagai pengelola dana gereja", "Sebagai penasehat keuangan umat", "Sebagai pengurus tradisi budaya"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2017/06/22/08/34/priest-2434215_960_720.jpg"
-    },
-    {
-        "question": "Apa nilai utama dalam membangun masa depan menurut ajaran Katolik?",
-        "options": ["Kekayaan", "Ketekunan dan iman", "Popularitas", "Keberuntungan"],
-        "answer": 1,
-        "image": "https://cdn.pixabay.com/photo/2016/08/24/12/59/boy-1614949_960_720.jpg"
-    },
-    {
-        "question": "Apa makna keselamatan menurut iman Katolik?",
-        "options": ["Kasih karunia Allah melalui Yesus Kristus", "Hasil dari usaha manusia", "Pilihan hidup individu", "Keputusan pemimpin gereja"],
-        "answer": 0,
-        "image": "https://th.bing.com/th/id/OIP.m5JvWbKLWJGJPme5y09MfQHaHE?rs=1&pid=ImgDetMain"
-    },
-    {
-        "question": "Apa yang dimaksud dengan iman sebagai tanggapan terhadap karya keselamatan Allah?",
-        "options": ["Melakukan perintah gereja tanpa memahami maknanya", "Percaya dan menghidupi kasih Allah", "Hanya melaksanakan ritual", "Mengikuti tradisi keluarga"],
-        "answer": 1,
-        "image": "https://cdn.pixabay.com/photo/2016/11/08/05/23/prayer-1804596_960_720.jpg"
-    },
-    {
-        "question": "Bagaimana iman Kristen mendorong kebersamaan dalam jemaat?",
-        "options": ["Dengan pelayanan kasih dan pengampunan", "Dengan memisahkan diri dari dunia", "Dengan bersaing satu sama lain", "Dengan hidup tanpa aturan"],
-        "answer": 0,
-        "image": "https://www.gerejaganjuran.org/assets/img/article/297801082150b3832a29e4b3628a7d91.jpg"
-    },
-    {
-        "question": "Apa tanggung jawab utama seorang anggota jemaat Katolik?",
-        "options": ["Menerima sakramen secara rutin", "Berpartisipasi aktif dalam kehidupan gereja", "Mendukung secara materi", "Mengikuti aturan tanpa pemahaman"],
-        "answer": 1,
-        "image": "https://parokilangsep.org/wp-content/uploads/2023/01/SAN_2111-scaled.jpg"
-    },
-    {
-        "question": "Apa hak seorang anggota gereja dalam komunitas Katolik?",
-        "options": ["Untuk menerima pelayanan sakramen", "Untuk mendominasi kegiatan gereja", "Untuk mengatur tata cara ibadah", "Untuk menghindari keterlibatan langsung"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2017/05/06/21/46/cross-2299408_960_720.jpg"
-    },
-    {
-        "question": "Apa makna kesatuan dalam Sakramen Perkawinan?",
-        "options": ["Kesatuan dalam doa dan kasih Allah", "Kesepakatan ekonomi antar keluarga", "Kerjasama dalam pekerjaan", "Kehidupan sosial yang harmonis"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2017/02/14/19/39/wedding-2061422_960_720.jpg"
-    },
-    {
-        "question": "Apa makna pengorbanan Yesus Kristus bagi umat Katolik?",
-        "options": ["Keselamatan kekal melalui kasih Allah", "Hanya sebagai simbol pengorbanan", "Perintah untuk hidup sederhana", "Keharusan mematuhi semua aturan gereja"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2016/07/13/16/51/cross-1511527_960_720.jpg"
-    },
-    {
-        "question": "Apa tanggung jawab pasangan Katolik setelah menerima Sakramen Perkawinan?",
-        "options": ["Membesarkan anak dalam iman", "Mencari keuntungan bersama", "Memelihara hubungan sosial", "Menjaga hubungan keluarga besar"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2020/04/28/09/27/children-5102177_960_720.jpg"
-    },
-    {
-        "question": "Apa tujuan utama Sakramen Imamat?",
-        "options": ["Melayani sakramen kepada umat", "Mengelola keuangan gereja", "Memperluas jaringan sosial", "Menjalankan tradisi gereja"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2016/03/27/20/47/priest-1283764_960_720.jpg"
-    },
-    {
-        "question": "Bagaimana iman dapat menjadi tanggapan nyata terhadap kasih Allah?",
-        "options": ["Melalui doa dan tindakan kasih", "Hanya dengan ibadah mingguan", "Dengan hidup tanpa dosa", "Dengan mengikuti semua aturan gereja"],
-        "answer": 0,
-        "image": "https://i.ytimg.com/vi/SzHqE7zp_0g/maxresdefault.jpg"
-    },
-    {
-        "question": "Apa yang harus dilakukan untuk hidup beriman kristiani?",
-        "options": ["Mengikuti teladan Yesus Kristus", "Menjaga jarak dengan orang lain", "Hanya berdoa tanpa tindakan nyata", "Menghindari masalah kehidupan"],
-        "answer": 0,
-        "image": "https://gbirayon3.org/uploads/general/forgive.jpg"
-    },
-    {
-        "question": "Apa yang dimaksud dengan iman yang hidup dalam komunitas Katolik?",
-        "options": ["Melayani sesama dengan kasih", "Hanya berpartisipasi dalam doa bersama", "Mematuhi aturan tanpa pertanyaan", "Menjaga diri dari pengaruh luar"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2016/03/26/22/44/church-1283141_960_720.jpg"
-    },
-    {
-        "question": "Apa makna hak dan kewajiban anggota jemaat Katolik?",
-        "options": ["Mengikuti aturan dan melayani sesama", "Hanya menerima pelayanan sakramen", "Menjaga status sosial di komunitas", "Mengelola kegiatan gereja"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2016/04/02/15/58/bible-1309700_960_720.jpg"
-    },
-    {
-        "question": "Bagaimana Sakramen Perkawinan mendukung kehidupan keluarga?",
-        "options": ["Membangun dasar cinta kasih", "Mengatur peran masing-masing", "Meningkatkan hubungan sosial", "Memastikan stabilitas ekonomi"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2016/03/27/20/46/wedding-1283762_960_720.jpg"
-    },
-    {
-        "question": "Apa yang menjadi pusat penghayatan iman dalam Gereja Katolik?",
-        "options": ["Kasih karunia Allah", "Perayaan tradisi", "Kepatuhan tanpa pemahaman", "Pengalaman pribadi"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2017/01/06/20/49/cross-1955666_960_720.jpg"
-    },
-    {
-        "question": "Apa pentingnya doa dalam kehidupan seorang Kristen Katolik?",
-        "options": ["Sebagai komunikasi dengan Allah", "Sebagai kewajiban harian", "Sebagai pengisi waktu luang", "Sebagai cara menunjukkan kesalehan"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2017/02/14/21/56/prayer-2064112_960_720.jpg"
-    },
-    {
-        "question": "Apa arti kata 'Imamat' dalam Gereja Katolik?",
-        "options": ["Pelayanan kasih kepada umat", "Kepemimpinan dalam politik", "Pengelolaan keuangan gereja", "Penjagaan doktrin"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2017/02/17/15/15/cross-2076703_960_720.jpg"
-    },
-    {
-        "question": "Apa tujuan utama Sakramen Perkawinan dalam Gereja Katolik?",
-        "options": ["Meningkatkan kekayaan keluarga", "Menciptakan keluarga yang kudus", "Membangun hubungan sosial", "Mengikuti adat istiadat"],
-        "answer": 1,
-        "image": "https://cdn.pixabay.com/photo/2020/06/14/11/49/couple-5297453_960_720.jpg"
-    },
-    {
-        "question": "Apa simbol Sakramen Imamat dalam upacara pentahbisan?",
-        "options": ["Kitab Suci", "Stola dan Kasula", "Rosario", "Minyak Suci"],
-        "answer": 1,
-        "image": "https://th.bing.com/th/id/OIP.xnfcsB4k9Lv92mjql9yUyQHaHa?rs=1&pid=ImgDetMain"
-    },
-    {
-        "question": "Apa makna utama membangun masa depan dalam iman Katolik?",
-        "options": ["Ketekunan dan doa", "Hanya fokus pada usaha duniawi", "Keberuntungan semata", "Mengikuti semua tren modern"],
-        "answer": 3,
-        "image": "https://cdn.pixabay.com/photo/2015/12/19/20/05/faith-1100602_960_720.jpg"
-    },
-    {
-        "question": "Apa peran seorang imam dalam Sakramen Imamat?",
-        "options": ["Menyampaikan khotbah setiap minggu", "Memimpin doa dan sakramen", "Mengatur keuangan gereja", "Mengelola organisasi sosial"],
+        "question": "Apa tujuan utama dari permainan Gobak Sodor?",
+        "options": [
+            "A. Menjaga bola agar tidak direbut",
+            "B. Memasukkan bola ke dalam gawang lawan",
+            "C. Mencapai garis lawan tanpa tertangkap",
+            "D. Menjaga area bermain agar tidak dilalui lawan"
+        ],
         "answer": 2,
-        "image": "https://assets.kompasiana.com/items/album/2024/03/03/uang-dan-alkitab-65e41f6d1470933f501c7924.jpg?t=o&v=770"
+        "image": "https://2.bp.blogspot.com/-vwuI5AOY9Vs/WxVW53MLN8I/AAAAAAAAF5o/NDOo3EWztRMDo1dGSohR204K_-NLIXDWwCLcBGAs/s1600/3%2BPermainan%2Bgobak%2Bsodor.png"
     },
     {
-        "question": "Apa yang dimaksud dengan 'Allah sebagai sumber keselamatan sejati' dalam ajaran Katolik?",
-        "options": ["Allah memberikan keselamatan melalui kasih-Nya", "Keselamatan tergantung pada usaha manusia", "Keselamatan adalah hak individu", "Keselamatan hanya milik gereja tertentu"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2016/03/27/20/44/cross-1283755_960_720.jpg"
-    },
-    {
-        "question": "Bagaimana cara menunjukkan iman sebagai tanggapan terhadap karya keselamatan Allah?",
-        "options": ["Dengan hidup kudus dan melakukan kasih", "Dengan hanya mengikuti tradisi", "Dengan mempelajari sejarah gereja", "Dengan menghafal semua doa"],
-        "answer": 3,
-        "image": "https://cdn.pixabay.com/photo/2016/11/29/06/15/prayer-1868563_960_720.jpg"
-    },
-    {
-        "question": "Apa pentingnya kebersamaan dalam jemaat Katolik?",
-        "options": ["Untuk menciptakan persatuan dalam kasih Allah", "Untuk menjaga tradisi lokal", "Untuk meningkatkan status sosial", "Untuk mendapatkan dukungan finansial"],
-        "answer": 1,
-        "image": "https://cdn.pixabay.com/photo/2016/03/26/22/42/friends-1283137_960_720.jpg"
-    },
-    {
-        "question": "Apa hak seorang anggota jemaat Katolik?",
-        "options": ["Menerima sakramen", "Mengatur tata ibadah", "Menyusun doktrin gereja", "Mengelola keuangan umat"],
-        "answer": 3,
-        "image": "https://cdn.pixabay.com/photo/2015/03/26/10/47/church-690710_960_720.jpg"
-    },
-    {
-        "question": "Apa kewajiban anggota jemaat Katolik dalam komunitas?",
-        "options": ["Melayani sesama dalam kasih", "Meningkatkan prestasi pribadi", "Mengikuti semua perintah tanpa pertanyaan", "Menghindari keterlibatan langsung"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2016/11/29/06/16/people-1868564_960_720.jpg"
-    },
-    {
-        "question": "Apa tanggung jawab pasangan Katolik dalam Sakramen Perkawinan?",
-        "options": ["Membimbing anak dalam iman", "Mengikuti tradisi keluarga", "Mengatur keuangan bersama", "Menjaga hubungan sosial"],
+        "question": "Pada permainan basket, area yang disebut ‘area tiga poin’ berada pada jarak ....",
+        "options": [
+            "A. 3 meter dari ring",
+            "B. 4 meter dari ring",
+            "C. 6 meter dari ring",
+            "D. 7 meter dari ring"
+        ],
         "answer": 2,
-        "image": "https://cdn.pixabay.com/photo/2016/11/29/04/52/children-1867564_960_720.jpg"
+        "image": "https://example.com/path-to-your-image12.jpg"
     },
     {
-        "question": "Apa arti Sakramen Penguatan dalam Katolik?",
-        "options": ["Memperkuat iman umat", "Meningkatkan status sosial", "Memberikan jabatan gereja", "Membuka peluang usaha baru"],
-        "answer": 0,
-        "image": "https://parokisedayu.org/wp-content/uploads/2018/07/krisma3-1024x683.jpeg"
-    },
-    {
-        "question": "Dalam Katolik, apa arti iman sebagai tanggapan terhadap Allah?",
-        "options": ["Menerima karya keselamatan Allah dengan percaya", "Mengikuti adat istiadat lokal", "Menjalankan kehidupan tanpa aturan", "Meningkatkan hubungan sosial"],
-        "answer": 0,
-        "image": "https://cdn.pixabay.com/photo/2017/12/28/22/03/religion-3046102_960_720.jpg"
-    },
-    {
-        "question": "Apa peran penting doa dalam kehidupan Katolik?",
-        "options": ["Menghubungkan manusia dengan Allah", "Meningkatkan keberuntungan pribadi", "Meningkatkan status ekonomi", "Menjaga tradisi gereja"],
+        "question": "Ukuran diameter cakram dalam olahraga lempar cakram adalah ....",
+        "options": [
+            "A. 25 cm",
+            "B. 30 cm",
+            "C. 50 cm",
+            "D. 75 cm"
+        ],
         "answer": 1,
-        "image": "https://cdn.pixabay.com/photo/2016/03/27/22/16/church-1283980_960_720.jpg"
-    }
+        "image": "https://haloedukasi.com/wp-content/uploads/2021/01/teknik-768x432-1.jpg"
+    },
+    {
+        "question": "Di dalam olahraga tolak peluru, peluru harus dilemparkan dengan menggunakan ....",
+        "options": [
+            "A. Kedua tangan",
+            "B. Satu tangan dari belakang kepala",
+            "C. Kedua kaki",
+            "D. Satu kaki"
+        ],
+        "answer": 1,
+        "image": "https://example.com/path-to-your-image14.jpg"
+    },
+    {
+        "question": "Pada permainan sepak bola, saat bola keluar dari lapangan melalui garis gawang, maka dilakukan ....",
+        "options": [
+            "A. Tendangan pojok",
+            "B. Tendangan bebas",
+            "C. Tendangan gawang",
+            "D. Lemparan ke dalam"
+        ],
+        "answer": 2,
+        "image": "https://example.com/path-to-your-image15.jpg"
+    },
+    {
+        "question": "Apa tujuan utama dari permainan lari kelompok?",
+        "options": [
+            "A. Mengumpulkan bola sebanyak mungkin",
+            "B. Berlari secepat mungkin untuk mencapai garis finish",
+            "C. Kerjasama tim untuk menyelesaikan rintangan",
+            "D. Menghindari lawan untuk tidak melintas"
+        ],
+        "answer": 2,
+        "image": "https://example.com/path-to-your-image16.jpg"
+    },
+    {
+        "question": "Dalam permainan sepak bola, siapa yang berfungsi untuk menjaga gawang agar tidak kebobolan?",
+        "options": [
+            "A. Penyerang",
+            "B. Gelandang",
+            "C. Bek",
+            "D. Kiper"
+        ],
+        "answer": 3,
+        "image": "https://example.com/path-to-your-image17.jpg"
+    },
+    {
+        "question": "Apa yang dimaksud dengan teknik dasar passing dalam sepak bola?",
+        "options": [
+            "A. Mengoper bola ke rekan setim dengan tendangan atau operan",
+            "B. Menjaga bola agar tidak direbut oleh lawan",
+            "C. Menendang bola langsung ke gawang",
+            "D. Menendang bola untuk membuangnya keluar lapangan"
+        ],
+        "answer": 0,
+        "image": "https://cdn.vox-cdn.com/thumbor/PhQCD_v5YolHK4dkhwi7NMwIuRo=/0x0:3000x2000/1200x800/filters:focal(1196x239:1676x719)/cdn.vox-cdn.com/uploads/chorus_image/image/52880765/481491258.0.jpg"
+    },
+    {
+        "question": "Pada olahraga tolak peluru, peluru dilemparkan dengan menggunakan teknik ....",
+        "options": [
+            "A. Lemparan atas",
+            "B. Lemparan bawah",
+            "C. Lemparan dari samping",
+            "D. Tolakan dari belakang kepala"
+        ],
+        "answer": 3,
+        "image": "https://res.cloudinary.com/dk0z4ums3/image/upload/v1664156161/attached_image/mengenal-olahraga-tolak-peluru-dan-manfaatnya-bagi-kesehatan.jpg"
+    },
+    {
+        "question": "Di dalam lari estafet, berapa panjang zona yang digunakan untuk menyerahkan tongkat?",
+        "options": [
+            "A. 5 meter",
+            "B. 10 meter",
+            "C. 20 meter",
+            "D. 25 meter"
+        ],
+        "answer": 1,
+        "image": "https://example.com/path-to-your-image20.jpg"
+    },
+    {
+        "question": "Silat adalah olahraga yang menggabungkan seni bela diri dengan ....",
+        "options": [
+            "A. Teknik pukulan dan tendangan",
+            "B. Keindahan gerakan tari",
+            "C. Penggunaan senjata tajam",
+            "D. Penggunaan kekuatan fisik semata"
+        ],
+        "answer": 1,
+        "image": "https://example.com/path-to-your-image21.jpg"
+    },
+    {
+        "question": "Pada permainan Gobak Sodor, tugas utama pemain yang berada di garis belakang adalah ....",
+        "options": [
+            "A. Menghentikan pemain lawan",
+            "B. Menjaga agar bola tetap dalam kontrol tim",
+            "C. Mencegah lawan menyeberang garis",
+            "D. Menjaga agar tidak terjebak di antara lawan"
+        ],
+        "answer": 2,
+        "image": "https://example.com/path-to-your-image22.jpg"
+    },
+    {
+        "question": "Dalam permainan basket, berapa banyak pemain yang ada dalam satu tim?",
+        "options": [
+            "A. 5 pemain",
+            "B. 6 pemain",
+            "C. 7 pemain",
+            "D. 10 pemain"
+        ],
+        "answer": 0,
+        "image": "https://th.bing.com/th/id/OIP.5eVrENE5i99SHO8IriQMqwHaE7?rs=1&pid=ImgDetMain"
+    },
+    {
+        "question": "Apa yang dimaksud dengan teknik dasar dribbling dalam permainan basket?",
+        "options": [
+            "A. Mengoper bola ke teman",
+            "B. Menendang bola ke arah gawang",
+            "C. Memantulkan bola ke lantai sambil berlari",
+            "D. Memasukkan bola ke dalam ring"
+        ],
+        "answer": 2,
+        "image": "https://example.com/path-to-your-image24.jpg"
+    },
+    {
+        "question": "Dalam permainan sepak bola, siapa yang dapat menggunakan tangan untuk menyentuh bola?",
+        "options": [
+            "A. Pemain bertahan",
+            "B. Pemain gelandang",
+            "C. Kiper",
+            "D. Pemain penyerang"
+        ],
+        "answer": 2,
+        "image": "https://www.fcutrecht.nl/media/24531/20200721_training-1987.jpg?center=0.33742331288343558,0.52493438320209973&mode=crop&width=1365&height=768&rnd=132427860577900000"
+    },
+    {
+        "question": "Di dalam permainan silat, apa yang dimaksud dengan ‘Jurus’?",
+        "options": [
+            "A. Gerakan serangan tangan",
+            "B. Teknik bertahan",
+            "C. Kumpulan gerakan bela diri",
+            "D. Serangan kaki yang cepat"
+        ],
+        "answer": 2,
+        "image": "https://example.com/path-to-your-image26.jpg"
+    },
+    {
+        "question": "Apa yang dimaksud dengan ‘Tongkat’ dalam lari estafet?",
+        "options": [
+            "A. Alat yang digunakan untuk mengukur jarak lari",
+            "B. Alat yang digunakan untuk berlari lebih cepat",
+            "C. Alat yang dipindahkan antar pelari",
+            "D. Alat untuk mengukur kecepatan lari"
+        ],
+        "answer": 2,
+        "image": "https://example.com/path-to-your-image27.jpg"
+    },
+    {
+        "question": "Dalam olahraga sepak bola, sebuah gol sah jika bola masuk ke dalam gawang dengan ....",
+        "options": [
+            "A. Terkena kaki kiper",
+            "B. Terkena tangan pemain lawan",
+            "C. Bola tidak keluar dari garis gawang",
+            "D. Bola menyentuh tiang gawang"
+        ],
+        "answer": 2,
+        "image": "https://mediasulut.co/foto_berita/776460505-addtext_0116092647.jpg"
+    },
+    {
+        "question": "Di dalam olahraga basket, apa tujuan dari ‘Rebound’?",
+        "options": [
+            "A. Mencetak poin langsung",
+            "B. Mengambil bola setelah tembakan gagal",
+            "C. Memberikan umpan kepada rekan",
+            "D. Menjaga pemain lawan agar tidak menyerang"
+        ],
+        "answer": 1,
+        "image": "https://example.com/path-to-your-image29.jpg"
+    },
+    {
+        "question": "Dalam permainan tolak peluru, peluru harus dilemparkan dari posisi ....",
+        "options": [
+            "A. Berdiri tegak di belakang garis tolak",
+            "B. Duduk di lantai",
+            "C. Berlari menuju garis tolak",
+            "D. Menggunakan kedua tangan"
+        ],
+        "answer": 0,
+        "image": "https://example.com/path-to-your-image30.jpg"
+    },
+    {
+        "question": "Dalam permainan sepak bola, di manakah posisi pemain gelandang?",
+        "options": [
+            "A. Di depan penjaga gawang",
+            "B. Di tengah lapangan",
+            "C. Di sisi kiri atau kanan lapangan",
+            "D. Di belakang bek"
+        ],
+        "answer": 1,
+        "image": "https://example.com/path-to-your-image31.jpg"
+    },
+    {
+        "question": "Apa yang dimaksud dengan 'Area Penalti' dalam sepak bola?",
+        "options": [
+            "A. Area tempat tendangan bebas dilakukan",
+            "B. Area di mana gol dilarang terjadi",
+            "C. Area tempat pemain bertahan menjaga gawang",
+            "D. Area di mana hanya kiper yang boleh memegang bola"
+        ],
+        "answer": 3,
+        "image": "https://example.com/path-to-your-image32.jpg"
+    },
+    {
+        "question": "Dalam olahraga silat, apa fungsi dari ‘Kuda-kuda’?",
+        "options": [
+            "A. Gerakan untuk menghindari serangan",
+            "B. Posisi tubuh untuk menjaga keseimbangan",
+            "C. Gerakan menyerang bagian tubuh lawan",
+            "D. Teknik untuk merantai gerakan silat"
+        ],
+        "answer": 1,
+        "image": "https://example.com/path-to-your-image33.jpg"
+    },
+    {
+        "question": "Pada permainan Gobak Sodor, siapa yang memegang peran penting dalam menggagalkan lawan?",
+        "options": [
+            "A. Pemain yang berlari ke garis belakang",
+            "B. Pemain yang menjaga garis tengah",
+            "C. Pemain yang menangkap lawan yang terjebak",
+            "D. Pemain yang mengoper bola"
+        ],
+        "answer": 2,
+        "image": "https://example.com/path-to-your-image34.jpg"
+    },
+    {
+        "question": "Apa yang dimaksud dengan ‘Tendangan Bebas’ dalam permainan sepak bola?",
+        "options": [
+            "A. Tendangan yang dilakukan setelah bola keluar dari garis gawang",
+            "B. Tendangan yang diberikan saat terjadi pelanggaran",
+            "C. Tendangan yang dilakukan tanpa halangan lawan",
+            "D. Tendangan untuk memulai permainan kembali"
+        ],
+        "answer": 1,
+        "image": "https://example.com/path-to-your-image35.jpg"
+    },
+    {
+        "question": "Ukuran panjang lapangan sepak bola internasional adalah ....",
+        "options": [
+            "A. 100-110 meter",
+            "B. 110-120 meter",
+            "C. 120-130 meter",
+            "D. 90-100 meter"
+        ],
+        "answer": 0,
+        "image": null
+    },
+    {
+        "question": "Ukuran lebar lapangan sepak bola internasional adalah ....",
+        "options": [
+            "A. 60-70 meter",
+            "B. 70-80 meter",
+            "C. 80-90 meter",
+            "D. 50-60 meter"
+        ],
+        "answer": 1,
+        "image": null
+    },
+    {
+        "question": "Dalam permainan basket, tinggi ring basket adalah ....",
+        "options": [
+            "A. 2,5 meter",
+            "B. 3 meter",
+            "C. 3,5 meter",
+            "D. 2 meter"
+        ],
+        "answer": 1,
+        "image": null
+    },
+    {
+        "question": "Berapa panjang lapangan bola voli untuk pertandingan internasional?",
+        "options": [
+            "A. 10 meter",
+            "B. 12 meter",
+            "C. 18 meter",
+            "D. 20 meter"
+        ],
+        "answer": 2,
+        "image": null
+    },
+    {
+        "question": "Ukuran diameter cakram dalam olahraga lempar cakram adalah ....",
+        "options": [
+            "A. 15 cm",
+            "B. 25 cm",
+            "C. 30 cm",
+            "D. 50 cm"
+        ],
+        "answer": 2,
+        "image": null
+    },
+    {
+        "question": "Di bawah ini yang bukan merupakan ukuran standar lapangan sepak bola adalah ....",
+        "options": [
+            "A. Panjang lapangan 100-110 meter",
+            "B. Lebar lapangan 60-70 meter",
+            "C. Ukuran gawang 7,32 meter x 2,44 meter",
+            "D. Panjang lapangan 90-100 meter"
+        ],
+        "answer": 3,
+        "image": null
+    },
+    {
+        "question": "Apa yang dimaksud dengan teknik dasar passing dalam permainan basket?",
+        "options": [
+            "A. Mengoper bola ke rekan setim",
+            "B. Mengambil bola dari lawan",
+            "C. Menendang bola ke arah gawang",
+            "D. Memantulkan bola ke lantai sambil berlari"
+        ],
+        "answer": 0,
+        "image": "https://example.com/path-to-your-image36.jpg"
+    },
+    {
+        "question": "Pada permainan sepak bola, area kotak penalti memiliki panjang ....",
+        "options": [
+            "A. 16 meter",
+            "B. 18 meter",
+            "C. 22 meter",
+            "D. 20 meter"
+        ],
+        "answer": 1,
+        "image": "https://example.com/path-to-your-image37.jpg"
+    },
+    {
+        "question": "Di dalam olahraga silat, apa yang dimaksud dengan ‘Gaya Berdiri’?",
+        "options": [
+            "A. Posisi tubuh untuk menyerang lawan",
+            "B. Posisi bertahan dengan kaki terbuka lebar",
+            "C. Posisi tubuh yang menjaga keseimbangan dan kontrol",
+            "D. Posisi tangan dalam menyerang"
+        ],
+        "answer": 2,
+        "image": "https://example.com/path-to-your-image38.jpg"
+    },
+    {
+        "question": "Di bawah ini yang merupakan ukuran panjang lapangan bulu tangkis adalah ....",
+        "options": [
+            "A. 13,4 meter",
+            "B. 14,5 meter",
+            "C. 16 meter",
+            "D. 12 meter"
+        ],
+        "answer": 0,
+        "image": "https://example.com/path-to-your-image39.jpg"
+    },
+    {
+        "question": "Berikut ini adalah gambar teknik dasar dalam permainan silat. Mana yang menunjukkan posisi bertahan?",
+        "options": [
+            {
+                "option": "A",
+                "image": "https://i.ytimg.com/vi/1kcoeIax7y0/maxresdefault.jpg"
+            },
+            {
+                "option": "B",
+                "image": "https://th.bing.com/th/id/OIP.ig_lTehZ0deItvpM03Qz0gHaE8?rs=1&pid=ImgDetMain"
+            },
+            {
+                "option": "C",
+                "image": "https://th.bing.com/th/id/OIP.5DH3CgRsipm7iEy06Zs6lgHaFj?rs=1&pid=ImgDetMain"
+            },
+            {
+                "option": "D",
+                "image": "https://i.ytimg.com/vi/rQVsaesLNYw/maxresdefault.jpg"
+            }
+        ],
+        "answer": 2,
+        "image": null
+    },
+    {
+        "question": "Pada permainan sepak bola, bagaimana posisi kiper saat menjaga gawang?",
+        "options": [
+            {
+                "option": "A",
+                "image": "https://media.istockphoto.com/id/1328990249/id/vektor/kiper-adalah-pemain-sepak-bola-berdiri-di-gawang-dan-menunggu-bola-dilayani-vector-datar.jpg?s=1024x1024&w=is&k=20&c=HkhLKbAr4M5_T2SIghymd-pLCIYnTMGQ8LS62RAWQxY="
+            },
+            {
+                "option": "B",
+                "image": "https://i.ytimg.com/vi/Jrk2vh6jqRs/hqdefault.jpg?sqp=-oaymwEoCOADEOgC8quKqQMcGADwAQH4Ac4FgAKACooCDAgAEAEYSSBlKA8wDw==&rs=AOn4CLAWLOgMEJdRYOE6u7HYmp_8qjU7IQ"
+            },
+            {
+                "option": "C",
+                "image": "data:image/jpeg;base64,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"
+            },
+            {
+                "option": "D",
+                "image": "https://example.com/goalkeeper_4.jpg"
+            }
+        ],
+        "answer": 0,
+        "image": null
+    },
+    {
+        "question": "Berikut ini adalah gambar teknik dasar dalam tolak peluru. Mana yang menunjukkan cara tolak peluru yang benar?",
+        "options": [
+            {
+                "option": "A",
+                "image": "https://example.com/tolak_peluru_1.jpg"
+            },
+            {
+                "option": "B",
+                "image": "https://th.bing.com/th/id/OIP.4wKJv6MCgdQbav90KrUqmQHaD-?rs=1&pid=ImgDetMain"
+            },
+            {
+                "option": "C",
+                "image": "https://garudasports.co.id/wp-content/uploads/2020/02/Teknik-Dasar-Tolak-Peluru-Yang-Harus-Dikuasai-2-t.jpg"
+            },
+            {
+                "option": "D",
+                "image": "https://kettlebellsworkouts.com/wp-content/uploads/2018/08/38_lateral_swing-300x252.png"
+            }
+        ],
+        "answer": 3,
+        "image": null
+    },
+    {
+        "question": "Yang mana lapangan gobag sodor?",
+        "options": [
+            {
+                "option": "A",
+                "image": "https://2.bp.blogspot.com/-vwuI5AOY9Vs/WxVW53MLN8I/AAAAAAAAF5o/NDOo3EWztRMDo1dGSohR204K_-NLIXDWwCLcBGAs/s1600/3%2BPermainan%2Bgobak%2Bsodor.png"
+            },
+            {
+                "option": "B",
+                "image": "https://1.bp.blogspot.com/-9I2v_T5lp44/YRjyoOEsFZI/AAAAAAAAAOc/SQXRVsSoyqE9JA_rB8sw09iRhnFre7NRwCLcBGAsYHQ/s1200/Lapangan%2BKasti%2BBeserta%2BUkurannya.png"
+            },
+            {
+                "option": "C",
+                "image": "https://1.bp.blogspot.com/-Kr_jh4IKnPo/X3bEfCvnpFI/AAAAAAAABhg/Vc3msiX0Zq0HSJBzCWkEqkwA0XOtgMWjQCLcBGAsYHQ/s1600/Ukuran%2BLapangan%2BBulu%2BTangkis%2BVuiral.png"
+            },
+            {
+                "option": "D",
+                "image": "https://th.bing.com/th/id/OIP.C28FVG2Kg64H286t9vOIHQHaE8?rs=1&pid=ImgDetMain"
+            }
+        ],
+        "answer": 0,
+        "image": null
+    },
+    {
+        "question": "Jumlah pemain dalam satu tim pada permainan Gobak Sodor adalah ....",
+        "options": [
+            "A. 4 pemain",
+            "B. 5 pemain",
+            "C. 6 pemain",
+            "D. 7 pemain"
+        ],
+        "answer": 1,
+        "image": null
+    },
+    {
+        "question": "Dalam permainan Gobak Sodor, berapa banyak petak yang ada pada lapangan?",
+        "options": [
+            "A. 3 petak",
+            "B. 4 petak",
+            "C. 5 petak",
+            "D. 6 petak"
+        ],
+        "answer": 0,
+        "image": null
+    },
 ]
+
+
+
+
+
+
+
 
 
 
@@ -482,99 +829,114 @@ footer {
 
 ;
 
-        let timeRemaining = 25 * 60;
-        let timerInterval = setInterval(() => {
-            timeRemaining -= 1;
-            document.getElementById('time').textContent = formatTime(timeRemaining);
-            if (timeRemaining <= 0) {
-                clearInterval(timerInterval);
-                alert('Waktu habis! Soal akan disubmit.');
-                submitQuiz();
-            }
-        }, 1000);
+let timeRemaining = 20 * 60;
+let timerInterval = setInterval(() => {
+    timeRemaining -= 1;
+    document.getElementById('time').textContent = formatTime(timeRemaining);
+    if (timeRemaining <= 0) {
+        clearInterval(timerInterval);
+        alert('Waktu habis! Soal akan disubmit.');
+        submitQuiz();
+    }
+}, 1000);
 
-        function formatTime(seconds) {
-            const minutes = Math.floor(seconds / 60);
-            const secondsRemaining = seconds % 60;
-            return `${minutes}:${secondsRemaining.toString().padStart(2, '0')}`;
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const secondsRemaining = seconds % 60;
+    return `${minutes}:${secondsRemaining.toString().padStart(2, '0')}`;
+}
+
+let currentPage = 1;
+const selectedAnswers = new Array(questions.length).fill(null);
+
+document.getElementById('current-question').textContent = currentPage;
+
+function loadQuestion() {
+    const questionData = questions[currentPage - 1];
+    document.getElementById('question').textContent = questionData.question;
+
+    // Tampilkan gambar soal jika ada
+    const questionImage = document.getElementById('question-image');
+    if (questionData.image) {
+        questionImage.src = questionData.image;
+        questionImage.style.display = 'block';
+    } else {
+        questionImage.style.display = 'none';
+    }
+
+    const optionsElement = document.getElementById('options');
+    optionsElement.innerHTML = '';
+
+    questionData.options.forEach((option, index) => {
+        const li = document.createElement('li');
+        
+        // Jika pilihan adalah gambar
+        if (option.image) {
+            const img = document.createElement('img');
+            img.src = option.image;  // URL gambar untuk pilihan
+            img.alt = option.alt || "Jawaban";
+            img.classList.add('option-image');
+            li.appendChild(img);
+        } else {
+            // Jika pilihan adalah teks
+            li.textContent = option.text || option;  // Menangani teks jika opsi berupa teks
         }
+        
+        li.addEventListener('click', () => selectOption(index));
+        
+        if (selectedAnswers[currentPage - 1] === index) {
+            li.classList.add('selected');
+        }
+        
+        optionsElement.appendChild(li);
+    });
 
-        let currentPage = 1;
-        const selectedAnswers = new Array(questions.length).fill(null);
+    document.getElementById('next').style.display = (currentPage === questions.length) ? 'none' : 'inline-block';
+    document.getElementById('submit').style.display = (currentPage === questions.length) ? 'inline-block' : 'none';
+}
 
+function selectOption(index) {
+    selectedAnswers[currentPage - 1] = index;
+    loadQuestion();
+}
+
+document.getElementById('next').addEventListener('click', () => {
+    if (currentPage < questions.length) {
+        currentPage++;
         document.getElementById('current-question').textContent = currentPage;
+        loadQuestion();
+    }
+});
 
-        function loadQuestion() {
-            const questionData = questions[currentPage - 1];
-            document.getElementById('question').textContent = questionData.question;
+document.getElementById('back').addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        document.getElementById('current-question').textContent = currentPage;
+        loadQuestion();
+    }
+});
 
-            // Tampilkan gambar jika ada
-            const questionImage = document.getElementById('question-image');
-            if (questionData.image) {
-                questionImage.src = questionData.image;
-                questionImage.style.display = 'block';
-            } else {
-                questionImage.style.display = 'none';
-            }
+document.getElementById('submit').addEventListener('click', submitQuiz);
 
-            const optionsElement = document.getElementById('options');
-            optionsElement.innerHTML = '';
-            questionData.options.forEach((option, index) => {
-                const li = document.createElement('li');
-                li.textContent = option;
-                li.addEventListener('click', () => selectOption(index));
-                if (selectedAnswers[currentPage - 1] === index) {
-                    li.classList.add('selected');
-                }
-                optionsElement.appendChild(li);
-            });
+function submitQuiz() {
+    clearInterval(timerInterval);
+    const score = selectedAnswers.reduce((acc, answer, index) => {
+        return answer === questions[index].answer ? acc + 1 : acc;
+    }, 0);
+    const totalQuestions = questions.length;
+    const percentage = (score / totalQuestions) * 100;
 
-            document.getElementById('next').style.display = (currentPage === questions.length) ? 'none' : 'inline-block';
-            document.getElementById('submit').style.display = (currentPage === questions.length) ? 'inline-block' : 'none';
-        }
+    document.getElementById('result').innerHTML = `Skor Anda: ${score} dari ${totalQuestions} (${percentage.toFixed(2)}%)`;
+    document.getElementById('result').style.display = 'block';
+    document.querySelector('.navigation').style.display = 'none';
 
-        function selectOption(index) {
-            selectedAnswers[currentPage - 1] = index;
-            loadQuestion();
-        }
-
-        document.getElementById('next').addEventListener('click', () => {
-            if (currentPage < questions.length) {
-                currentPage++;
-                document.getElementById('current-question').textContent = currentPage;
-                loadQuestion();
-            }
-        });
-
-        document.getElementById('back').addEventListener('click', () => {
-            if (currentPage > 1) {
-                currentPage--;
-                document.getElementById('current-question').textContent = currentPage;
-                loadQuestion();
-            }
-        });
-
-        document.getElementById('submit').addEventListener('click', submitQuiz);
-
-        function submitQuiz() {
-            clearInterval(timerInterval);
-            const score = selectedAnswers.reduce((acc, answer, index) => {
-                return answer === questions[index].answer ? acc + 1 : acc;
-            }, 0);
-            const totalQuestions = questions.length;
-            const percentage = (score / totalQuestions) * 100;
-
-            document.getElementById('result').innerHTML = `Skor Anda: ${score} dari ${totalQuestions} (${percentage.toFixed(2)}%)`;
-            document.getElementById('result').style.display = 'block';
-            document.querySelector('.navigation').style.display = 'none';
-
-            setTimeout(() => {
-                const phoneNumber = "6289530067456";
-                const message = `Nilai ( Masukkan Nama Anda ) adalah: ${score} dari ${totalQuestions} (${percentage.toFixed(2)}%)`;
-                const whatsappURL = `https://wa.me/${6289530067456}?text=${encodeURIComponent(message)}`;
-                window.open(whatsappURL, '_blank');
-            }, 3000);
-        }
+    setTimeout(() => {
+        const phoneNumber = "6289530067456";
+        const message = `Nilai ( Masukkan Nama Anda ) adalah: ${score} dari ${totalQuestions} (${percentage.toFixed(2)}%)`;
+        const whatsappURL = `https://wa.me/${6289530067456}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappURL, '_blank');
+    }, 3000);
+}
 
         loadQuestion();
 
